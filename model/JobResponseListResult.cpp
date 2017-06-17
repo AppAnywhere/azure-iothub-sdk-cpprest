@@ -38,6 +38,7 @@ void JobResponseListResult::validate()
 
 web::json::value JobResponseListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value JobResponseListResult::toJson() const
 
 void JobResponseListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,11 +76,11 @@ void JobResponseListResult::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_6_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<JobResponse>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_6_value> newItem(new Inline_response_200_6_value());
+                std::shared_ptr<JobResponse> newItem(new JobResponse());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -140,11 +143,11 @@ void JobResponseListResult::fromMultiPart(std::shared_ptr<MultipartFormData> mul
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_6_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<JobResponse>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_6_value> newItem(new Inline_response_200_6_value());
+                std::shared_ptr<JobResponse> newItem(new JobResponse());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -161,7 +164,7 @@ void JobResponseListResult::fromMultiPart(std::shared_ptr<MultipartFormData> mul
 }
 
 
-std::vector<std::shared_ptr<Inline_response_200_6_value>>& JobResponseListResult::getValue()
+std::vector<std::shared_ptr<JobResponse>>& JobResponseListResult::getValue()
 {
     return m_Value;
 }

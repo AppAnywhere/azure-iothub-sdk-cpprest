@@ -22,9 +22,9 @@
 
 #include "ModelBase.h"
 
-#include "Inline_response_200_3_capacity.h"
-#include "Inline_response_200_3_sku.h"
+#include "IotHubCapacity.h"
 #include <cpprest/details/basic_types.h>
+#include "IotHubSkuInfo.h"
 
 namespace io {
 namespace swagger {
@@ -65,26 +65,20 @@ public:
     /// <summary>
     /// 
     /// </summary>
-    std::shared_ptr<Inline_response_200_3_sku> getSku() const;
-    void setSku(std::shared_ptr<Inline_response_200_3_sku> value);
-    bool skuIsSet() const;
-    void unsetSku();
-    /// <summary>
+    std::shared_ptr<IotHubSkuInfo> getSku() const;
+    void setSku(std::shared_ptr<IotHubSkuInfo> value);
+        /// <summary>
     /// 
     /// </summary>
-    std::shared_ptr<Inline_response_200_3_capacity> getCapacity() const;
-    void setCapacity(std::shared_ptr<Inline_response_200_3_capacity> value);
-    bool capacityIsSet() const;
-    void unsetCapacity();
-
+    std::shared_ptr<IotHubCapacity> getCapacity() const;
+    void setCapacity(std::shared_ptr<IotHubCapacity> value);
+    
 protected:
     utility::string_t m_ResourceType;
     bool m_ResourceTypeIsSet;
-std::shared_ptr<Inline_response_200_3_sku> m_Sku;
-    bool m_SkuIsSet;
-std::shared_ptr<Inline_response_200_3_capacity> m_Capacity;
-    bool m_CapacityIsSet;
-};
+    std::shared_ptr<IotHubSkuInfo> m_Sku;
+        std::shared_ptr<IotHubCapacity> m_Capacity;
+    };
 
 }
 }

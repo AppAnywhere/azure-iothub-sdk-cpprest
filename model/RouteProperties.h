@@ -83,11 +83,11 @@ public:
     
 protected:
     utility::string_t m_Name;
-    utility::string_t m_Source;
-    utility::string_t m_Condition;
+        utility::string_t m_Source;
+        utility::string_t m_Condition;
     bool m_ConditionIsSet;
-std::vector<utility::string_t> m_EndpointNames;
-    bool m_IsEnabled;
+    std::vector<utility::string_t> m_EndpointNames;
+        bool m_IsEnabled;
     };
 
 }

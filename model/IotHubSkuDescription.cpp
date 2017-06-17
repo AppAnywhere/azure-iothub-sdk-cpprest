@@ -23,8 +23,6 @@ IotHubSkuDescription::IotHubSkuDescription()
 {
     m_ResourceType = U("");
     m_ResourceTypeIsSet = false;
-    m_SkuIsSet = false;
-    m_CapacityIsSet = false;
     
 }
 
@@ -39,20 +37,15 @@ void IotHubSkuDescription::validate()
 
 web::json::value IotHubSkuDescription::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_ResourceTypeIsSet)
     {
         val[U("resourceType")] = ModelBase::toJson(m_ResourceType);
     }
-    if(m_SkuIsSet)
-    {
-        val[U("sku")] = ModelBase::toJson(m_Sku);
-    }
-    if(m_CapacityIsSet)
-    {
-        val[U("capacity")] = ModelBase::toJson(m_Capacity);
-    }
+    val[U("sku")] = ModelBase::toJson(m_Sku);
+    val[U("capacity")] = ModelBase::toJson(m_Capacity);
     
 
     return val;
@@ -60,31 +53,19 @@ web::json::value IotHubSkuDescription::toJson() const
 
 void IotHubSkuDescription::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("resourceType")))
     {
         setResourceType(ModelBase::stringFromJson(val[U("resourceType")]));
         
     }
-    if(val.has_field(U("sku")))
-    {
-        if(!val[U("sku")].is_null())
-        {
-            std::shared_ptr<Inline_response_200_3_sku> newItem(new Inline_response_200_3_sku());
-            newItem->fromJson(val[U("sku")]);
-            setSku( newItem );
-        }
-        
-    }
-    if(val.has_field(U("capacity")))
-    {
-        if(!val[U("capacity")].is_null())
-        {
-            std::shared_ptr<Inline_response_200_3_capacity> newItem(new Inline_response_200_3_capacity());
-            newItem->fromJson(val[U("capacity")]);
-            setCapacity( newItem );
-        }
-        
-    }
+    std::shared_ptr<IotHubSkuInfo> newSku(new IotHubSkuInfo());
+    newSku->fromJson(val[U("sku")]);
+    setSku( newSku );
+    std::shared_ptr<IotHubCapacity> newCapacity(new IotHubCapacity());
+    newCapacity->fromJson(val[U("capacity")]);
+    setCapacity( newCapacity );
     
 }
 
@@ -101,22 +82,8 @@ void IotHubSkuDescription::toMultipart(std::shared_ptr<MultipartFormData> multip
         multipart->add(ModelBase::toHttpContent(namePrefix + U("resourceType"), m_ResourceType));
         
     }
-    if(m_SkuIsSet)
-    {
-        if (m_Sku.get())
-        {
-            m_Sku->toMultipart(multipart, U("sku."));
-        }
-        
-    }
-    if(m_CapacityIsSet)
-    {
-        if (m_Capacity.get())
-        {
-            m_Capacity->toMultipart(multipart, U("capacity."));
-        }
-        
-    }
+    m_Sku->toMultipart(multipart, U("sku."));
+    m_Capacity->toMultipart(multipart, U("capacity."));
     
 }
 
@@ -133,26 +100,12 @@ void IotHubSkuDescription::fromMultiPart(std::shared_ptr<MultipartFormData> mult
         setResourceType(ModelBase::stringFromHttpContent(multipart->getContent(U("resourceType"))));
         
     }
-    if(multipart->hasContent(U("sku")))
-    {
-        if(multipart->hasContent(U("sku")))
-        {
-            std::shared_ptr<Inline_response_200_3_sku> newItem(new Inline_response_200_3_sku());
-            newItem->fromMultiPart(multipart, U("sku."));
-            setSku( newItem );
-        }
-        
-    }
-    if(multipart->hasContent(U("capacity")))
-    {
-        if(multipart->hasContent(U("capacity")))
-        {
-            std::shared_ptr<Inline_response_200_3_capacity> newItem(new Inline_response_200_3_capacity());
-            newItem->fromMultiPart(multipart, U("capacity."));
-            setCapacity( newItem );
-        }
-        
-    }
+    std::shared_ptr<IotHubSkuInfo> newSku(new IotHubSkuInfo());
+    newSku->fromMultiPart(multipart, U("sku."));
+    setSku( newSku );
+    std::shared_ptr<IotHubCapacity> newCapacity(new IotHubCapacity());
+    newCapacity->fromMultiPart(multipart, U("capacity."));
+    setCapacity( newCapacity );
     
 }
 
@@ -174,39 +127,23 @@ void IotHubSkuDescription::unsetResourceType()
 {
     m_ResourceTypeIsSet = false;
 }
-std::shared_ptr<Inline_response_200_3_sku> IotHubSkuDescription::getSku() const
+std::shared_ptr<IotHubSkuInfo> IotHubSkuDescription::getSku() const
 {
     return m_Sku;
 }
-void IotHubSkuDescription::setSku(std::shared_ptr<Inline_response_200_3_sku> value)
+void IotHubSkuDescription::setSku(std::shared_ptr<IotHubSkuInfo> value)
 {
     m_Sku = value;
-    m_SkuIsSet = true;
+    
 }
-bool IotHubSkuDescription::skuIsSet() const
-{
-    return m_SkuIsSet;
-}
-void IotHubSkuDescription::unsetSku()
-{
-    m_SkuIsSet = false;
-}
-std::shared_ptr<Inline_response_200_3_capacity> IotHubSkuDescription::getCapacity() const
+std::shared_ptr<IotHubCapacity> IotHubSkuDescription::getCapacity() const
 {
     return m_Capacity;
 }
-void IotHubSkuDescription::setCapacity(std::shared_ptr<Inline_response_200_3_capacity> value)
+void IotHubSkuDescription::setCapacity(std::shared_ptr<IotHubCapacity> value)
 {
     m_Capacity = value;
-    m_CapacityIsSet = true;
-}
-bool IotHubSkuDescription::capacityIsSet() const
-{
-    return m_CapacityIsSet;
-}
-void IotHubSkuDescription::unsetCapacity()
-{
-    m_CapacityIsSet = false;
+    
 }
 
 }

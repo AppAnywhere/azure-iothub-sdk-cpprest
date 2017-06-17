@@ -22,7 +22,7 @@
 
 #include "ModelBase.h"
 
-#include "Inline_response_200_6_value.h"
+#include "JobResponse.h"
 #include <cpprest/details/basic_types.h>
 #include <vector>
 
@@ -58,7 +58,7 @@ public:
     /// <summary>
     /// The array of JobResponse objects.
     /// </summary>
-    std::vector<std::shared_ptr<Inline_response_200_6_value>>& getValue();
+    std::vector<std::shared_ptr<JobResponse>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
     /// <summary>
@@ -70,9 +70,9 @@ public:
     void unsetNextLink();
 
 protected:
-    std::vector<std::shared_ptr<Inline_response_200_6_value>> m_Value;
+    std::vector<std::shared_ptr<JobResponse>> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

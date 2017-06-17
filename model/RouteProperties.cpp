@@ -40,6 +40,7 @@ void RouteProperties::validate()
 
 web::json::value RouteProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("name")] = ModelBase::toJson(m_Name);
@@ -64,6 +65,8 @@ web::json::value RouteProperties::toJson() const
 
 void RouteProperties::fromJson(web::json::value& val)
 {
+    
+
     setName(ModelBase::stringFromJson(val[U("name")]));
     setSource(ModelBase::stringFromJson(val[U("source")]));
     if(val.has_field(U("condition")))

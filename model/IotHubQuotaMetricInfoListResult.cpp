@@ -38,6 +38,7 @@ void IotHubQuotaMetricInfoListResult::validate()
 
 web::json::value IotHubQuotaMetricInfoListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value IotHubQuotaMetricInfoListResult::toJson() const
 
 void IotHubQuotaMetricInfoListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,11 +76,11 @@ void IotHubQuotaMetricInfoListResult::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_7_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubQuotaMetricInfo>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_7_value> newItem(new Inline_response_200_7_value());
+                std::shared_ptr<IotHubQuotaMetricInfo> newItem(new IotHubQuotaMetricInfo());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -140,11 +143,11 @@ void IotHubQuotaMetricInfoListResult::fromMultiPart(std::shared_ptr<MultipartFor
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_7_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubQuotaMetricInfo>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_7_value> newItem(new Inline_response_200_7_value());
+                std::shared_ptr<IotHubQuotaMetricInfo> newItem(new IotHubQuotaMetricInfo());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -161,7 +164,7 @@ void IotHubQuotaMetricInfoListResult::fromMultiPart(std::shared_ptr<MultipartFor
 }
 
 
-std::vector<std::shared_ptr<Inline_response_200_7_value>>& IotHubQuotaMetricInfoListResult::getValue()
+std::vector<std::shared_ptr<IotHubQuotaMetricInfo>>& IotHubQuotaMetricInfoListResult::getValue()
 {
     return m_Value;
 }

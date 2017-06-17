@@ -77,9 +77,9 @@ public:
 protected:
     int64_t m_TotalDeviceCount;
     bool m_TotalDeviceCountIsSet;
-int64_t m_EnabledDeviceCount;
+    int64_t m_EnabledDeviceCount;
     bool m_EnabledDeviceCountIsSet;
-int64_t m_DisabledDeviceCount;
+    int64_t m_DisabledDeviceCount;
     bool m_DisabledDeviceCountIsSet;
 };
 

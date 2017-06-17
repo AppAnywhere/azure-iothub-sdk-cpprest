@@ -36,9 +36,9 @@ PUTApi::~PUTApi()
 {
 }
 
-pplx::task<std::shared_ptr<Inline_response_200_5>> PUTApi::iotHubResourceCreateEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name)
+pplx::task<std::shared_ptr<EventHubConsumerGroupInfo>> PUTApi::iotHubResourceCreateEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}");
@@ -141,7 +141,7 @@ boost::replace_all(path, U("{") U("name") U("}"), ApiClient::parameterToString(n
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_5> result(new Inline_response_200_5());
+        std::shared_ptr<EventHubConsumerGroupInfo> result(new EventHubConsumerGroupInfo());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -156,21 +156,21 @@ boost::replace_all(path, U("{") U("name") U("}"), ApiClient::parameterToString(n
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceCreateEventHubConsumerGroup: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200>> PUTApi::iotHubResourceCreateOrUpdate(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<IotHubDescription> iotHubDescription)
+pplx::task<std::shared_ptr<IotHubDescription>> PUTApi::iotHubResourceCreateOrUpdate(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<IotHubDescription> iotHubDescription)
 {
-    
+
     // verify the required parameter 'iotHubDescription' is set
     if (iotHubDescription == nullptr)
     {
         throw ApiException(400, U("Missing required parameter 'iotHubDescription' when calling PUTApi->iotHubResourceCreateOrUpdate"));
     }
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}");
@@ -284,7 +284,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200> result(new Inline_response_200());
+        std::shared_ptr<IotHubDescription> result(new IotHubDescription());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -299,7 +299,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceCreateOrUpdate: unsupported response type"));
         }
 
         return result;

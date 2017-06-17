@@ -36,6 +36,7 @@ void OperationsMonitoringProperties::validate()
 
 web::json::value OperationsMonitoringProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_EventsIsSet)
@@ -49,6 +50,8 @@ web::json::value OperationsMonitoringProperties::toJson() const
 
 void OperationsMonitoringProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("events")))
     {
         if(!val[U("events")].is_null())

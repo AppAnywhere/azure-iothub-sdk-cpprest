@@ -43,6 +43,7 @@ void ErrorDetails::validate()
 
 web::json::value ErrorDetails::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_CodeIsSet)
@@ -68,6 +69,8 @@ web::json::value ErrorDetails::toJson() const
 
 void ErrorDetails::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("Code")))
     {
         setCode(ModelBase::stringFromJson(val[U("Code")]));

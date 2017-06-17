@@ -78,9 +78,9 @@ public:
 protected:
     utility::string_t m_LockDurationAsIso8601;
     bool m_LockDurationAsIso8601IsSet;
-utility::string_t m_TtlAsIso8601;
+    utility::string_t m_TtlAsIso8601;
     bool m_TtlAsIso8601IsSet;
-int32_t m_MaxDeliveryCount;
+    int32_t m_MaxDeliveryCount;
     bool m_MaxDeliveryCountIsSet;
 };
 

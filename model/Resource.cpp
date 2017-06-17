@@ -43,6 +43,7 @@ void Resource::validate()
 
 web::json::value Resource::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_IdIsSet)
@@ -69,6 +70,8 @@ web::json::value Resource::toJson() const
 
 void Resource::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("id")))
     {
         setId(ModelBase::stringFromJson(val[U("id")]));

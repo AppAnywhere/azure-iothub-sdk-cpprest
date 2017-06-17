@@ -22,14 +22,14 @@
 
 #include "ApiClient.h"
 
-#include "ExportDevicesParameters.h"
-#include "ImportDevicesParameters.h"
-#include "Inline_response_200_6_value.h"
-#include "Inline_response_200_8.h"
-#include "Inline_response_200_9.h"
-#include "Inline_response_200_9_value.h"
-#include "Inline_response_default.h"
+#include "ErrorDetails.h"
+#include "ExportDevicesRequest.h"
+#include "ImportDevicesRequest.h"
+#include "IotHubNameAvailabilityInfo.h"
+#include "JobResponse.h"
 #include "OperationInputs.h"
+#include "SharedAccessSignatureAuthorizationRule.h"
+#include "SharedAccessSignatureAuthorizationRuleListResult.h"
 #include <cpprest/details/basic_types.h>
 
 namespace io {
@@ -51,7 +51,7 @@ public:
     /// Check if an IoT hub name is available.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="operationInputs">Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_8>> iotHubResourceCheckNameAvailability(utility::string_t apiVersion, utility::string_t subscriptionId, std::shared_ptr<OperationInputs> operationInputs);
+    pplx::task<std::shared_ptr<IotHubNameAvailabilityInfo>> iotHubResourceCheckNameAvailability(utility::string_t apiVersion, utility::string_t subscriptionId, std::shared_ptr<OperationInputs> operationInputs);
     /// <summary>
     /// Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
     /// </summary>
@@ -59,7 +59,7 @@ public:
     /// Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="exportDevicesParameters">The parameters that specify the export devices operation.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_6_value>> iotHubResourceExportDevices(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<ExportDevicesParameters> exportDevicesParameters);
+    pplx::task<std::shared_ptr<JobResponse>> iotHubResourceExportDevices(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<ExportDevicesRequest> exportDevicesParameters);
     /// <summary>
     /// Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
     /// </summary>
@@ -67,7 +67,7 @@ public:
     /// Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="keyName">The name of the shared access policy.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_9_value>> iotHubResourceGetKeysForKeyName(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t keyName);
+    pplx::task<std::shared_ptr<SharedAccessSignatureAuthorizationRule>> iotHubResourceGetKeysForKeyName(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t keyName);
     /// <summary>
     /// Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
     /// </summary>
@@ -75,7 +75,7 @@ public:
     /// Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="importDevicesParameters">The parameters that specify the import devices operation.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_6_value>> iotHubResourceImportDevices(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<ImportDevicesParameters> importDevicesParameters);
+    pplx::task<std::shared_ptr<JobResponse>> iotHubResourceImportDevices(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<ImportDevicesRequest> importDevicesParameters);
     /// <summary>
     /// Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
     /// </summary>
@@ -83,7 +83,7 @@ public:
     /// Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_9>> iotHubResourceListKeys(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<SharedAccessSignatureAuthorizationRuleListResult>> iotHubResourceListKeys(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
 
 protected:
     std::shared_ptr<ApiClient> m_ApiClient;

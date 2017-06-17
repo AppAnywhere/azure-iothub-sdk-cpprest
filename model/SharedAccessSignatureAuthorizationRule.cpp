@@ -41,6 +41,7 @@ void SharedAccessSignatureAuthorizationRule::validate()
 
 web::json::value SharedAccessSignatureAuthorizationRule::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("keyName")] = ModelBase::toJson(m_KeyName);
@@ -60,6 +61,8 @@ web::json::value SharedAccessSignatureAuthorizationRule::toJson() const
 
 void SharedAccessSignatureAuthorizationRule::fromJson(web::json::value& val)
 {
+    
+
     setKeyName(ModelBase::stringFromJson(val[U("keyName")]));
     if(val.has_field(U("primaryKey")))
     {

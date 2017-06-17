@@ -43,6 +43,7 @@ void IotHubDescription::validate()
 
 web::json::value IotHubDescription::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_IdIsSet)
@@ -69,6 +70,8 @@ web::json::value IotHubDescription::toJson() const
 
 void IotHubDescription::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("id")))
     {
         setId(ModelBase::stringFromJson(val[U("id")]));

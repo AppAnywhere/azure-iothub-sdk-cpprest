@@ -51,6 +51,7 @@ void JobResponse::validate()
 
 web::json::value JobResponse::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_JobIdIsSet)
@@ -92,6 +93,8 @@ web::json::value JobResponse::toJson() const
 
 void JobResponse::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("jobId")))
     {
         setJobId(ModelBase::stringFromJson(val[U("jobId")]));

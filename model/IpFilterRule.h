@@ -71,8 +71,8 @@ public:
     
 protected:
     utility::string_t m_FilterName;
-    utility::string_t m_Action;
-    utility::string_t m_IpMask;
+        utility::string_t m_Action;
+        utility::string_t m_IpMask;
     };
 
 }

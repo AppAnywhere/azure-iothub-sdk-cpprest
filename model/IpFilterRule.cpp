@@ -38,6 +38,7 @@ void IpFilterRule::validate()
 
 web::json::value IpFilterRule::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("filterName")] = ModelBase::toJson(m_FilterName);
@@ -50,6 +51,8 @@ web::json::value IpFilterRule::toJson() const
 
 void IpFilterRule::fromJson(web::json::value& val)
 {
+    
+
     setFilterName(ModelBase::stringFromJson(val[U("filterName")]));
     setAction(ModelBase::stringFromJson(val[U("action")]));
     setIpMask(ModelBase::stringFromJson(val[U("ipMask")]));

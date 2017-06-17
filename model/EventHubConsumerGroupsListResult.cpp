@@ -38,6 +38,7 @@ void EventHubConsumerGroupsListResult::validate()
 
 web::json::value EventHubConsumerGroupsListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value EventHubConsumerGroupsListResult::toJson() const
 
 void EventHubConsumerGroupsListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;

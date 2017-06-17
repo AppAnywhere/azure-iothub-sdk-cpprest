@@ -37,6 +37,7 @@ void ImportDevicesRequest::validate()
 
 web::json::value ImportDevicesRequest::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("InputBlobContainerUri")] = ModelBase::toJson(m_InputBlobContainerUri);
@@ -48,6 +49,8 @@ web::json::value ImportDevicesRequest::toJson() const
 
 void ImportDevicesRequest::fromJson(web::json::value& val)
 {
+    
+
     setInputBlobContainerUri(ModelBase::stringFromJson(val[U("InputBlobContainerUri")]));
     setOutputBlobContainerUri(ModelBase::stringFromJson(val[U("OutputBlobContainerUri")]));
     

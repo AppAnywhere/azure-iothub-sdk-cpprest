@@ -40,6 +40,7 @@ void CloudToDeviceProperties::validate()
 
 web::json::value CloudToDeviceProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_MaxDeliveryCountIsSet)
@@ -61,6 +62,8 @@ web::json::value CloudToDeviceProperties::toJson() const
 
 void CloudToDeviceProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromJson(val[U("maxDeliveryCount")]));
@@ -74,7 +77,7 @@ void CloudToDeviceProperties::fromJson(web::json::value& val)
     {
         if(!val[U("feedback")].is_null())
         {
-            std::shared_ptr<IotHubProperties_cloudToDevice_feedback> newItem(new IotHubProperties_cloudToDevice_feedback());
+            std::shared_ptr<FeedbackProperties> newItem(new FeedbackProperties());
             newItem->fromJson(val[U("feedback")]);
             setFeedback( newItem );
         }
@@ -132,7 +135,7 @@ void CloudToDeviceProperties::fromMultiPart(std::shared_ptr<MultipartFormData> m
     {
         if(multipart->hasContent(U("feedback")))
         {
-            std::shared_ptr<IotHubProperties_cloudToDevice_feedback> newItem(new IotHubProperties_cloudToDevice_feedback());
+            std::shared_ptr<FeedbackProperties> newItem(new FeedbackProperties());
             newItem->fromMultiPart(multipart, U("feedback."));
             setFeedback( newItem );
         }
@@ -176,11 +179,11 @@ void CloudToDeviceProperties::unsetDefaultTtlAsIso8601()
 {
     m_DefaultTtlAsIso8601IsSet = false;
 }
-std::shared_ptr<IotHubProperties_cloudToDevice_feedback> CloudToDeviceProperties::getFeedback() const
+std::shared_ptr<FeedbackProperties> CloudToDeviceProperties::getFeedback() const
 {
     return m_Feedback;
 }
-void CloudToDeviceProperties::setFeedback(std::shared_ptr<IotHubProperties_cloudToDevice_feedback> value)
+void CloudToDeviceProperties::setFeedback(std::shared_ptr<FeedbackProperties> value)
 {
     m_Feedback = value;
     m_FeedbackIsSet = true;

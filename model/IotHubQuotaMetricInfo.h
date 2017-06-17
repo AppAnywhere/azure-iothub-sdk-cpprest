@@ -78,9 +78,9 @@ public:
 protected:
     utility::string_t m_Name;
     bool m_NameIsSet;
-int64_t m_CurrentValue;
+    int64_t m_CurrentValue;
     bool m_CurrentValueIsSet;
-int64_t m_MaxValue;
+    int64_t m_MaxValue;
     bool m_MaxValueIsSet;
 };
 

@@ -22,9 +22,8 @@
 
 #include "ApiClient.h"
 
-#include "Inline_response_200.h"
-#include "Inline_response_200_5.h"
-#include "Inline_response_default.h"
+#include "ErrorDetails.h"
+#include "EventHubConsumerGroupInfo.h"
 #include "IotHubDescription.h"
 #include <cpprest/details/basic_types.h>
 
@@ -47,7 +46,7 @@ public:
     /// Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="eventHubEndpointName">The name of the Event Hub-compatible endpoint in the IoT hub.</param>/// <param name="name">The name of the consumer group to add.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_5>> iotHubResourceCreateEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name);
+    pplx::task<std::shared_ptr<EventHubConsumerGroupInfo>> iotHubResourceCreateEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name);
     /// <summary>
     /// Create or update the metadata of an IoT hub.
     /// </summary>
@@ -55,7 +54,7 @@ public:
     /// Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub to create or update.</param>/// <param name="iotHubDescription">The IoT hub metadata and security metadata.</param>
-    pplx::task<std::shared_ptr<Inline_response_200>> iotHubResourceCreateOrUpdate(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<IotHubDescription> iotHubDescription);
+    pplx::task<std::shared_ptr<IotHubDescription>> iotHubResourceCreateOrUpdate(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, std::shared_ptr<IotHubDescription> iotHubDescription);
 
 protected:
     std::shared_ptr<ApiClient> m_ApiClient;

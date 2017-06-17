@@ -38,6 +38,7 @@ void RoutingProperties::validate()
 
 web::json::value RoutingProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_EndpointsIsSet)
@@ -67,11 +68,13 @@ web::json::value RoutingProperties::toJson() const
 
 void RoutingProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("endpoints")))
     {
         if(!val[U("endpoints")].is_null())
         {
-            std::shared_ptr<IotHubProperties_routing_endpoints> newItem(new IotHubProperties_routing_endpoints());
+            std::shared_ptr<RoutingEndpoints> newItem(new RoutingEndpoints());
             newItem->fromJson(val[U("endpoints")]);
             setEndpoints( newItem );
         }
@@ -87,11 +90,11 @@ void RoutingProperties::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_Routes.push_back( std::shared_ptr<IotHubProperties_routing_routes>(nullptr) );
+                m_Routes.push_back( std::shared_ptr<RouteProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_routes> newItem(new IotHubProperties_routing_routes());
+                std::shared_ptr<RouteProperties> newItem(new RouteProperties());
                 newItem->fromJson(item);
                 m_Routes.push_back( newItem );
             }
@@ -103,7 +106,7 @@ void RoutingProperties::fromJson(web::json::value& val)
     {
         if(!val[U("fallbackRoute")].is_null())
         {
-            std::shared_ptr<IotHubProperties_routing_fallbackRoute> newItem(new IotHubProperties_routing_fallbackRoute());
+            std::shared_ptr<FallbackRouteProperties> newItem(new FallbackRouteProperties());
             newItem->fromJson(val[U("fallbackRoute")]);
             setFallbackRoute( newItem );
         }
@@ -163,7 +166,7 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
     {
         if(multipart->hasContent(U("endpoints")))
         {
-            std::shared_ptr<IotHubProperties_routing_endpoints> newItem(new IotHubProperties_routing_endpoints());
+            std::shared_ptr<RoutingEndpoints> newItem(new RoutingEndpoints());
             newItem->fromMultiPart(multipart, U("endpoints."));
             setEndpoints( newItem );
         }
@@ -180,11 +183,11 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
             
             if(item.is_null())
             {
-                m_Routes.push_back( std::shared_ptr<IotHubProperties_routing_routes>(nullptr) );
+                m_Routes.push_back( std::shared_ptr<RouteProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_routes> newItem(new IotHubProperties_routing_routes());
+                std::shared_ptr<RouteProperties> newItem(new RouteProperties());
                 newItem->fromJson(item);
                 m_Routes.push_back( newItem );
             }
@@ -196,7 +199,7 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
     {
         if(multipart->hasContent(U("fallbackRoute")))
         {
-            std::shared_ptr<IotHubProperties_routing_fallbackRoute> newItem(new IotHubProperties_routing_fallbackRoute());
+            std::shared_ptr<FallbackRouteProperties> newItem(new FallbackRouteProperties());
             newItem->fromMultiPart(multipart, U("fallbackRoute."));
             setFallbackRoute( newItem );
         }
@@ -206,11 +209,11 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
 }
 
 
-std::shared_ptr<IotHubProperties_routing_endpoints> RoutingProperties::getEndpoints() const
+std::shared_ptr<RoutingEndpoints> RoutingProperties::getEndpoints() const
 {
     return m_Endpoints;
 }
-void RoutingProperties::setEndpoints(std::shared_ptr<IotHubProperties_routing_endpoints> value)
+void RoutingProperties::setEndpoints(std::shared_ptr<RoutingEndpoints> value)
 {
     m_Endpoints = value;
     m_EndpointsIsSet = true;
@@ -223,7 +226,7 @@ void RoutingProperties::unsetEndpoints()
 {
     m_EndpointsIsSet = false;
 }
-std::vector<std::shared_ptr<IotHubProperties_routing_routes>>& RoutingProperties::getRoutes()
+std::vector<std::shared_ptr<RouteProperties>>& RoutingProperties::getRoutes()
 {
     return m_Routes;
 }
@@ -235,11 +238,11 @@ void RoutingProperties::unsetRoutes()
 {
     m_RoutesIsSet = false;
 }
-std::shared_ptr<IotHubProperties_routing_fallbackRoute> RoutingProperties::getFallbackRoute() const
+std::shared_ptr<FallbackRouteProperties> RoutingProperties::getFallbackRoute() const
 {
     return m_FallbackRoute;
 }
-void RoutingProperties::setFallbackRoute(std::shared_ptr<IotHubProperties_routing_fallbackRoute> value)
+void RoutingProperties::setFallbackRoute(std::shared_ptr<FallbackRouteProperties> value)
 {
     m_FallbackRoute = value;
     m_FallbackRouteIsSet = true;

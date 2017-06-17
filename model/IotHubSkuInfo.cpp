@@ -39,6 +39,7 @@ void IotHubSkuInfo::validate()
 
 web::json::value IotHubSkuInfo::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("name")] = ModelBase::toJson(m_Name);
@@ -54,6 +55,8 @@ web::json::value IotHubSkuInfo::toJson() const
 
 void IotHubSkuInfo::fromJson(web::json::value& val)
 {
+    
+
     setName(ModelBase::stringFromJson(val[U("name")]));
     if(val.has_field(U("tier")))
     {

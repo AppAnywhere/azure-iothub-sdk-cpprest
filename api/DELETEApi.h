@@ -22,8 +22,8 @@
 
 #include "ApiClient.h"
 
-#include "Inline_response_200.h"
-#include "Inline_response_default.h"
+#include "ErrorDetails.h"
+#include "IotHubDescription.h"
 #include <cpprest/details/basic_types.h>
 
 namespace io {
@@ -45,7 +45,7 @@ public:
     /// Delete an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub to delete.</param>
-    pplx::task<std::shared_ptr<Inline_response_200>> iotHubResourceDelete(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<IotHubDescription>> iotHubResourceDelete(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
     /// <summary>
     /// Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
     /// </summary>

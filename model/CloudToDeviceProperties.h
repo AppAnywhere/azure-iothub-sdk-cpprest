@@ -23,7 +23,7 @@
 #include "ModelBase.h"
 
 #include <cpprest/details/basic_types.h>
-#include "IotHubProperties_cloudToDevice_feedback.h"
+#include "FeedbackProperties.h"
 
 namespace io {
 namespace swagger {
@@ -71,17 +71,17 @@ public:
     /// <summary>
     /// 
     /// </summary>
-    std::shared_ptr<IotHubProperties_cloudToDevice_feedback> getFeedback() const;
-    void setFeedback(std::shared_ptr<IotHubProperties_cloudToDevice_feedback> value);
+    std::shared_ptr<FeedbackProperties> getFeedback() const;
+    void setFeedback(std::shared_ptr<FeedbackProperties> value);
     bool feedbackIsSet() const;
     void unsetFeedback();
 
 protected:
     int32_t m_MaxDeliveryCount;
     bool m_MaxDeliveryCountIsSet;
-utility::string_t m_DefaultTtlAsIso8601;
+    utility::string_t m_DefaultTtlAsIso8601;
     bool m_DefaultTtlAsIso8601IsSet;
-std::shared_ptr<IotHubProperties_cloudToDevice_feedback> m_Feedback;
+    std::shared_ptr<FeedbackProperties> m_Feedback;
     bool m_FeedbackIsSet;
 };
 

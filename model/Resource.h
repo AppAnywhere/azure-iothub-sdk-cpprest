@@ -91,12 +91,12 @@ public:
 protected:
     utility::string_t m_Id;
     bool m_IdIsSet;
-utility::string_t m_Name;
+    utility::string_t m_Name;
     bool m_NameIsSet;
-utility::string_t m_Type;
+    utility::string_t m_Type;
     bool m_TypeIsSet;
-utility::string_t m_Location;
-    std::map<utility::string_t, utility::string_t> m_Tags;
+    utility::string_t m_Location;
+        std::map<utility::string_t, utility::string_t> m_Tags;
     bool m_TagsIsSet;
 };
 

@@ -22,9 +22,9 @@
 
 #include "ModelBase.h"
 
-#include "IotHubProperties_routing_endpoints_serviceBusQueues.h"
-#include "IotHubProperties_routing_endpoints_serviceBusTopics.h"
-#include "IotHubProperties_routing_endpoints_eventHubs.h"
+#include "RoutingEventHubProperties.h"
+#include "RoutingServiceBusQueueEndpointProperties.h"
+#include "RoutingServiceBusTopicEndpointProperties.h"
 #include <vector>
 
 namespace io {
@@ -59,28 +59,28 @@ public:
     /// <summary>
     /// The list of Service Bus queue endpoints that IoT hub routes the messages to, based on the routing rules.
     /// </summary>
-    std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues>>& getServiceBusQueues();
+    std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>>& getServiceBusQueues();
     bool serviceBusQueuesIsSet() const;
     void unsetServiceBusQueues();
     /// <summary>
     /// The list of Service Bus topic endpoints that the IoT hub routes the messages to, based on the routing rules.
     /// </summary>
-    std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics>>& getServiceBusTopics();
+    std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>>& getServiceBusTopics();
     bool serviceBusTopicsIsSet() const;
     void unsetServiceBusTopics();
     /// <summary>
     /// The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not include the built-in Event Hubs endpoint.
     /// </summary>
-    std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs>>& getEventHubs();
+    std::vector<std::shared_ptr<RoutingEventHubProperties>>& getEventHubs();
     bool eventHubsIsSet() const;
     void unsetEventHubs();
 
 protected:
-    std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues>> m_ServiceBusQueues;
+    std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>> m_ServiceBusQueues;
     bool m_ServiceBusQueuesIsSet;
-std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics>> m_ServiceBusTopics;
+    std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>> m_ServiceBusTopics;
     bool m_ServiceBusTopicsIsSet;
-std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs>> m_EventHubs;
+    std::vector<std::shared_ptr<RoutingEventHubProperties>> m_EventHubs;
     bool m_EventHubsIsSet;
 };
 

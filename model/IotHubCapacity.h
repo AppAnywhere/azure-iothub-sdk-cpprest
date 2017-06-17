@@ -85,11 +85,11 @@ public:
 protected:
     int64_t m_Minimum;
     bool m_MinimumIsSet;
-int64_t m_Maximum;
+    int64_t m_Maximum;
     bool m_MaximumIsSet;
-int64_t m_Default;
+    int64_t m_Default;
     bool m_DefaultIsSet;
-utility::string_t m_ScaleType;
+    utility::string_t m_ScaleType;
     bool m_ScaleTypeIsSet;
 };
 

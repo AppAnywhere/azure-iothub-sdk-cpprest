@@ -80,11 +80,11 @@ public:
     
 protected:
     utility::string_t m_KeyName;
-    utility::string_t m_PrimaryKey;
+        utility::string_t m_PrimaryKey;
     bool m_PrimaryKeyIsSet;
-utility::string_t m_SecondaryKey;
+    utility::string_t m_SecondaryKey;
     bool m_SecondaryKeyIsSet;
-utility::string_t m_Rights;
+    utility::string_t m_Rights;
     };
 
 }

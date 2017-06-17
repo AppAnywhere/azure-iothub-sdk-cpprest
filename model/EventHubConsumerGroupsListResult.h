@@ -71,7 +71,7 @@ public:
 protected:
     std::vector<utility::string_t> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

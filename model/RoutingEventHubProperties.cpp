@@ -41,6 +41,7 @@ void RoutingEventHubProperties::validate()
 
 web::json::value RoutingEventHubProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("connectionString")] = ModelBase::toJson(m_ConnectionString);
@@ -60,6 +61,8 @@ web::json::value RoutingEventHubProperties::toJson() const
 
 void RoutingEventHubProperties::fromJson(web::json::value& val)
 {
+    
+
     setConnectionString(ModelBase::stringFromJson(val[U("connectionString")]));
     setName(ModelBase::stringFromJson(val[U("name")]));
     if(val.has_field(U("subscriptionId")))

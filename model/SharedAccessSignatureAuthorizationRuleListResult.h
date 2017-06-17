@@ -22,8 +22,8 @@
 
 #include "ModelBase.h"
 
-#include "Inline_response_200_9_value.h"
 #include <cpprest/details/basic_types.h>
+#include "SharedAccessSignatureAuthorizationRule.h"
 #include <vector>
 
 namespace io {
@@ -58,7 +58,7 @@ public:
     /// <summary>
     /// The list of shared access policies.
     /// </summary>
-    std::vector<std::shared_ptr<Inline_response_200_9_value>>& getValue();
+    std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
     /// <summary>
@@ -70,9 +70,9 @@ public:
     void unsetNextLink();
 
 protected:
-    std::vector<std::shared_ptr<Inline_response_200_9_value>> m_Value;
+    std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

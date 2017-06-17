@@ -38,6 +38,7 @@ void IotHubSkuDescriptionListResult::validate()
 
 web::json::value IotHubSkuDescriptionListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value IotHubSkuDescriptionListResult::toJson() const
 
 void IotHubSkuDescriptionListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,11 +76,11 @@ void IotHubSkuDescriptionListResult::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_3_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubSkuDescription>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_3_value> newItem(new Inline_response_200_3_value());
+                std::shared_ptr<IotHubSkuDescription> newItem(new IotHubSkuDescription());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -140,11 +143,11 @@ void IotHubSkuDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartForm
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_3_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubSkuDescription>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_3_value> newItem(new Inline_response_200_3_value());
+                std::shared_ptr<IotHubSkuDescription> newItem(new IotHubSkuDescription());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -161,7 +164,7 @@ void IotHubSkuDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartForm
 }
 
 
-std::vector<std::shared_ptr<Inline_response_200_3_value>>& IotHubSkuDescriptionListResult::getValue()
+std::vector<std::shared_ptr<IotHubSkuDescription>>& IotHubSkuDescriptionListResult::getValue()
 {
     return m_Value;
 }

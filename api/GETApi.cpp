@@ -36,9 +36,9 @@ GETApi::~GETApi()
 {
 }
 
-pplx::task<std::shared_ptr<Inline_response_200>> GETApi::iotHubResourceGet(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
+pplx::task<std::shared_ptr<IotHubDescription>> GETApi::iotHubResourceGet(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}");
@@ -139,7 +139,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200> result(new Inline_response_200());
+        std::shared_ptr<IotHubDescription> result(new IotHubDescription());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -154,15 +154,15 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGet: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_5>> GETApi::iotHubResourceGetEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name)
+pplx::task<std::shared_ptr<EventHubConsumerGroupInfo>> GETApi::iotHubResourceGetEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}");
@@ -265,7 +265,7 @@ boost::replace_all(path, U("{") U("name") U("}"), ApiClient::parameterToString(n
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_5> result(new Inline_response_200_5());
+        std::shared_ptr<EventHubConsumerGroupInfo> result(new EventHubConsumerGroupInfo());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -280,15 +280,15 @@ boost::replace_all(path, U("{") U("name") U("}"), ApiClient::parameterToString(n
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGetEventHubConsumerGroup: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_6_value>> GETApi::iotHubResourceGetJob(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t jobId)
+pplx::task<std::shared_ptr<JobResponse>> GETApi::iotHubResourceGetJob(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t jobId)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/jobs/{jobId}");
@@ -390,7 +390,7 @@ boost::replace_all(path, U("{") U("jobId") U("}"), ApiClient::parameterToString(
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_6_value> result(new Inline_response_200_6_value());
+        std::shared_ptr<JobResponse> result(new JobResponse());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -405,15 +405,15 @@ boost::replace_all(path, U("{") U("jobId") U("}"), ApiClient::parameterToString(
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGetJob: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_7>> GETApi::iotHubResourceGetQuotaMetrics(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
+pplx::task<std::shared_ptr<IotHubQuotaMetricInfoListResult>> GETApi::iotHubResourceGetQuotaMetrics(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/quotaMetrics");
@@ -514,7 +514,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_7> result(new Inline_response_200_7());
+        std::shared_ptr<IotHubQuotaMetricInfoListResult> result(new IotHubQuotaMetricInfoListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -529,15 +529,15 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGetQuotaMetrics: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_2>> GETApi::iotHubResourceGetStats(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
+pplx::task<std::shared_ptr<RegistryStatistics>> GETApi::iotHubResourceGetStats(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/IotHubStats");
@@ -638,7 +638,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_2> result(new Inline_response_200_2());
+        std::shared_ptr<RegistryStatistics> result(new RegistryStatistics());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -653,15 +653,15 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGetStats: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_3>> GETApi::iotHubResourceGetValidSkus(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
+pplx::task<std::shared_ptr<IotHubSkuDescriptionListResult>> GETApi::iotHubResourceGetValidSkus(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/skus");
@@ -762,7 +762,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_3> result(new Inline_response_200_3());
+        std::shared_ptr<IotHubSkuDescriptionListResult> result(new IotHubSkuDescriptionListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -777,15 +777,15 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceGetValidSkus: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_1>> GETApi::iotHubResourceListByResourceGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName)
+pplx::task<std::shared_ptr<IotHubDescriptionListResult>> GETApi::iotHubResourceListByResourceGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs");
@@ -885,7 +885,7 @@ boost::replace_all(path, U("{") U("resourceGroupName") U("}"), ApiClient::parame
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_1> result(new Inline_response_200_1());
+        std::shared_ptr<IotHubDescriptionListResult> result(new IotHubDescriptionListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -900,15 +900,15 @@ boost::replace_all(path, U("{") U("resourceGroupName") U("}"), ApiClient::parame
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceListByResourceGroup: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_1>> GETApi::iotHubResourceListBySubscription(utility::string_t apiVersion, utility::string_t subscriptionId)
+pplx::task<std::shared_ptr<IotHubDescriptionListResult>> GETApi::iotHubResourceListBySubscription(utility::string_t apiVersion, utility::string_t subscriptionId)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/providers/Microsoft.Devices/IotHubs");
@@ -1007,7 +1007,7 @@ pplx::task<std::shared_ptr<Inline_response_200_1>> GETApi::iotHubResourceListByS
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_1> result(new Inline_response_200_1());
+        std::shared_ptr<IotHubDescriptionListResult> result(new IotHubDescriptionListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -1022,15 +1022,15 @@ pplx::task<std::shared_ptr<Inline_response_200_1>> GETApi::iotHubResourceListByS
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceListBySubscription: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_4>> GETApi::iotHubResourceListEventHubConsumerGroups(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName)
+pplx::task<std::shared_ptr<EventHubConsumerGroupsListResult>> GETApi::iotHubResourceListEventHubConsumerGroups(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups");
@@ -1132,7 +1132,7 @@ boost::replace_all(path, U("{") U("eventHubEndpointName") U("}"), ApiClient::par
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_4> result(new Inline_response_200_4());
+        std::shared_ptr<EventHubConsumerGroupsListResult> result(new EventHubConsumerGroupsListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -1147,15 +1147,15 @@ boost::replace_all(path, U("{") U("eventHubEndpointName") U("}"), ApiClient::par
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceListEventHubConsumerGroups: unsupported response type"));
         }
 
         return result;
     });
 }
-pplx::task<std::shared_ptr<Inline_response_200_6>> GETApi::iotHubResourceListJobs(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
+pplx::task<std::shared_ptr<JobResponseListResult>> GETApi::iotHubResourceListJobs(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName)
 {
-    
+
 
     std::shared_ptr<ApiConfiguration> apiConfiguration( m_ApiClient->getConfiguration() );
     utility::string_t path = U("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/jobs");
@@ -1256,7 +1256,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
     })
     .then([=](utility::string_t response)
     {
-        std::shared_ptr<Inline_response_200_6> result(new Inline_response_200_6());
+        std::shared_ptr<JobResponseListResult> result(new JobResponseListResult());
 
         if(responseHttpContentType == U("application/json"))
         {
@@ -1271,7 +1271,7 @@ boost::replace_all(path, U("{") U("resourceName") U("}"), ApiClient::parameterTo
         else
         {
             throw ApiException(500
-                , U("error calling findPetsByStatus: unsupported response type"));
+                , U("error calling iotHubResourceListJobs: unsupported response type"));
         }
 
         return result;

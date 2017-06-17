@@ -43,6 +43,7 @@ void IotHubCapacity::validate()
 
 web::json::value IotHubCapacity::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_MinimumIsSet)
@@ -68,6 +69,8 @@ web::json::value IotHubCapacity::toJson() const
 
 void IotHubCapacity::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("minimum")))
     {
         setMinimum(ModelBase::int64_tFromJson(val[U("minimum")]));

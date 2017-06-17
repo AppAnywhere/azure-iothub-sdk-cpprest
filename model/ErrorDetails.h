@@ -85,11 +85,11 @@ public:
 protected:
     utility::string_t m_Code;
     bool m_CodeIsSet;
-utility::string_t m_HttpStatusCode;
+    utility::string_t m_HttpStatusCode;
     bool m_HttpStatusCodeIsSet;
-utility::string_t m_Message;
+    utility::string_t m_Message;
     bool m_MessageIsSet;
-utility::string_t m_Details;
+    utility::string_t m_Details;
     bool m_DetailsIsSet;
 };
 

@@ -37,6 +37,7 @@ void ExportDevicesRequest::validate()
 
 web::json::value ExportDevicesRequest::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("ExportBlobContainerUri")] = ModelBase::toJson(m_ExportBlobContainerUri);
@@ -48,6 +49,8 @@ web::json::value ExportDevicesRequest::toJson() const
 
 void ExportDevicesRequest::fromJson(web::json::value& val)
 {
+    
+
     setExportBlobContainerUri(ModelBase::stringFromJson(val[U("ExportBlobContainerUri")]));
     setExcludeKeys(ModelBase::boolFromJson(val[U("ExcludeKeys")]));
     

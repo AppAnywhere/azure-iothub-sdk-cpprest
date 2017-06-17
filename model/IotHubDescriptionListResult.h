@@ -23,8 +23,8 @@
 #include "ModelBase.h"
 
 #include <cpprest/details/basic_types.h>
-#include "Inline_response_200.h"
 #include <vector>
+#include "IotHubDescription.h"
 
 namespace io {
 namespace swagger {
@@ -58,7 +58,7 @@ public:
     /// <summary>
     /// The array of IotHubDescription objects.
     /// </summary>
-    std::vector<std::shared_ptr<Inline_response_200>>& getValue();
+    std::vector<std::shared_ptr<IotHubDescription>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
     /// <summary>
@@ -70,9 +70,9 @@ public:
     void unsetNextLink();
 
 protected:
-    std::vector<std::shared_ptr<Inline_response_200>> m_Value;
+    std::vector<std::shared_ptr<IotHubDescription>> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

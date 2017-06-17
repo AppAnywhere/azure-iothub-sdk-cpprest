@@ -113,19 +113,19 @@ public:
 protected:
     utility::string_t m_JobId;
     bool m_JobIdIsSet;
-utility::string_t m_StartTimeUtc;
+    utility::string_t m_StartTimeUtc;
     bool m_StartTimeUtcIsSet;
-utility::string_t m_EndTimeUtc;
+    utility::string_t m_EndTimeUtc;
     bool m_EndTimeUtcIsSet;
-utility::string_t m_Type;
+    utility::string_t m_Type;
     bool m_TypeIsSet;
-utility::string_t m_Status;
+    utility::string_t m_Status;
     bool m_StatusIsSet;
-utility::string_t m_FailureReason;
+    utility::string_t m_FailureReason;
     bool m_FailureReasonIsSet;
-utility::string_t m_StatusMessage;
+    utility::string_t m_StatusMessage;
     bool m_StatusMessageIsSet;
-utility::string_t m_ParentJobId;
+    utility::string_t m_ParentJobId;
     bool m_ParentJobIdIsSet;
 };
 

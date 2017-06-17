@@ -66,7 +66,7 @@ public:
     
 protected:
     utility::string_t m_InputBlobContainerUri;
-    utility::string_t m_OutputBlobContainerUri;
+        utility::string_t m_OutputBlobContainerUri;
     };
 
 }

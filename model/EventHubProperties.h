@@ -92,13 +92,13 @@ public:
 protected:
     int64_t m_RetentionTimeInDays;
     bool m_RetentionTimeInDaysIsSet;
-int32_t m_PartitionCount;
+    int32_t m_PartitionCount;
     bool m_PartitionCountIsSet;
-std::vector<utility::string_t> m_PartitionIds;
+    std::vector<utility::string_t> m_PartitionIds;
     bool m_PartitionIdsIsSet;
-utility::string_t m_Path;
+    utility::string_t m_Path;
     bool m_PathIsSet;
-utility::string_t m_Endpoint;
+    utility::string_t m_Endpoint;
     bool m_EndpointIsSet;
 };
 

@@ -40,6 +40,7 @@ void EventHubConsumerGroupInfo::validate()
 
 web::json::value EventHubConsumerGroupInfo::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_TagsIsSet)
@@ -61,6 +62,8 @@ web::json::value EventHubConsumerGroupInfo::toJson() const
 
 void EventHubConsumerGroupInfo::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("tags")))
     {
         if(!val[U("tags")].is_null())

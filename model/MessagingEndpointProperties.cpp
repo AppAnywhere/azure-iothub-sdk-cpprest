@@ -41,6 +41,7 @@ void MessagingEndpointProperties::validate()
 
 web::json::value MessagingEndpointProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_LockDurationAsIso8601IsSet)
@@ -62,6 +63,8 @@ web::json::value MessagingEndpointProperties::toJson() const
 
 void MessagingEndpointProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("lockDurationAsIso8601")))
     {
         setLockDurationAsIso8601(ModelBase::stringFromJson(val[U("lockDurationAsIso8601")]));

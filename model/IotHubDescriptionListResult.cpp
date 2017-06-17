@@ -38,6 +38,7 @@ void IotHubDescriptionListResult::validate()
 
 web::json::value IotHubDescriptionListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value IotHubDescriptionListResult::toJson() const
 
 void IotHubDescriptionListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,11 +76,11 @@ void IotHubDescriptionListResult::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubDescription>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200> newItem(new Inline_response_200());
+                std::shared_ptr<IotHubDescription> newItem(new IotHubDescription());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -140,11 +143,11 @@ void IotHubDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartFormDat
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200>(nullptr) );
+                m_Value.push_back( std::shared_ptr<IotHubDescription>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200> newItem(new Inline_response_200());
+                std::shared_ptr<IotHubDescription> newItem(new IotHubDescription());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -161,7 +164,7 @@ void IotHubDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartFormDat
 }
 
 
-std::vector<std::shared_ptr<Inline_response_200>>& IotHubDescriptionListResult::getValue()
+std::vector<std::shared_ptr<IotHubDescription>>& IotHubDescriptionListResult::getValue()
 {
     return m_Value;
 }

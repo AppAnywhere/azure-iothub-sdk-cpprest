@@ -73,9 +73,9 @@ public:
     
 protected:
     utility::string_t m_Name;
-    utility::string_t m_Tier;
+        utility::string_t m_Tier;
     bool m_TierIsSet;
-int64_t m_Capacity;
+    int64_t m_Capacity;
     };
 
 }

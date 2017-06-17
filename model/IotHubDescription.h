@@ -13,7 +13,7 @@
 /*
  * IotHubDescription.h
  *
- * The common properties of an Azure resource.
+ * The description of the IoT hub.
  */
 
 #ifndef IotHubDescription_H_
@@ -25,6 +25,7 @@
 #include <cpprest/details/basic_types.h>
 #include <map>
 #include <vector>
+#include "Resource.h"
 
 namespace io {
 namespace swagger {
@@ -32,7 +33,7 @@ namespace client {
 namespace model {
 
 /// <summary>
-/// The common properties of an Azure resource.
+/// The description of the IoT hub.
 /// </summary>
 class  IotHubDescription
     : public ModelBase
@@ -91,12 +92,12 @@ public:
 protected:
     utility::string_t m_Id;
     bool m_IdIsSet;
-utility::string_t m_Name;
+    utility::string_t m_Name;
     bool m_NameIsSet;
-utility::string_t m_Type;
+    utility::string_t m_Type;
     bool m_TypeIsSet;
-utility::string_t m_Location;
-    std::map<utility::string_t, utility::string_t> m_Tags;
+    utility::string_t m_Location;
+        std::map<utility::string_t, utility::string_t> m_Tags;
     bool m_TagsIsSet;
 };
 

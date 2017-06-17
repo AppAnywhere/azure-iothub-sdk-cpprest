@@ -41,6 +41,7 @@ void IotHubQuotaMetricInfo::validate()
 
 web::json::value IotHubQuotaMetricInfo::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_NameIsSet)
@@ -62,6 +63,8 @@ web::json::value IotHubQuotaMetricInfo::toJson() const
 
 void IotHubQuotaMetricInfo::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("Name")))
     {
         setName(ModelBase::stringFromJson(val[U("Name")]));

@@ -22,16 +22,16 @@
 
 #include "ApiClient.h"
 
-#include "Inline_response_200.h"
-#include "Inline_response_200_1.h"
-#include "Inline_response_200_2.h"
-#include "Inline_response_200_3.h"
-#include "Inline_response_200_4.h"
-#include "Inline_response_200_5.h"
-#include "Inline_response_200_6.h"
-#include "Inline_response_200_6_value.h"
-#include "Inline_response_200_7.h"
-#include "Inline_response_default.h"
+#include "ErrorDetails.h"
+#include "EventHubConsumerGroupInfo.h"
+#include "EventHubConsumerGroupsListResult.h"
+#include "IotHubDescription.h"
+#include "IotHubDescriptionListResult.h"
+#include "IotHubQuotaMetricInfoListResult.h"
+#include "IotHubSkuDescriptionListResult.h"
+#include "JobResponse.h"
+#include "JobResponseListResult.h"
+#include "RegistryStatistics.h"
 #include <cpprest/details/basic_types.h>
 
 namespace io {
@@ -53,7 +53,7 @@ public:
     /// Get the non-security related metadata of an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200>> iotHubResourceGet(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<IotHubDescription>> iotHubResourceGet(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
     /// <summary>
     /// Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
     /// </summary>
@@ -61,7 +61,7 @@ public:
     /// Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="eventHubEndpointName">The name of the Event Hub-compatible endpoint in the IoT hub.</param>/// <param name="name">The name of the consumer group to retrieve.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_5>> iotHubResourceGetEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name);
+    pplx::task<std::shared_ptr<EventHubConsumerGroupInfo>> iotHubResourceGetEventHubConsumerGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName, utility::string_t name);
     /// <summary>
     /// Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
     /// </summary>
@@ -69,7 +69,7 @@ public:
     /// Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="jobId">The job identifier.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_6_value>> iotHubResourceGetJob(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t jobId);
+    pplx::task<std::shared_ptr<JobResponse>> iotHubResourceGetJob(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t jobId);
     /// <summary>
     /// Get the quota metrics for an IoT hub.
     /// </summary>
@@ -77,7 +77,7 @@ public:
     /// Get the quota metrics for an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_7>> iotHubResourceGetQuotaMetrics(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<IotHubQuotaMetricInfoListResult>> iotHubResourceGetQuotaMetrics(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
     /// <summary>
     /// Get the statistics from an IoT hub.
     /// </summary>
@@ -85,7 +85,7 @@ public:
     /// Get the statistics from an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_2>> iotHubResourceGetStats(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<RegistryStatistics>> iotHubResourceGetStats(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
     /// <summary>
     /// Get the list of valid SKUs for an IoT hub.
     /// </summary>
@@ -93,7 +93,7 @@ public:
     /// Get the list of valid SKUs for an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_3>> iotHubResourceGetValidSkus(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<IotHubSkuDescriptionListResult>> iotHubResourceGetValidSkus(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
     /// <summary>
     /// Get all the IoT hubs in a resource group.
     /// </summary>
@@ -101,7 +101,7 @@ public:
     /// Get all the IoT hubs in a resource group.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hubs.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_1>> iotHubResourceListByResourceGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName);
+    pplx::task<std::shared_ptr<IotHubDescriptionListResult>> iotHubResourceListByResourceGroup(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName);
     /// <summary>
     /// Get all the IoT hubs in a subscription.
     /// </summary>
@@ -109,7 +109,7 @@ public:
     /// Get all the IoT hubs in a subscription.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_1>> iotHubResourceListBySubscription(utility::string_t apiVersion, utility::string_t subscriptionId);
+    pplx::task<std::shared_ptr<IotHubDescriptionListResult>> iotHubResourceListBySubscription(utility::string_t apiVersion, utility::string_t subscriptionId);
     /// <summary>
     /// Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
     /// </summary>
@@ -117,7 +117,7 @@ public:
     /// Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>/// <param name="eventHubEndpointName">The name of the Event Hub-compatible endpoint.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_4>> iotHubResourceListEventHubConsumerGroups(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName);
+    pplx::task<std::shared_ptr<EventHubConsumerGroupsListResult>> iotHubResourceListEventHubConsumerGroups(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName, utility::string_t eventHubEndpointName);
     /// <summary>
     /// Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
     /// </summary>
@@ -125,7 +125,7 @@ public:
     /// Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
     /// </remarks>
     /// <param name="apiVersion">The version of the API.</param>/// <param name="subscriptionId">The subscription identifier.</param>/// <param name="resourceGroupName">The name of the resource group that contains the IoT hub.</param>/// <param name="resourceName">The name of the IoT hub.</param>
-    pplx::task<std::shared_ptr<Inline_response_200_6>> iotHubResourceListJobs(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
+    pplx::task<std::shared_ptr<JobResponseListResult>> iotHubResourceListJobs(utility::string_t apiVersion, utility::string_t subscriptionId, utility::string_t resourceGroupName, utility::string_t resourceName);
 
 protected:
     std::shared_ptr<ApiClient> m_ApiClient;

@@ -22,7 +22,7 @@
 
 #include "ModelBase.h"
 
-#include "Inline_response_200_3_value.h"
+#include "IotHubSkuDescription.h"
 #include <cpprest/details/basic_types.h>
 #include <vector>
 
@@ -58,7 +58,7 @@ public:
     /// <summary>
     /// The array of IotHubSkuDescription.
     /// </summary>
-    std::vector<std::shared_ptr<Inline_response_200_3_value>>& getValue();
+    std::vector<std::shared_ptr<IotHubSkuDescription>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
     /// <summary>
@@ -70,9 +70,9 @@ public:
     void unsetNextLink();
 
 protected:
-    std::vector<std::shared_ptr<Inline_response_200_3_value>> m_Value;
+    std::vector<std::shared_ptr<IotHubSkuDescription>> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

@@ -80,10 +80,10 @@ public:
 
 protected:
     utility::string_t m_ConnectionString;
-    utility::string_t m_Name;
-    utility::string_t m_SubscriptionId;
+        utility::string_t m_Name;
+        utility::string_t m_SubscriptionId;
     bool m_SubscriptionIdIsSet;
-utility::string_t m_ResourceGroup;
+    utility::string_t m_ResourceGroup;
     bool m_ResourceGroupIsSet;
 };
 

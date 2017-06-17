@@ -38,6 +38,7 @@ void RoutingEndpoints::validate()
 
 web::json::value RoutingEndpoints::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -83,6 +84,8 @@ web::json::value RoutingEndpoints::toJson() const
 
 void RoutingEndpoints::fromJson(web::json::value& val)
 {
+    
+
     {
         m_ServiceBusQueues.clear();
         std::vector<web::json::value> jsonArray;
@@ -93,11 +96,11 @@ void RoutingEndpoints::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_ServiceBusQueues.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues>(nullptr) );
+                m_ServiceBusQueues.push_back( std::shared_ptr<RoutingServiceBusQueueEndpointProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues> newItem(new IotHubProperties_routing_endpoints_serviceBusQueues());
+                std::shared_ptr<RoutingServiceBusQueueEndpointProperties> newItem(new RoutingServiceBusQueueEndpointProperties());
                 newItem->fromJson(item);
                 m_ServiceBusQueues.push_back( newItem );
             }
@@ -115,11 +118,11 @@ void RoutingEndpoints::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_ServiceBusTopics.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics>(nullptr) );
+                m_ServiceBusTopics.push_back( std::shared_ptr<RoutingServiceBusTopicEndpointProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics> newItem(new IotHubProperties_routing_endpoints_serviceBusTopics());
+                std::shared_ptr<RoutingServiceBusTopicEndpointProperties> newItem(new RoutingServiceBusTopicEndpointProperties());
                 newItem->fromJson(item);
                 m_ServiceBusTopics.push_back( newItem );
             }
@@ -137,11 +140,11 @@ void RoutingEndpoints::fromJson(web::json::value& val)
             
             if(item.is_null())
             {
-                m_EventHubs.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs>(nullptr) );
+                m_EventHubs.push_back( std::shared_ptr<RoutingEventHubProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs> newItem(new IotHubProperties_routing_endpoints_eventHubs());
+                std::shared_ptr<RoutingEventHubProperties> newItem(new RoutingEventHubProperties());
                 newItem->fromJson(item);
                 m_EventHubs.push_back( newItem );
             }
@@ -218,11 +221,11 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             
             if(item.is_null())
             {
-                m_ServiceBusQueues.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues>(nullptr) );
+                m_ServiceBusQueues.push_back( std::shared_ptr<RoutingServiceBusQueueEndpointProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues> newItem(new IotHubProperties_routing_endpoints_serviceBusQueues());
+                std::shared_ptr<RoutingServiceBusQueueEndpointProperties> newItem(new RoutingServiceBusQueueEndpointProperties());
                 newItem->fromJson(item);
                 m_ServiceBusQueues.push_back( newItem );
             }
@@ -241,11 +244,11 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             
             if(item.is_null())
             {
-                m_ServiceBusTopics.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics>(nullptr) );
+                m_ServiceBusTopics.push_back( std::shared_ptr<RoutingServiceBusTopicEndpointProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics> newItem(new IotHubProperties_routing_endpoints_serviceBusTopics());
+                std::shared_ptr<RoutingServiceBusTopicEndpointProperties> newItem(new RoutingServiceBusTopicEndpointProperties());
                 newItem->fromJson(item);
                 m_ServiceBusTopics.push_back( newItem );
             }
@@ -264,11 +267,11 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             
             if(item.is_null())
             {
-                m_EventHubs.push_back( std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs>(nullptr) );
+                m_EventHubs.push_back( std::shared_ptr<RoutingEventHubProperties>(nullptr) );
             }
             else
             {
-                std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs> newItem(new IotHubProperties_routing_endpoints_eventHubs());
+                std::shared_ptr<RoutingEventHubProperties> newItem(new RoutingEventHubProperties());
                 newItem->fromJson(item);
                 m_EventHubs.push_back( newItem );
             }
@@ -280,7 +283,7 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
 }
 
 
-std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusQueues>>& RoutingEndpoints::getServiceBusQueues()
+std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>>& RoutingEndpoints::getServiceBusQueues()
 {
     return m_ServiceBusQueues;
 }
@@ -292,7 +295,7 @@ void RoutingEndpoints::unsetServiceBusQueues()
 {
     m_ServiceBusQueuesIsSet = false;
 }
-std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_serviceBusTopics>>& RoutingEndpoints::getServiceBusTopics()
+std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>>& RoutingEndpoints::getServiceBusTopics()
 {
     return m_ServiceBusTopics;
 }
@@ -304,7 +307,7 @@ void RoutingEndpoints::unsetServiceBusTopics()
 {
     m_ServiceBusTopicsIsSet = false;
 }
-std::vector<std::shared_ptr<IotHubProperties_routing_endpoints_eventHubs>>& RoutingEndpoints::getEventHubs()
+std::vector<std::shared_ptr<RoutingEventHubProperties>>& RoutingEndpoints::getEventHubs()
 {
     return m_EventHubs;
 }

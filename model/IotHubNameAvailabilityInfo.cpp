@@ -41,6 +41,7 @@ void IotHubNameAvailabilityInfo::validate()
 
 web::json::value IotHubNameAvailabilityInfo::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_NameAvailableIsSet)
@@ -62,6 +63,8 @@ web::json::value IotHubNameAvailabilityInfo::toJson() const
 
 void IotHubNameAvailabilityInfo::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("nameAvailable")))
     {
         setNameAvailable(ModelBase::boolFromJson(val[U("nameAvailable")]));

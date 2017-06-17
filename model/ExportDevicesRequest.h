@@ -66,7 +66,7 @@ public:
     
 protected:
     utility::string_t m_ExportBlobContainerUri;
-    bool m_ExcludeKeys;
+        bool m_ExcludeKeys;
     };
 
 }

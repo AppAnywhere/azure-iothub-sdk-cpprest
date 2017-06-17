@@ -78,9 +78,9 @@ public:
 protected:
     bool m_NameAvailable;
     bool m_NameAvailableIsSet;
-utility::string_t m_Reason;
+    utility::string_t m_Reason;
     bool m_ReasonIsSet;
-utility::string_t m_Message;
+    utility::string_t m_Message;
     bool m_MessageIsSet;
 };
 

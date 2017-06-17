@@ -22,9 +22,9 @@
 
 #include "ModelBase.h"
 
-#include "Inline_response_200_7_value.h"
 #include <cpprest/details/basic_types.h>
 #include <vector>
+#include "IotHubQuotaMetricInfo.h"
 
 namespace io {
 namespace swagger {
@@ -58,7 +58,7 @@ public:
     /// <summary>
     /// The array of quota metrics objects.
     /// </summary>
-    std::vector<std::shared_ptr<Inline_response_200_7_value>>& getValue();
+    std::vector<std::shared_ptr<IotHubQuotaMetricInfo>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
     /// <summary>
@@ -70,9 +70,9 @@ public:
     void unsetNextLink();
 
 protected:
-    std::vector<std::shared_ptr<Inline_response_200_7_value>> m_Value;
+    std::vector<std::shared_ptr<IotHubQuotaMetricInfo>> m_Value;
     bool m_ValueIsSet;
-utility::string_t m_NextLink;
+    utility::string_t m_NextLink;
     bool m_NextLinkIsSet;
 };
 

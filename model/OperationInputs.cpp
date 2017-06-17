@@ -36,6 +36,7 @@ void OperationInputs::validate()
 
 web::json::value OperationInputs::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("Name")] = ModelBase::toJson(m_Name);
@@ -46,6 +47,8 @@ web::json::value OperationInputs::toJson() const
 
 void OperationInputs::fromJson(web::json::value& val)
 {
+    
+
     setName(ModelBase::stringFromJson(val[U("Name")]));
     
 }

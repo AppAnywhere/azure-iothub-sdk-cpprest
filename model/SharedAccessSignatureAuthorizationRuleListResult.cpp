@@ -38,6 +38,7 @@ void SharedAccessSignatureAuthorizationRuleListResult::validate()
 
 web::json::value SharedAccessSignatureAuthorizationRuleListResult::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     {
@@ -63,6 +64,8 @@ web::json::value SharedAccessSignatureAuthorizationRuleListResult::toJson() cons
 
 void SharedAccessSignatureAuthorizationRuleListResult::fromJson(web::json::value& val)
 {
+    
+
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,11 +76,11 @@ void SharedAccessSignatureAuthorizationRuleListResult::fromJson(web::json::value
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_9_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<SharedAccessSignatureAuthorizationRule>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_9_value> newItem(new Inline_response_200_9_value());
+                std::shared_ptr<SharedAccessSignatureAuthorizationRule> newItem(new SharedAccessSignatureAuthorizationRule());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -140,11 +143,11 @@ void SharedAccessSignatureAuthorizationRuleListResult::fromMultiPart(std::shared
             
             if(item.is_null())
             {
-                m_Value.push_back( std::shared_ptr<Inline_response_200_9_value>(nullptr) );
+                m_Value.push_back( std::shared_ptr<SharedAccessSignatureAuthorizationRule>(nullptr) );
             }
             else
             {
-                std::shared_ptr<Inline_response_200_9_value> newItem(new Inline_response_200_9_value());
+                std::shared_ptr<SharedAccessSignatureAuthorizationRule> newItem(new SharedAccessSignatureAuthorizationRule());
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
@@ -161,7 +164,7 @@ void SharedAccessSignatureAuthorizationRuleListResult::fromMultiPart(std::shared
 }
 
 
-std::vector<std::shared_ptr<Inline_response_200_9_value>>& SharedAccessSignatureAuthorizationRuleListResult::getValue()
+std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>>& SharedAccessSignatureAuthorizationRuleListResult::getValue()
 {
     return m_Value;
 }

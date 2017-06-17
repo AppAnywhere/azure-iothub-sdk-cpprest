@@ -22,10 +22,10 @@
 
 #include "ModelBase.h"
 
-#include "IotHubProperties_routing_fallbackRoute.h"
+#include "RouteProperties.h"
+#include "RoutingEndpoints.h"
+#include "FallbackRouteProperties.h"
 #include <vector>
-#include "IotHubProperties_routing_endpoints.h"
-#include "IotHubProperties_routing_routes.h"
 
 namespace io {
 namespace swagger {
@@ -59,30 +59,30 @@ public:
     /// <summary>
     /// 
     /// </summary>
-    std::shared_ptr<IotHubProperties_routing_endpoints> getEndpoints() const;
-    void setEndpoints(std::shared_ptr<IotHubProperties_routing_endpoints> value);
+    std::shared_ptr<RoutingEndpoints> getEndpoints() const;
+    void setEndpoints(std::shared_ptr<RoutingEndpoints> value);
     bool endpointsIsSet() const;
     void unsetEndpoints();
     /// <summary>
     /// The list of user-provided routing rules that the IoT hub uses to route messages to built-in and custom endpoints. A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5 routing rules are allowed for free hubs.
     /// </summary>
-    std::vector<std::shared_ptr<IotHubProperties_routing_routes>>& getRoutes();
+    std::vector<std::shared_ptr<RouteProperties>>& getRoutes();
     bool routesIsSet() const;
     void unsetRoutes();
     /// <summary>
-    /// 
+    /// The properties of the route that is used as a fall-back route when none of the conditions specified in the &#39;routes&#39; section are met. This is an optional parameter. When this property is not set, the messages which do not meet any of the conditions specified in the &#39;routes&#39; section get routed to the built-in eventhub endpoint.
     /// </summary>
-    std::shared_ptr<IotHubProperties_routing_fallbackRoute> getFallbackRoute() const;
-    void setFallbackRoute(std::shared_ptr<IotHubProperties_routing_fallbackRoute> value);
+    std::shared_ptr<FallbackRouteProperties> getFallbackRoute() const;
+    void setFallbackRoute(std::shared_ptr<FallbackRouteProperties> value);
     bool fallbackRouteIsSet() const;
     void unsetFallbackRoute();
 
 protected:
-    std::shared_ptr<IotHubProperties_routing_endpoints> m_Endpoints;
+    std::shared_ptr<RoutingEndpoints> m_Endpoints;
     bool m_EndpointsIsSet;
-std::vector<std::shared_ptr<IotHubProperties_routing_routes>> m_Routes;
+    std::vector<std::shared_ptr<RouteProperties>> m_Routes;
     bool m_RoutesIsSet;
-std::shared_ptr<IotHubProperties_routing_fallbackRoute> m_FallbackRoute;
+    std::shared_ptr<FallbackRouteProperties> m_FallbackRoute;
     bool m_FallbackRouteIsSet;
 };
 

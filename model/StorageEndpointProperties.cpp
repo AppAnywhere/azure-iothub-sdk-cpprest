@@ -39,6 +39,7 @@ void StorageEndpointProperties::validate()
 
 web::json::value StorageEndpointProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_SasTtlAsIso8601IsSet)
@@ -54,6 +55,8 @@ web::json::value StorageEndpointProperties::toJson() const
 
 void StorageEndpointProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("sasTtlAsIso8601")))
     {
         setSasTtlAsIso8601(ModelBase::stringFromJson(val[U("sasTtlAsIso8601")]));

@@ -39,6 +39,7 @@ void FallbackRouteProperties::validate()
 
 web::json::value FallbackRouteProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     val[U("source")] = ModelBase::toJson(m_Source);
@@ -62,6 +63,8 @@ web::json::value FallbackRouteProperties::toJson() const
 
 void FallbackRouteProperties::fromJson(web::json::value& val)
 {
+    
+
     setSource(ModelBase::stringFromJson(val[U("source")]));
     if(val.has_field(U("condition")))
     {

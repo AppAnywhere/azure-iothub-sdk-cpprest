@@ -44,6 +44,7 @@ void EventHubProperties::validate()
 
 web::json::value EventHubProperties::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_RetentionTimeInDaysIsSet)
@@ -81,6 +82,8 @@ web::json::value EventHubProperties::toJson() const
 
 void EventHubProperties::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("retentionTimeInDays")))
     {
         setRetentionTimeInDays(ModelBase::int64_tFromJson(val[U("retentionTimeInDays")]));

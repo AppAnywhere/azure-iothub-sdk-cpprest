@@ -79,9 +79,9 @@ public:
 protected:
     std::map<utility::string_t, utility::string_t> m_Tags;
     bool m_TagsIsSet;
-utility::string_t m_Id;
+    utility::string_t m_Id;
     bool m_IdIsSet;
-utility::string_t m_Name;
+    utility::string_t m_Name;
     bool m_NameIsSet;
 };
 

@@ -41,6 +41,7 @@ void RegistryStatistics::validate()
 
 web::json::value RegistryStatistics::toJson() const
 {
+    
     web::json::value val = web::json::value::object();
 
     if(m_TotalDeviceCountIsSet)
@@ -62,6 +63,8 @@ web::json::value RegistryStatistics::toJson() const
 
 void RegistryStatistics::fromJson(web::json::value& val)
 {
+    
+
     if(val.has_field(U("totalDeviceCount")))
     {
         setTotalDeviceCount(ModelBase::int64_tFromJson(val[U("totalDeviceCount")]));

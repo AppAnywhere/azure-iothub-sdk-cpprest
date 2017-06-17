@@ -74,8 +74,8 @@ public:
 protected:
     utility::string_t m_SasTtlAsIso8601;
     bool m_SasTtlAsIso8601IsSet;
-utility::string_t m_ConnectionString;
-    utility::string_t m_ContainerName;
+    utility::string_t m_ConnectionString;
+        utility::string_t m_ContainerName;
     };
 
 }
