@@ -1,3 +1,7 @@
+#Visual studio files
+.vs
+
+
 # Compiled Object files
 *.slo
 *.lo

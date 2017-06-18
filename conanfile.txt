@@ -1,0 +1,5 @@
+[requires]
+cpprestsdk/2.8.0@lasote/vcpkg
+
+[generators]
+cmake
