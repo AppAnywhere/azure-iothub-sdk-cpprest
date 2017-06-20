@@ -24,7 +24,6 @@ RoutingEndpoints::RoutingEndpoints()
     m_ServiceBusQueuesIsSet = false;
     m_ServiceBusTopicsIsSet = false;
     m_EventHubsIsSet = false;
-    
 }
 
 RoutingEndpoints::~RoutingEndpoints()
@@ -38,7 +37,6 @@ void RoutingEndpoints::validate()
 
 web::json::value RoutingEndpoints::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     {
@@ -47,7 +45,6 @@ web::json::value RoutingEndpoints::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("serviceBusQueues")] = web::json::value::array(jsonArray);
@@ -59,7 +56,6 @@ web::json::value RoutingEndpoints::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("serviceBusTopics")] = web::json::value::array(jsonArray);
@@ -71,21 +67,17 @@ web::json::value RoutingEndpoints::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("eventHubs")] = web::json::value::array(jsonArray);
         }
     }
-    
 
     return val;
 }
 
 void RoutingEndpoints::fromJson(web::json::value& val)
 {
-    
-
     {
         m_ServiceBusQueues.clear();
         std::vector<web::json::value> jsonArray;
@@ -93,7 +85,6 @@ void RoutingEndpoints::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("serviceBusQueues")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_ServiceBusQueues.push_back( std::shared_ptr<RoutingServiceBusQueueEndpointProperties>(nullptr) );
@@ -104,7 +95,6 @@ void RoutingEndpoints::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_ServiceBusQueues.push_back( newItem );
             }
-            
         }
         }
     }
@@ -115,7 +105,6 @@ void RoutingEndpoints::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("serviceBusTopics")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_ServiceBusTopics.push_back( std::shared_ptr<RoutingServiceBusTopicEndpointProperties>(nullptr) );
@@ -126,7 +115,6 @@ void RoutingEndpoints::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_ServiceBusTopics.push_back( newItem );
             }
-            
         }
         }
     }
@@ -137,7 +125,6 @@ void RoutingEndpoints::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("eventHubs")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_EventHubs.push_back( std::shared_ptr<RoutingEventHubProperties>(nullptr) );
@@ -148,11 +135,9 @@ void RoutingEndpoints::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_EventHubs.push_back( newItem );
             }
-            
         }
         }
     }
-    
 }
 
 void RoutingEndpoints::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -199,7 +184,6 @@ void RoutingEndpoints::toMultipart(std::shared_ptr<MultipartFormData> multipart,
             multipart->add(ModelBase::toHttpContent(namePrefix + U("eventHubs"), web::json::value::array(jsonArray), U("application/json")));
         }
     }
-    
 }
 
 void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -218,7 +202,6 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("serviceBusQueues"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_ServiceBusQueues.push_back( std::shared_ptr<RoutingServiceBusQueueEndpointProperties>(nullptr) );
@@ -229,7 +212,6 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
                 newItem->fromJson(item);
                 m_ServiceBusQueues.push_back( newItem );
             }
-            
         }
         }
     }
@@ -241,7 +223,6 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("serviceBusTopics"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_ServiceBusTopics.push_back( std::shared_ptr<RoutingServiceBusTopicEndpointProperties>(nullptr) );
@@ -252,7 +233,6 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
                 newItem->fromJson(item);
                 m_ServiceBusTopics.push_back( newItem );
             }
-            
         }
         }
     }
@@ -264,7 +244,6 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("eventHubs"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_EventHubs.push_back( std::shared_ptr<RoutingEventHubProperties>(nullptr) );
@@ -275,46 +254,66 @@ void RoutingEndpoints::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
                 newItem->fromJson(item);
                 m_EventHubs.push_back( newItem );
             }
-            
         }
         }
     }
-    
 }
-
 
 std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>>& RoutingEndpoints::getServiceBusQueues()
 {
     return m_ServiceBusQueues;
 }
+
+void RoutingEndpoints::setServiceBusQueues(std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>> value)
+{
+    m_ServiceBusQueues = value;
+    m_ServiceBusQueuesIsSet = true;
+}
 bool RoutingEndpoints::serviceBusQueuesIsSet() const
 {
     return m_ServiceBusQueuesIsSet;
 }
+
 void RoutingEndpoints::unsetServiceBusQueues()
 {
     m_ServiceBusQueuesIsSet = false;
 }
+
 std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>>& RoutingEndpoints::getServiceBusTopics()
 {
     return m_ServiceBusTopics;
+}
+
+void RoutingEndpoints::setServiceBusTopics(std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>> value)
+{
+    m_ServiceBusTopics = value;
+    m_ServiceBusTopicsIsSet = true;
 }
 bool RoutingEndpoints::serviceBusTopicsIsSet() const
 {
     return m_ServiceBusTopicsIsSet;
 }
+
 void RoutingEndpoints::unsetServiceBusTopics()
 {
     m_ServiceBusTopicsIsSet = false;
 }
+
 std::vector<std::shared_ptr<RoutingEventHubProperties>>& RoutingEndpoints::getEventHubs()
 {
     return m_EventHubs;
+}
+
+void RoutingEndpoints::setEventHubs(std::vector<std::shared_ptr<RoutingEventHubProperties>> value)
+{
+    m_EventHubs = value;
+    m_EventHubsIsSet = true;
 }
 bool RoutingEndpoints::eventHubsIsSet() const
 {
     return m_EventHubsIsSet;
 }
+
 void RoutingEndpoints::unsetEventHubs()
 {
     m_EventHubsIsSet = false;

@@ -24,7 +24,6 @@ IotHubQuotaMetricInfoListResult::IotHubQuotaMetricInfoListResult()
     m_ValueIsSet = false;
     m_NextLink = U("");
     m_NextLinkIsSet = false;
-    
 }
 
 IotHubQuotaMetricInfoListResult::~IotHubQuotaMetricInfoListResult()
@@ -38,7 +37,6 @@ void IotHubQuotaMetricInfoListResult::validate()
 
 web::json::value IotHubQuotaMetricInfoListResult::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     {
@@ -47,7 +45,6 @@ web::json::value IotHubQuotaMetricInfoListResult::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("value")] = web::json::value::array(jsonArray);
@@ -57,15 +54,12 @@ web::json::value IotHubQuotaMetricInfoListResult::toJson() const
     {
         val[U("nextLink")] = ModelBase::toJson(m_NextLink);
     }
-    
 
     return val;
 }
 
 void IotHubQuotaMetricInfoListResult::fromJson(web::json::value& val)
 {
-    
-
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,7 +67,6 @@ void IotHubQuotaMetricInfoListResult::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("value")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Value.push_back( std::shared_ptr<IotHubQuotaMetricInfo>(nullptr) );
@@ -84,16 +77,13 @@ void IotHubQuotaMetricInfoListResult::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
-            
         }
         }
     }
     if(val.has_field(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromJson(val[U("nextLink")]));
-        
     }
-    
 }
 
 void IotHubQuotaMetricInfoListResult::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -121,7 +111,6 @@ void IotHubQuotaMetricInfoListResult::toMultipart(std::shared_ptr<MultipartFormD
         multipart->add(ModelBase::toHttpContent(namePrefix + U("nextLink"), m_NextLink));
         
     }
-    
 }
 
 void IotHubQuotaMetricInfoListResult::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -140,7 +129,6 @@ void IotHubQuotaMetricInfoListResult::fromMultiPart(std::shared_ptr<MultipartFor
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("value"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Value.push_back( std::shared_ptr<IotHubQuotaMetricInfo>(nullptr) );
@@ -151,35 +139,41 @@ void IotHubQuotaMetricInfoListResult::fromMultiPart(std::shared_ptr<MultipartFor
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
-            
         }
         }
     }
     if(multipart->hasContent(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromHttpContent(multipart->getContent(U("nextLink"))));
-        
     }
-    
 }
-
 
 std::vector<std::shared_ptr<IotHubQuotaMetricInfo>>& IotHubQuotaMetricInfoListResult::getValue()
 {
     return m_Value;
 }
+
+void IotHubQuotaMetricInfoListResult::setValue(std::vector<std::shared_ptr<IotHubQuotaMetricInfo>> value)
+{
+    m_Value = value;
+    m_ValueIsSet = true;
+}
 bool IotHubQuotaMetricInfoListResult::valueIsSet() const
 {
     return m_ValueIsSet;
 }
+
 void IotHubQuotaMetricInfoListResult::unsetValue()
 {
     m_ValueIsSet = false;
 }
+
 utility::string_t IotHubQuotaMetricInfoListResult::getNextLink() const
 {
     return m_NextLink;
 }
+
+
 void IotHubQuotaMetricInfoListResult::setNextLink(utility::string_t value)
 {
     m_NextLink = value;
@@ -189,6 +183,7 @@ bool IotHubQuotaMetricInfoListResult::nextLinkIsSet() const
 {
     return m_NextLinkIsSet;
 }
+
 void IotHubQuotaMetricInfoListResult::unsetNextLink()
 {
     m_NextLinkIsSet = false;

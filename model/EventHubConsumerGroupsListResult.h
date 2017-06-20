@@ -60,13 +60,14 @@ public:
     std::vector<utility::string_t>& getValue();
     bool valueIsSet() const;
     void unsetValue();
+    void setValue(std::vector<utility::string_t> value);
     /// <summary>
     /// The next link.
     /// </summary>
     utility::string_t getNextLink() const;
-    void setNextLink(utility::string_t value);
     bool nextLinkIsSet() const;
     void unsetNextLink();
+    void setNextLink(utility::string_t value);
 
 protected:
     std::vector<utility::string_t> m_Value;

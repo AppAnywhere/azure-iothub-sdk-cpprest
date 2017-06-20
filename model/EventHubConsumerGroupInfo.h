@@ -61,20 +61,21 @@ public:
     std::map<utility::string_t, utility::string_t>& getTags();
     bool tagsIsSet() const;
     void unsetTags();
+    void setTags(std::map<utility::string_t, utility::string_t> value);
     /// <summary>
     /// The Event Hub-compatible consumer group identifier.
     /// </summary>
     utility::string_t getId() const;
-    void setId(utility::string_t value);
     bool idIsSet() const;
     void unsetId();
+    void setId(utility::string_t value);
     /// <summary>
     /// The Event Hub-compatible consumer group name.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
     bool nameIsSet() const;
     void unsetName();
+    void setName(utility::string_t value);
 
 protected:
     std::map<utility::string_t, utility::string_t> m_Tags;

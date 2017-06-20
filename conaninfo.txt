@@ -7,7 +7,9 @@
     os=Windows
 
 [requires]
-    cpprestsdk/2.Y.Z
+    Boost/1.Y.Z
+    CppRestSdk/2.Y.Z
+    OpenSSL/1.Y.Z
 
 [options]
 
@@ -21,10 +23,37 @@
     os=Windows
 
 [full_requires]
-    cpprestsdk/2.8.0@lasote/vcpkg:63da998e3642b50bee33f4449826b2d623661505
+    Boost/1.59.0@lasote/stable:7569deb7626b9f88e03d1b57f5ad4b34f8383a6f
+    CppRestSdk/2.8.0@lasote/vcpkg:63da998e3642b50bee33f4449826b2d623661505
+    OpenSSL/1.0.2g@lasote/stable:ee5dab950b6ea94ae953b93c55343e98c2ec39df
+    zlib/1.2.8@lasote/stable:c85f9b402dd4d46acdf074e1c63b768a41181d7a
 
 [full_options]
-
+    Boost:header_only=False
+    Boost:shared=True
+    OpenSSL:386=False
+    OpenSSL:no_asm=False
+    OpenSSL:no_bf=False
+    OpenSSL:no_cast=False
+    OpenSSL:no_des=False
+    OpenSSL:no_dh=False
+    OpenSSL:no_dsa=False
+    OpenSSL:no_electric_fence=False
+    OpenSSL:no_hmac=False
+    OpenSSL:no_md2=False
+    OpenSSL:no_md5=False
+    OpenSSL:no_mdc2=False
+    OpenSSL:no_rc2=False
+    OpenSSL:no_rc4=False
+    OpenSSL:no_rc5=False
+    OpenSSL:no_rsa=False
+    OpenSSL:no_sha=False
+    OpenSSL:no_sse2=False
+    OpenSSL:no_threads=False
+    OpenSSL:no_zlib=False
+    OpenSSL:shared=False
+    OpenSSL:zlib_dynamic=False
+    zlib:shared=True
 
 [scope]
     dev=True

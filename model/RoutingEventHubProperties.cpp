@@ -27,7 +27,6 @@ RoutingEventHubProperties::RoutingEventHubProperties()
     m_SubscriptionIdIsSet = false;
     m_ResourceGroup = U("");
     m_ResourceGroupIsSet = false;
-    
 }
 
 RoutingEventHubProperties::~RoutingEventHubProperties()
@@ -41,7 +40,6 @@ void RoutingEventHubProperties::validate()
 
 web::json::value RoutingEventHubProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("connectionString")] = ModelBase::toJson(m_ConnectionString);
@@ -54,28 +52,22 @@ web::json::value RoutingEventHubProperties::toJson() const
     {
         val[U("resourceGroup")] = ModelBase::toJson(m_ResourceGroup);
     }
-    
 
     return val;
 }
 
 void RoutingEventHubProperties::fromJson(web::json::value& val)
 {
-    
-
     setConnectionString(ModelBase::stringFromJson(val[U("connectionString")]));
     setName(ModelBase::stringFromJson(val[U("name")]));
     if(val.has_field(U("subscriptionId")))
     {
         setSubscriptionId(ModelBase::stringFromJson(val[U("subscriptionId")]));
-        
     }
     if(val.has_field(U("resourceGroup")))
     {
         setResourceGroup(ModelBase::stringFromJson(val[U("resourceGroup")]));
-        
     }
-    
 }
 
 void RoutingEventHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -98,7 +90,6 @@ void RoutingEventHubProperties::toMultipart(std::shared_ptr<MultipartFormData> m
         multipart->add(ModelBase::toHttpContent(namePrefix + U("resourceGroup"), m_ResourceGroup));
         
     }
-    
 }
 
 void RoutingEventHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -114,21 +105,19 @@ void RoutingEventHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData>
     if(multipart->hasContent(U("subscriptionId")))
     {
         setSubscriptionId(ModelBase::stringFromHttpContent(multipart->getContent(U("subscriptionId"))));
-        
     }
     if(multipart->hasContent(U("resourceGroup")))
     {
         setResourceGroup(ModelBase::stringFromHttpContent(multipart->getContent(U("resourceGroup"))));
-        
     }
-    
 }
-
 
 utility::string_t RoutingEventHubProperties::getConnectionString() const
 {
     return m_ConnectionString;
 }
+
+
 void RoutingEventHubProperties::setConnectionString(utility::string_t value)
 {
     m_ConnectionString = value;
@@ -138,6 +127,8 @@ utility::string_t RoutingEventHubProperties::getName() const
 {
     return m_Name;
 }
+
+
 void RoutingEventHubProperties::setName(utility::string_t value)
 {
     m_Name = value;
@@ -147,6 +138,8 @@ utility::string_t RoutingEventHubProperties::getSubscriptionId() const
 {
     return m_SubscriptionId;
 }
+
+
 void RoutingEventHubProperties::setSubscriptionId(utility::string_t value)
 {
     m_SubscriptionId = value;
@@ -156,14 +149,18 @@ bool RoutingEventHubProperties::subscriptionIdIsSet() const
 {
     return m_SubscriptionIdIsSet;
 }
+
 void RoutingEventHubProperties::unsetSubscriptionId()
 {
     m_SubscriptionIdIsSet = false;
 }
+
 utility::string_t RoutingEventHubProperties::getResourceGroup() const
 {
     return m_ResourceGroup;
 }
+
+
 void RoutingEventHubProperties::setResourceGroup(utility::string_t value)
 {
     m_ResourceGroup = value;
@@ -173,6 +170,7 @@ bool RoutingEventHubProperties::resourceGroupIsSet() const
 {
     return m_ResourceGroupIsSet;
 }
+
 void RoutingEventHubProperties::unsetResourceGroup()
 {
     m_ResourceGroupIsSet = false;

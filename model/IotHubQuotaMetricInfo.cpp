@@ -27,7 +27,6 @@ IotHubQuotaMetricInfo::IotHubQuotaMetricInfo()
     m_CurrentValueIsSet = false;
     m_MaxValue = 0;
     m_MaxValueIsSet = false;
-    
 }
 
 IotHubQuotaMetricInfo::~IotHubQuotaMetricInfo()
@@ -41,7 +40,6 @@ void IotHubQuotaMetricInfo::validate()
 
 web::json::value IotHubQuotaMetricInfo::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_NameIsSet)
@@ -56,19 +54,15 @@ web::json::value IotHubQuotaMetricInfo::toJson() const
     {
         val[U("MaxValue")] = ModelBase::toJson(m_MaxValue);
     }
-    
 
     return val;
 }
 
 void IotHubQuotaMetricInfo::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("Name")))
     {
         setName(ModelBase::stringFromJson(val[U("Name")]));
-        
     }
     if(val.has_field(U("CurrentValue")))
     {
@@ -78,7 +72,6 @@ void IotHubQuotaMetricInfo::fromJson(web::json::value& val)
     {
         setMaxValue(ModelBase::int64_tFromJson(val[U("MaxValue")]));
     }
-    
 }
 
 void IotHubQuotaMetricInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -102,7 +95,6 @@ void IotHubQuotaMetricInfo::toMultipart(std::shared_ptr<MultipartFormData> multi
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("MaxValue"), m_MaxValue));
     }
-    
 }
 
 void IotHubQuotaMetricInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -116,7 +108,6 @@ void IotHubQuotaMetricInfo::fromMultiPart(std::shared_ptr<MultipartFormData> mul
     if(multipart->hasContent(U("Name")))
     {
         setName(ModelBase::stringFromHttpContent(multipart->getContent(U("Name"))));
-        
     }
     if(multipart->hasContent(U("CurrentValue")))
     {
@@ -126,14 +117,14 @@ void IotHubQuotaMetricInfo::fromMultiPart(std::shared_ptr<MultipartFormData> mul
     {
         setMaxValue(ModelBase::int64_tFromHttpContent(multipart->getContent(U("MaxValue"))));
     }
-    
 }
-
 
 utility::string_t IotHubQuotaMetricInfo::getName() const
 {
     return m_Name;
 }
+
+
 void IotHubQuotaMetricInfo::setName(utility::string_t value)
 {
     m_Name = value;
@@ -143,14 +134,18 @@ bool IotHubQuotaMetricInfo::NameIsSet() const
 {
     return m_NameIsSet;
 }
+
 void IotHubQuotaMetricInfo::unsetName()
 {
     m_NameIsSet = false;
 }
+
 int64_t IotHubQuotaMetricInfo::getCurrentValue() const
 {
     return m_CurrentValue;
 }
+
+
 void IotHubQuotaMetricInfo::setCurrentValue(int64_t value)
 {
     m_CurrentValue = value;
@@ -160,14 +155,18 @@ bool IotHubQuotaMetricInfo::CurrentValueIsSet() const
 {
     return m_CurrentValueIsSet;
 }
+
 void IotHubQuotaMetricInfo::unsetCurrentValue()
 {
     m_CurrentValueIsSet = false;
 }
+
 int64_t IotHubQuotaMetricInfo::getMaxValue() const
 {
     return m_MaxValue;
 }
+
+
 void IotHubQuotaMetricInfo::setMaxValue(int64_t value)
 {
     m_MaxValue = value;
@@ -177,6 +176,7 @@ bool IotHubQuotaMetricInfo::MaxValueIsSet() const
 {
     return m_MaxValueIsSet;
 }
+
 void IotHubQuotaMetricInfo::unsetMaxValue()
 {
     m_MaxValueIsSet = false;

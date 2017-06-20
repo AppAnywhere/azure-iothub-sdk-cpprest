@@ -69,86 +69,91 @@ public:
     std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>>& getAuthorizationPolicies();
     bool authorizationPoliciesIsSet() const;
     void unsetAuthorizationPolicies();
+    void setAuthorizationPolicies(std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>> value);
     /// <summary>
     /// The IP filter rules.
     /// </summary>
     std::vector<std::shared_ptr<IpFilterRule>>& getIpFilterRules();
     bool ipFilterRulesIsSet() const;
     void unsetIpFilterRules();
+    void setIpFilterRules(std::vector<std::shared_ptr<IpFilterRule>> value);
     /// <summary>
     /// The provisioning state.
     /// </summary>
     utility::string_t getProvisioningState() const;
-    void setProvisioningState(utility::string_t value);
     bool provisioningStateIsSet() const;
     void unsetProvisioningState();
+    void setProvisioningState(utility::string_t value);
     /// <summary>
     /// The name of the host.
     /// </summary>
     utility::string_t getHostName() const;
-    void setHostName(utility::string_t value);
     bool hostNameIsSet() const;
     void unsetHostName();
+    void setHostName(utility::string_t value);
     /// <summary>
     /// The Event Hub-compatible endpoint properties. The possible keys to this dictionary are events and operationsMonitoringEvents. Both of these keys have to be present in the dictionary while making create or update calls for the IoT hub.
     /// </summary>
     std::map<utility::string_t, std::shared_ptr<EventHubProperties>>& getEventHubEndpoints();
     bool eventHubEndpointsIsSet() const;
     void unsetEventHubEndpoints();
+    void setEventHubEndpoints(std::map<utility::string_t, std::shared_ptr<EventHubProperties>> value);
     /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<RoutingProperties> getRouting() const;
-    void setRouting(std::shared_ptr<RoutingProperties> value);
     bool routingIsSet() const;
     void unsetRouting();
+    void setRouting(std::shared_ptr<RoutingProperties> value);
     /// <summary>
     /// The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to True, causes an error to be thrown.
     /// </summary>
     std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>>& getStorageEndpoints();
     bool storageEndpointsIsSet() const;
     void unsetStorageEndpoints();
+    void setStorageEndpoints(std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>> value);
     /// <summary>
     /// The messaging endpoint properties for the file upload notification queue.
     /// </summary>
     std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>>& getMessagingEndpoints();
     bool messagingEndpointsIsSet() const;
     void unsetMessagingEndpoints();
+    void setMessagingEndpoints(std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>> value);
     /// <summary>
     /// If True, file upload notifications are enabled.
     /// </summary>
     bool getEnableFileUploadNotifications() const;
-    void setEnableFileUploadNotifications(bool value);
     bool enableFileUploadNotificationsIsSet() const;
     void unsetEnableFileUploadNotifications();
+    void setEnableFileUploadNotifications(bool value);
     /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<CloudToDeviceProperties> getCloudToDevice() const;
-    void setCloudToDevice(std::shared_ptr<CloudToDeviceProperties> value);
     bool cloudToDeviceIsSet() const;
     void unsetCloudToDevice();
+    void setCloudToDevice(std::shared_ptr<CloudToDeviceProperties> value);
     /// <summary>
     /// Comments.
     /// </summary>
     utility::string_t getComments() const;
-    void setComments(utility::string_t value);
     bool commentsIsSet() const;
     void unsetComments();
+    void setComments(utility::string_t value);
     /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<OperationsMonitoringProperties> getOperationsMonitoringProperties() const;
-    void setOperationsMonitoringProperties(std::shared_ptr<OperationsMonitoringProperties> value);
     bool operationsMonitoringPropertiesIsSet() const;
     void unsetOperationsMonitoringProperties();
+    void setOperationsMonitoringProperties(std::shared_ptr<OperationsMonitoringProperties> value);
     /// <summary>
     /// The capabilities and features enabled for the IoT hub.
     /// </summary>
     utility::string_t getFeatures() const;
-    void setFeatures(utility::string_t value);
     bool featuresIsSet() const;
     void unsetFeatures();
+    void setFeatures(utility::string_t value);
 
 protected:
     std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>> m_AuthorizationPolicies;

@@ -57,20 +57,20 @@ public:
     /// The name of the SKU.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
-        /// <summary>
+        void setName(utility::string_t value);
+    /// <summary>
     /// The billing tier for the IoT hub.
     /// </summary>
     utility::string_t getTier() const;
-    void setTier(utility::string_t value);
     bool tierIsSet() const;
     void unsetTier();
+    void setTier(utility::string_t value);
     /// <summary>
     /// The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
     /// </summary>
     int64_t getCapacity() const;
-    void setCapacity(int64_t value);
-    
+        void setCapacity(int64_t value);
+
 protected:
     utility::string_t m_Name;
         utility::string_t m_Tier;

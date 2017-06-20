@@ -57,30 +57,30 @@ public:
     /// The minimum number of units.
     /// </summary>
     int64_t getMinimum() const;
-    void setMinimum(int64_t value);
     bool minimumIsSet() const;
     void unsetMinimum();
+    void setMinimum(int64_t value);
     /// <summary>
     /// The maximum number of units.
     /// </summary>
     int64_t getMaximum() const;
-    void setMaximum(int64_t value);
     bool maximumIsSet() const;
     void unsetMaximum();
+    void setMaximum(int64_t value);
     /// <summary>
     /// The default number of units.
     /// </summary>
     int64_t getDefault() const;
-    void setDefault(int64_t value);
     bool defaultIsSet() const;
     void unsetDefault();
+    void setDefault(int64_t value);
     /// <summary>
     /// The type of the scaling enabled.
     /// </summary>
     utility::string_t getScaleType() const;
-    void setScaleType(utility::string_t value);
     bool scaleTypeIsSet() const;
     void unsetScaleType();
+    void setScaleType(utility::string_t value);
 
 protected:
     int64_t m_Minimum;

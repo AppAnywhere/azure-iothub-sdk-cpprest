@@ -39,7 +39,6 @@ IotHubProperties::IotHubProperties()
     m_OperationsMonitoringPropertiesIsSet = false;
     m_Features = U("");
     m_FeaturesIsSet = false;
-    
 }
 
 IotHubProperties::~IotHubProperties()
@@ -53,7 +52,6 @@ void IotHubProperties::validate()
 
 web::json::value IotHubProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     {
@@ -62,7 +60,6 @@ web::json::value IotHubProperties::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("authorizationPolicies")] = web::json::value::array(jsonArray);
@@ -74,7 +71,6 @@ web::json::value IotHubProperties::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("ipFilterRules")] = web::json::value::array(jsonArray);
@@ -88,21 +84,51 @@ web::json::value IotHubProperties::toJson() const
     {
         val[U("hostName")] = ModelBase::toJson(m_HostName);
     }
-    if(m_EventHubEndpointsIsSet)
     {
-        val[U("eventHubEndpoints")] = ModelBase::toJson(m_EventHubEndpoints);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_EventHubEndpoints )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("eventHubEndpoints")] = web::json::value::array(jsonArray);
+        }
     }
     if(m_RoutingIsSet)
     {
         val[U("routing")] = ModelBase::toJson(m_Routing);
     }
-    if(m_StorageEndpointsIsSet)
     {
-        val[U("storageEndpoints")] = ModelBase::toJson(m_StorageEndpoints);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_StorageEndpoints )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("storageEndpoints")] = web::json::value::array(jsonArray);
+        }
     }
-    if(m_MessagingEndpointsIsSet)
     {
-        val[U("messagingEndpoints")] = ModelBase::toJson(m_MessagingEndpoints);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_MessagingEndpoints )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("messagingEndpoints")] = web::json::value::array(jsonArray);
+        }
     }
     if(m_EnableFileUploadNotificationsIsSet)
     {
@@ -124,15 +150,12 @@ web::json::value IotHubProperties::toJson() const
     {
         val[U("features")] = ModelBase::toJson(m_Features);
     }
-    
 
     return val;
 }
 
 void IotHubProperties::fromJson(web::json::value& val)
 {
-    
-
     {
         m_AuthorizationPolicies.clear();
         std::vector<web::json::value> jsonArray;
@@ -140,7 +163,6 @@ void IotHubProperties::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("authorizationPolicies")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_AuthorizationPolicies.push_back( std::shared_ptr<SharedAccessSignatureAuthorizationRule>(nullptr) );
@@ -151,7 +173,6 @@ void IotHubProperties::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_AuthorizationPolicies.push_back( newItem );
             }
-            
         }
         }
     }
@@ -162,7 +183,6 @@ void IotHubProperties::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("ipFilterRules")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_IpFilterRules.push_back( std::shared_ptr<IpFilterRule>(nullptr) );
@@ -173,29 +193,41 @@ void IotHubProperties::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_IpFilterRules.push_back( newItem );
             }
-            
         }
         }
     }
     if(val.has_field(U("provisioningState")))
     {
         setProvisioningState(ModelBase::stringFromJson(val[U("provisioningState")]));
-        
     }
     if(val.has_field(U("hostName")))
     {
         setHostName(ModelBase::stringFromJson(val[U("hostName")]));
-        
     }
-    if(val.has_field(U("eventHubEndpoints")))
     {
-        if(!val[U("eventHubEndpoints")].is_null())
+        m_EventHubEndpoints.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("eventHubEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<EventHubProperties>> newItem(std::map<utility::string_t, EventHubProperties>());
-            newItem->fromJson(val[U("eventHubEndpoints")]);
-            setEventHubEndpoints( newItem );
+        for( auto& item : val[U("eventHubEndpoints")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_EventHubEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;EventHubProperties&gt;>( key, std::shared_ptr<EventHubProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<EventHubProperties> newItem(new EventHubProperties());
+                newItem->fromJson(item[U("value")]);
+                m_EventHubEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;EventHubProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
     if(val.has_field(U("routing")))
     {
@@ -205,27 +237,56 @@ void IotHubProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("routing")]);
             setRouting( newItem );
         }
-        
     }
-    if(val.has_field(U("storageEndpoints")))
     {
-        if(!val[U("storageEndpoints")].is_null())
+        m_StorageEndpoints.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("storageEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>> newItem(std::map<utility::string_t, StorageEndpointProperties>());
-            newItem->fromJson(val[U("storageEndpoints")]);
-            setStorageEndpoints( newItem );
+        for( auto& item : val[U("storageEndpoints")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_StorageEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;StorageEndpointProperties&gt;>( key, std::shared_ptr<StorageEndpointProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<StorageEndpointProperties> newItem(new StorageEndpointProperties());
+                newItem->fromJson(item[U("value")]);
+                m_StorageEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;StorageEndpointProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
-    if(val.has_field(U("messagingEndpoints")))
     {
-        if(!val[U("messagingEndpoints")].is_null())
+        m_MessagingEndpoints.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("messagingEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>> newItem(std::map<utility::string_t, MessagingEndpointProperties>());
-            newItem->fromJson(val[U("messagingEndpoints")]);
-            setMessagingEndpoints( newItem );
+        for( auto& item : val[U("messagingEndpoints")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_MessagingEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;MessagingEndpointProperties&gt;>( key, std::shared_ptr<MessagingEndpointProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<MessagingEndpointProperties> newItem(new MessagingEndpointProperties());
+                newItem->fromJson(item[U("value")]);
+                m_MessagingEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;MessagingEndpointProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
     if(val.has_field(U("enableFileUploadNotifications")))
     {
@@ -239,12 +300,10 @@ void IotHubProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("cloudToDevice")]);
             setCloudToDevice( newItem );
         }
-        
     }
     if(val.has_field(U("comments")))
     {
         setComments(ModelBase::stringFromJson(val[U("comments")]));
-        
     }
     if(val.has_field(U("operationsMonitoringProperties")))
     {
@@ -254,14 +313,11 @@ void IotHubProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("operationsMonitoringProperties")]);
             setOperationsMonitoringProperties( newItem );
         }
-        
     }
     if(val.has_field(U("features")))
     {
         setFeatures(ModelBase::stringFromJson(val[U("features")]));
-        
     }
-    
 }
 
 void IotHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -306,13 +362,20 @@ void IotHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart,
         multipart->add(ModelBase::toHttpContent(namePrefix + U("hostName"), m_HostName));
         
     }
-    if(m_EventHubEndpointsIsSet)
     {
-        if (m_EventHubEndpoints.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_EventHubEndpoints )
         {
-            m_EventHubEndpoints->toMultipart(multipart, U("eventHubEndpoints."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("eventHubEndpoints"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
     if(m_RoutingIsSet)
     {
@@ -322,21 +385,35 @@ void IotHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart,
         }
         
     }
-    if(m_StorageEndpointsIsSet)
     {
-        if (m_StorageEndpoints.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_StorageEndpoints )
         {
-            m_StorageEndpoints->toMultipart(multipart, U("storageEndpoints."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("storageEndpoints"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
-    if(m_MessagingEndpointsIsSet)
     {
-        if (m_MessagingEndpoints.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_MessagingEndpoints )
         {
-            m_MessagingEndpoints->toMultipart(multipart, U("messagingEndpoints."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("messagingEndpoints"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
     if(m_EnableFileUploadNotificationsIsSet)
     {
@@ -368,7 +445,6 @@ void IotHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart,
         multipart->add(ModelBase::toHttpContent(namePrefix + U("features"), m_Features));
         
     }
-    
 }
 
 void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -387,7 +463,6 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("authorizationPolicies"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_AuthorizationPolicies.push_back( std::shared_ptr<SharedAccessSignatureAuthorizationRule>(nullptr) );
@@ -398,7 +473,6 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
                 newItem->fromJson(item);
                 m_AuthorizationPolicies.push_back( newItem );
             }
-            
         }
         }
     }
@@ -410,7 +484,6 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("ipFilterRules"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_IpFilterRules.push_back( std::shared_ptr<IpFilterRule>(nullptr) );
@@ -421,29 +494,42 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
                 newItem->fromJson(item);
                 m_IpFilterRules.push_back( newItem );
             }
-            
         }
         }
     }
     if(multipart->hasContent(U("provisioningState")))
     {
         setProvisioningState(ModelBase::stringFromHttpContent(multipart->getContent(U("provisioningState"))));
-        
     }
     if(multipart->hasContent(U("hostName")))
     {
         setHostName(ModelBase::stringFromHttpContent(multipart->getContent(U("hostName"))));
-        
     }
-    if(multipart->hasContent(U("eventHubEndpoints")))
     {
+        m_EventHubEndpoints.clear();
         if(multipart->hasContent(U("eventHubEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<EventHubProperties>> newItem(std::map<utility::string_t, EventHubProperties>());
-            newItem->fromMultiPart(multipart, U("eventHubEndpoints."));
-            setEventHubEndpoints( newItem );
+
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("eventHubEndpoints"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_EventHubEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;EventHubProperties&gt;>( key, std::shared_ptr<EventHubProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<EventHubProperties> newItem(new EventHubProperties());
+                newItem->fromJson(item[U("value")]);
+                m_EventHubEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;EventHubProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
     if(multipart->hasContent(U("routing")))
     {
@@ -453,27 +539,58 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             newItem->fromMultiPart(multipart, U("routing."));
             setRouting( newItem );
         }
-        
     }
-    if(multipart->hasContent(U("storageEndpoints")))
     {
+        m_StorageEndpoints.clear();
         if(multipart->hasContent(U("storageEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>> newItem(std::map<utility::string_t, StorageEndpointProperties>());
-            newItem->fromMultiPart(multipart, U("storageEndpoints."));
-            setStorageEndpoints( newItem );
+
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("storageEndpoints"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_StorageEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;StorageEndpointProperties&gt;>( key, std::shared_ptr<StorageEndpointProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<StorageEndpointProperties> newItem(new StorageEndpointProperties());
+                newItem->fromJson(item[U("value")]);
+                m_StorageEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;StorageEndpointProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
-    if(multipart->hasContent(U("messagingEndpoints")))
     {
+        m_MessagingEndpoints.clear();
         if(multipart->hasContent(U("messagingEndpoints")))
         {
-            std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>> newItem(std::map<utility::string_t, MessagingEndpointProperties>());
-            newItem->fromMultiPart(multipart, U("messagingEndpoints."));
-            setMessagingEndpoints( newItem );
+
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("messagingEndpoints"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            if(item.is_null())
+            {
+                m_MessagingEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;MessagingEndpointProperties&gt;>( key, std::shared_ptr<MessagingEndpointProperties>(nullptr) ));
+            }
+            else
+            {
+                std::shared_ptr<MessagingEndpointProperties> newItem(new MessagingEndpointProperties());
+                newItem->fromJson(item[U("value")]);
+                m_MessagingEndpoints.insert(std::pair<utility::string_t,std::shared_ptr&lt;MessagingEndpointProperties&gt;>( key, newItem ));
+            }
         }
-        
+        }
     }
     if(multipart->hasContent(U("enableFileUploadNotifications")))
     {
@@ -487,12 +604,10 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             newItem->fromMultiPart(multipart, U("cloudToDevice."));
             setCloudToDevice( newItem );
         }
-        
     }
     if(multipart->hasContent(U("comments")))
     {
         setComments(ModelBase::stringFromHttpContent(multipart->getContent(U("comments"))));
-        
     }
     if(multipart->hasContent(U("operationsMonitoringProperties")))
     {
@@ -502,45 +617,59 @@ void IotHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipar
             newItem->fromMultiPart(multipart, U("operationsMonitoringProperties."));
             setOperationsMonitoringProperties( newItem );
         }
-        
     }
     if(multipart->hasContent(U("features")))
     {
         setFeatures(ModelBase::stringFromHttpContent(multipart->getContent(U("features"))));
-        
     }
-    
 }
-
 
 std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>>& IotHubProperties::getAuthorizationPolicies()
 {
     return m_AuthorizationPolicies;
 }
+
+void IotHubProperties::setAuthorizationPolicies(std::vector<std::shared_ptr<SharedAccessSignatureAuthorizationRule>> value)
+{
+    m_AuthorizationPolicies = value;
+    m_AuthorizationPoliciesIsSet = true;
+}
 bool IotHubProperties::authorizationPoliciesIsSet() const
 {
     return m_AuthorizationPoliciesIsSet;
 }
+
 void IotHubProperties::unsetAuthorizationPolicies()
 {
     m_AuthorizationPoliciesIsSet = false;
 }
+
 std::vector<std::shared_ptr<IpFilterRule>>& IotHubProperties::getIpFilterRules()
 {
     return m_IpFilterRules;
+}
+
+void IotHubProperties::setIpFilterRules(std::vector<std::shared_ptr<IpFilterRule>> value)
+{
+    m_IpFilterRules = value;
+    m_IpFilterRulesIsSet = true;
 }
 bool IotHubProperties::ipFilterRulesIsSet() const
 {
     return m_IpFilterRulesIsSet;
 }
+
 void IotHubProperties::unsetIpFilterRules()
 {
     m_IpFilterRulesIsSet = false;
 }
+
 utility::string_t IotHubProperties::getProvisioningState() const
 {
     return m_ProvisioningState;
 }
+
+
 void IotHubProperties::setProvisioningState(utility::string_t value)
 {
     m_ProvisioningState = value;
@@ -550,14 +679,18 @@ bool IotHubProperties::provisioningStateIsSet() const
 {
     return m_ProvisioningStateIsSet;
 }
+
 void IotHubProperties::unsetProvisioningState()
 {
     m_ProvisioningStateIsSet = false;
 }
+
 utility::string_t IotHubProperties::getHostName() const
 {
     return m_HostName;
 }
+
+
 void IotHubProperties::setHostName(utility::string_t value)
 {
     m_HostName = value;
@@ -567,26 +700,38 @@ bool IotHubProperties::hostNameIsSet() const
 {
     return m_HostNameIsSet;
 }
+
 void IotHubProperties::unsetHostName()
 {
     m_HostNameIsSet = false;
 }
+
 std::map<utility::string_t, std::shared_ptr<EventHubProperties>>& IotHubProperties::getEventHubEndpoints()
 {
     return m_EventHubEndpoints;
+}
+
+void IotHubProperties::setEventHubEndpoints(std::map<utility::string_t, std::shared_ptr<EventHubProperties>> value)
+{
+    m_EventHubEndpoints = value;
+    m_EventHubEndpointsIsSet = true;
 }
 bool IotHubProperties::eventHubEndpointsIsSet() const
 {
     return m_EventHubEndpointsIsSet;
 }
+
 void IotHubProperties::unsetEventHubEndpoints()
 {
     m_EventHubEndpointsIsSet = false;
 }
+
 std::shared_ptr<RoutingProperties> IotHubProperties::getRouting() const
 {
     return m_Routing;
 }
+
+
 void IotHubProperties::setRouting(std::shared_ptr<RoutingProperties> value)
 {
     m_Routing = value;
@@ -596,38 +741,58 @@ bool IotHubProperties::routingIsSet() const
 {
     return m_RoutingIsSet;
 }
+
 void IotHubProperties::unsetRouting()
 {
     m_RoutingIsSet = false;
 }
+
 std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>>& IotHubProperties::getStorageEndpoints()
 {
     return m_StorageEndpoints;
+}
+
+void IotHubProperties::setStorageEndpoints(std::map<utility::string_t, std::shared_ptr<StorageEndpointProperties>> value)
+{
+    m_StorageEndpoints = value;
+    m_StorageEndpointsIsSet = true;
 }
 bool IotHubProperties::storageEndpointsIsSet() const
 {
     return m_StorageEndpointsIsSet;
 }
+
 void IotHubProperties::unsetStorageEndpoints()
 {
     m_StorageEndpointsIsSet = false;
 }
+
 std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>>& IotHubProperties::getMessagingEndpoints()
 {
     return m_MessagingEndpoints;
+}
+
+void IotHubProperties::setMessagingEndpoints(std::map<utility::string_t, std::shared_ptr<MessagingEndpointProperties>> value)
+{
+    m_MessagingEndpoints = value;
+    m_MessagingEndpointsIsSet = true;
 }
 bool IotHubProperties::messagingEndpointsIsSet() const
 {
     return m_MessagingEndpointsIsSet;
 }
+
 void IotHubProperties::unsetMessagingEndpoints()
 {
     m_MessagingEndpointsIsSet = false;
 }
+
 bool IotHubProperties::getEnableFileUploadNotifications() const
 {
     return m_EnableFileUploadNotifications;
 }
+
+
 void IotHubProperties::setEnableFileUploadNotifications(bool value)
 {
     m_EnableFileUploadNotifications = value;
@@ -637,14 +802,18 @@ bool IotHubProperties::enableFileUploadNotificationsIsSet() const
 {
     return m_EnableFileUploadNotificationsIsSet;
 }
+
 void IotHubProperties::unsetEnableFileUploadNotifications()
 {
     m_EnableFileUploadNotificationsIsSet = false;
 }
+
 std::shared_ptr<CloudToDeviceProperties> IotHubProperties::getCloudToDevice() const
 {
     return m_CloudToDevice;
 }
+
+
 void IotHubProperties::setCloudToDevice(std::shared_ptr<CloudToDeviceProperties> value)
 {
     m_CloudToDevice = value;
@@ -654,14 +823,18 @@ bool IotHubProperties::cloudToDeviceIsSet() const
 {
     return m_CloudToDeviceIsSet;
 }
+
 void IotHubProperties::unsetCloudToDevice()
 {
     m_CloudToDeviceIsSet = false;
 }
+
 utility::string_t IotHubProperties::getComments() const
 {
     return m_Comments;
 }
+
+
 void IotHubProperties::setComments(utility::string_t value)
 {
     m_Comments = value;
@@ -671,14 +844,18 @@ bool IotHubProperties::commentsIsSet() const
 {
     return m_CommentsIsSet;
 }
+
 void IotHubProperties::unsetComments()
 {
     m_CommentsIsSet = false;
 }
+
 std::shared_ptr<OperationsMonitoringProperties> IotHubProperties::getOperationsMonitoringProperties() const
 {
     return m_OperationsMonitoringProperties;
 }
+
+
 void IotHubProperties::setOperationsMonitoringProperties(std::shared_ptr<OperationsMonitoringProperties> value)
 {
     m_OperationsMonitoringProperties = value;
@@ -688,14 +865,18 @@ bool IotHubProperties::operationsMonitoringPropertiesIsSet() const
 {
     return m_OperationsMonitoringPropertiesIsSet;
 }
+
 void IotHubProperties::unsetOperationsMonitoringProperties()
 {
     m_OperationsMonitoringPropertiesIsSet = false;
 }
+
 utility::string_t IotHubProperties::getFeatures() const
 {
     return m_Features;
 }
+
+
 void IotHubProperties::setFeatures(utility::string_t value)
 {
     m_Features = value;
@@ -705,6 +886,7 @@ bool IotHubProperties::featuresIsSet() const
 {
     return m_FeaturesIsSet;
 }
+
 void IotHubProperties::unsetFeatures()
 {
     m_FeaturesIsSet = false;

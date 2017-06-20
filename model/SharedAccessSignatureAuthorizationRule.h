@@ -57,27 +57,27 @@ public:
     /// The name of the shared access policy.
     /// </summary>
     utility::string_t getKeyName() const;
-    void setKeyName(utility::string_t value);
-        /// <summary>
+        void setKeyName(utility::string_t value);
+    /// <summary>
     /// The primary key.
     /// </summary>
     utility::string_t getPrimaryKey() const;
-    void setPrimaryKey(utility::string_t value);
     bool primaryKeyIsSet() const;
     void unsetPrimaryKey();
+    void setPrimaryKey(utility::string_t value);
     /// <summary>
     /// The secondary key.
     /// </summary>
     utility::string_t getSecondaryKey() const;
-    void setSecondaryKey(utility::string_t value);
     bool secondaryKeyIsSet() const;
     void unsetSecondaryKey();
+    void setSecondaryKey(utility::string_t value);
     /// <summary>
     /// The permissions assigned to the shared access policy.
     /// </summary>
     utility::string_t getRights() const;
-    void setRights(utility::string_t value);
-    
+        void setRights(utility::string_t value);
+
 protected:
     utility::string_t m_KeyName;
         utility::string_t m_PrimaryKey;

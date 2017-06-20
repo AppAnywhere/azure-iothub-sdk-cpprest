@@ -57,23 +57,23 @@ public:
     /// The name of the quota metric.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
     bool NameIsSet() const;
     void unsetName();
+    void setName(utility::string_t value);
     /// <summary>
     /// The current value for the quota metric.
     /// </summary>
     int64_t getCurrentValue() const;
-    void setCurrentValue(int64_t value);
     bool CurrentValueIsSet() const;
     void unsetCurrentValue();
+    void setCurrentValue(int64_t value);
     /// <summary>
     /// The maximum value of the quota metric.
     /// </summary>
     int64_t getMaxValue() const;
-    void setMaxValue(int64_t value);
     bool MaxValueIsSet() const;
     void unsetMaxValue();
+    void setMaxValue(int64_t value);
 
 protected:
     utility::string_t m_Name;

@@ -61,13 +61,14 @@ public:
     std::vector<std::shared_ptr<JobResponse>>& getValue();
     bool valueIsSet() const;
     void unsetValue();
+    void setValue(std::vector<std::shared_ptr<JobResponse>> value);
     /// <summary>
     /// The next link.
     /// </summary>
     utility::string_t getNextLink() const;
-    void setNextLink(utility::string_t value);
     bool nextLinkIsSet() const;
     void unsetNextLink();
+    void setNextLink(utility::string_t value);
 
 protected:
     std::vector<std::shared_ptr<JobResponse>> m_Value;

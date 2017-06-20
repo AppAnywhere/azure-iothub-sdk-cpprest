@@ -57,26 +57,26 @@ public:
     /// The connection string of the service bus topic endpoint.
     /// </summary>
     utility::string_t getConnectionString() const;
-    void setConnectionString(utility::string_t value);
-        /// <summary>
+        void setConnectionString(utility::string_t value);
+    /// <summary>
     /// The name of the service bus topic endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved;  events, operationsMonitoringEvents, fileNotifications, $default. Endpoint names must be unique across endpoint types.  The name need not be the same as the actual topic name.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
-        /// <summary>
+        void setName(utility::string_t value);
+    /// <summary>
     /// The subscription identifier of the service bus topic endpoint.
     /// </summary>
     utility::string_t getSubscriptionId() const;
-    void setSubscriptionId(utility::string_t value);
     bool subscriptionIdIsSet() const;
     void unsetSubscriptionId();
+    void setSubscriptionId(utility::string_t value);
     /// <summary>
     /// The name of the resource group of the service bus topic endpoint.
     /// </summary>
     utility::string_t getResourceGroup() const;
-    void setResourceGroup(utility::string_t value);
     bool resourceGroupIsSet() const;
     void unsetResourceGroup();
+    void setResourceGroup(utility::string_t value);
 
 protected:
     utility::string_t m_ConnectionString;

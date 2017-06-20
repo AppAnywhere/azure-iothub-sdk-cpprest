@@ -27,7 +27,6 @@ IotHubNameAvailabilityInfo::IotHubNameAvailabilityInfo()
     m_ReasonIsSet = false;
     m_Message = U("");
     m_MessageIsSet = false;
-    
 }
 
 IotHubNameAvailabilityInfo::~IotHubNameAvailabilityInfo()
@@ -41,7 +40,6 @@ void IotHubNameAvailabilityInfo::validate()
 
 web::json::value IotHubNameAvailabilityInfo::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_NameAvailableIsSet)
@@ -56,15 +54,12 @@ web::json::value IotHubNameAvailabilityInfo::toJson() const
     {
         val[U("message")] = ModelBase::toJson(m_Message);
     }
-    
 
     return val;
 }
 
 void IotHubNameAvailabilityInfo::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("nameAvailable")))
     {
         setNameAvailable(ModelBase::boolFromJson(val[U("nameAvailable")]));
@@ -72,14 +67,11 @@ void IotHubNameAvailabilityInfo::fromJson(web::json::value& val)
     if(val.has_field(U("reason")))
     {
         setReason(ModelBase::stringFromJson(val[U("reason")]));
-        
     }
     if(val.has_field(U("message")))
     {
         setMessage(ModelBase::stringFromJson(val[U("message")]));
-        
     }
-    
 }
 
 void IotHubNameAvailabilityInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -104,7 +96,6 @@ void IotHubNameAvailabilityInfo::toMultipart(std::shared_ptr<MultipartFormData> 
         multipart->add(ModelBase::toHttpContent(namePrefix + U("message"), m_Message));
         
     }
-    
 }
 
 void IotHubNameAvailabilityInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -122,21 +113,19 @@ void IotHubNameAvailabilityInfo::fromMultiPart(std::shared_ptr<MultipartFormData
     if(multipart->hasContent(U("reason")))
     {
         setReason(ModelBase::stringFromHttpContent(multipart->getContent(U("reason"))));
-        
     }
     if(multipart->hasContent(U("message")))
     {
         setMessage(ModelBase::stringFromHttpContent(multipart->getContent(U("message"))));
-        
     }
-    
 }
-
 
 bool IotHubNameAvailabilityInfo::getNameAvailable() const
 {
     return m_NameAvailable;
 }
+
+
 void IotHubNameAvailabilityInfo::setNameAvailable(bool value)
 {
     m_NameAvailable = value;
@@ -146,14 +135,18 @@ bool IotHubNameAvailabilityInfo::nameAvailableIsSet() const
 {
     return m_NameAvailableIsSet;
 }
+
 void IotHubNameAvailabilityInfo::unsetNameAvailable()
 {
     m_NameAvailableIsSet = false;
 }
+
 utility::string_t IotHubNameAvailabilityInfo::getReason() const
 {
     return m_Reason;
 }
+
+
 void IotHubNameAvailabilityInfo::setReason(utility::string_t value)
 {
     m_Reason = value;
@@ -163,14 +156,18 @@ bool IotHubNameAvailabilityInfo::reasonIsSet() const
 {
     return m_ReasonIsSet;
 }
+
 void IotHubNameAvailabilityInfo::unsetReason()
 {
     m_ReasonIsSet = false;
 }
+
 utility::string_t IotHubNameAvailabilityInfo::getMessage() const
 {
     return m_Message;
 }
+
+
 void IotHubNameAvailabilityInfo::setMessage(utility::string_t value)
 {
     m_Message = value;
@@ -180,6 +177,7 @@ bool IotHubNameAvailabilityInfo::messageIsSet() const
 {
     return m_MessageIsSet;
 }
+
 void IotHubNameAvailabilityInfo::unsetMessage()
 {
     m_MessageIsSet = false;

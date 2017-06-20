@@ -57,13 +57,13 @@ public:
     /// The export blob container URI.
     /// </summary>
     utility::string_t getExportBlobContainerUri() const;
-    void setExportBlobContainerUri(utility::string_t value);
-        /// <summary>
+        void setExportBlobContainerUri(utility::string_t value);
+    /// <summary>
     /// The value indicating whether keys should be excluded during export.
     /// </summary>
     bool getExcludeKeys() const;
-    void setExcludeKeys(bool value);
-    
+        void setExcludeKeys(bool value);
+
 protected:
     utility::string_t m_ExportBlobContainerUri;
         bool m_ExcludeKeys;

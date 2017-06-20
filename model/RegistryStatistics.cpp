@@ -27,7 +27,6 @@ RegistryStatistics::RegistryStatistics()
     m_EnabledDeviceCountIsSet = false;
     m_DisabledDeviceCount = 0;
     m_DisabledDeviceCountIsSet = false;
-    
 }
 
 RegistryStatistics::~RegistryStatistics()
@@ -41,7 +40,6 @@ void RegistryStatistics::validate()
 
 web::json::value RegistryStatistics::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_TotalDeviceCountIsSet)
@@ -56,15 +54,12 @@ web::json::value RegistryStatistics::toJson() const
     {
         val[U("disabledDeviceCount")] = ModelBase::toJson(m_DisabledDeviceCount);
     }
-    
 
     return val;
 }
 
 void RegistryStatistics::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("totalDeviceCount")))
     {
         setTotalDeviceCount(ModelBase::int64_tFromJson(val[U("totalDeviceCount")]));
@@ -77,7 +72,6 @@ void RegistryStatistics::fromJson(web::json::value& val)
     {
         setDisabledDeviceCount(ModelBase::int64_tFromJson(val[U("disabledDeviceCount")]));
     }
-    
 }
 
 void RegistryStatistics::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -100,7 +94,6 @@ void RegistryStatistics::toMultipart(std::shared_ptr<MultipartFormData> multipar
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("disabledDeviceCount"), m_DisabledDeviceCount));
     }
-    
 }
 
 void RegistryStatistics::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -123,14 +116,14 @@ void RegistryStatistics::fromMultiPart(std::shared_ptr<MultipartFormData> multip
     {
         setDisabledDeviceCount(ModelBase::int64_tFromHttpContent(multipart->getContent(U("disabledDeviceCount"))));
     }
-    
 }
-
 
 int64_t RegistryStatistics::getTotalDeviceCount() const
 {
     return m_TotalDeviceCount;
 }
+
+
 void RegistryStatistics::setTotalDeviceCount(int64_t value)
 {
     m_TotalDeviceCount = value;
@@ -140,14 +133,18 @@ bool RegistryStatistics::totalDeviceCountIsSet() const
 {
     return m_TotalDeviceCountIsSet;
 }
+
 void RegistryStatistics::unsetTotalDeviceCount()
 {
     m_TotalDeviceCountIsSet = false;
 }
+
 int64_t RegistryStatistics::getEnabledDeviceCount() const
 {
     return m_EnabledDeviceCount;
 }
+
+
 void RegistryStatistics::setEnabledDeviceCount(int64_t value)
 {
     m_EnabledDeviceCount = value;
@@ -157,14 +154,18 @@ bool RegistryStatistics::enabledDeviceCountIsSet() const
 {
     return m_EnabledDeviceCountIsSet;
 }
+
 void RegistryStatistics::unsetEnabledDeviceCount()
 {
     m_EnabledDeviceCountIsSet = false;
 }
+
 int64_t RegistryStatistics::getDisabledDeviceCount() const
 {
     return m_DisabledDeviceCount;
 }
+
+
 void RegistryStatistics::setDisabledDeviceCount(int64_t value)
 {
     m_DisabledDeviceCount = value;
@@ -174,6 +175,7 @@ bool RegistryStatistics::disabledDeviceCountIsSet() const
 {
     return m_DisabledDeviceCountIsSet;
 }
+
 void RegistryStatistics::unsetDisabledDeviceCount()
 {
     m_DisabledDeviceCountIsSet = false;

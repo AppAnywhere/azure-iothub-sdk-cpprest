@@ -57,30 +57,30 @@ public:
     /// The error code.
     /// </summary>
     utility::string_t getCode() const;
-    void setCode(utility::string_t value);
     bool CodeIsSet() const;
     void unsetCode();
+    void setCode(utility::string_t value);
     /// <summary>
     /// The HTTP status code.
     /// </summary>
     utility::string_t getHttpStatusCode() const;
-    void setHttpStatusCode(utility::string_t value);
     bool HttpStatusCodeIsSet() const;
     void unsetHttpStatusCode();
+    void setHttpStatusCode(utility::string_t value);
     /// <summary>
     /// The error message.
     /// </summary>
     utility::string_t getMessage() const;
-    void setMessage(utility::string_t value);
     bool MessageIsSet() const;
     void unsetMessage();
+    void setMessage(utility::string_t value);
     /// <summary>
     /// The error details.
     /// </summary>
     utility::string_t getDetails() const;
-    void setDetails(utility::string_t value);
     bool DetailsIsSet() const;
     void unsetDetails();
+    void setDetails(utility::string_t value);
 
 protected:
     utility::string_t m_Code;

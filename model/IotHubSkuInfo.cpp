@@ -25,7 +25,6 @@ IotHubSkuInfo::IotHubSkuInfo()
     m_Tier = U("");
     m_TierIsSet = false;
     m_Capacity = 0;
-    
 }
 
 IotHubSkuInfo::~IotHubSkuInfo()
@@ -39,7 +38,6 @@ void IotHubSkuInfo::validate()
 
 web::json::value IotHubSkuInfo::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("name")] = ModelBase::toJson(m_Name);
@@ -48,23 +46,18 @@ web::json::value IotHubSkuInfo::toJson() const
         val[U("tier")] = ModelBase::toJson(m_Tier);
     }
     val[U("capacity")] = ModelBase::toJson(m_Capacity);
-    
 
     return val;
 }
 
 void IotHubSkuInfo::fromJson(web::json::value& val)
 {
-    
-
     setName(ModelBase::stringFromJson(val[U("name")]));
     if(val.has_field(U("tier")))
     {
         setTier(ModelBase::stringFromJson(val[U("tier")]));
-        
     }
     setCapacity(ModelBase::int64_tFromJson(val[U("capacity")]));
-    
 }
 
 void IotHubSkuInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -82,7 +75,6 @@ void IotHubSkuInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, co
         
     }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("capacity"), m_Capacity));
-    
 }
 
 void IotHubSkuInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -97,17 +89,16 @@ void IotHubSkuInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, 
     if(multipart->hasContent(U("tier")))
     {
         setTier(ModelBase::stringFromHttpContent(multipart->getContent(U("tier"))));
-        
     }
     setCapacity(ModelBase::int64_tFromHttpContent(multipart->getContent(U("capacity"))));
-    
 }
-
 
 utility::string_t IotHubSkuInfo::getName() const
 {
     return m_Name;
 }
+
+
 void IotHubSkuInfo::setName(utility::string_t value)
 {
     m_Name = value;
@@ -117,6 +108,8 @@ utility::string_t IotHubSkuInfo::getTier() const
 {
     return m_Tier;
 }
+
+
 void IotHubSkuInfo::setTier(utility::string_t value)
 {
     m_Tier = value;
@@ -126,20 +119,23 @@ bool IotHubSkuInfo::tierIsSet() const
 {
     return m_TierIsSet;
 }
+
 void IotHubSkuInfo::unsetTier()
 {
     m_TierIsSet = false;
 }
+
 int64_t IotHubSkuInfo::getCapacity() const
 {
     return m_Capacity;
 }
+
+
 void IotHubSkuInfo::setCapacity(int64_t value)
 {
     m_Capacity = value;
     
 }
-
 }
 }
 }

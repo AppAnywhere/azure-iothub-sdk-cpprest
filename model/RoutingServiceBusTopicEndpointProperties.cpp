@@ -27,7 +27,6 @@ RoutingServiceBusTopicEndpointProperties::RoutingServiceBusTopicEndpointProperti
     m_SubscriptionIdIsSet = false;
     m_ResourceGroup = U("");
     m_ResourceGroupIsSet = false;
-    
 }
 
 RoutingServiceBusTopicEndpointProperties::~RoutingServiceBusTopicEndpointProperties()
@@ -41,7 +40,6 @@ void RoutingServiceBusTopicEndpointProperties::validate()
 
 web::json::value RoutingServiceBusTopicEndpointProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("connectionString")] = ModelBase::toJson(m_ConnectionString);
@@ -54,28 +52,22 @@ web::json::value RoutingServiceBusTopicEndpointProperties::toJson() const
     {
         val[U("resourceGroup")] = ModelBase::toJson(m_ResourceGroup);
     }
-    
 
     return val;
 }
 
 void RoutingServiceBusTopicEndpointProperties::fromJson(web::json::value& val)
 {
-    
-
     setConnectionString(ModelBase::stringFromJson(val[U("connectionString")]));
     setName(ModelBase::stringFromJson(val[U("name")]));
     if(val.has_field(U("subscriptionId")))
     {
         setSubscriptionId(ModelBase::stringFromJson(val[U("subscriptionId")]));
-        
     }
     if(val.has_field(U("resourceGroup")))
     {
         setResourceGroup(ModelBase::stringFromJson(val[U("resourceGroup")]));
-        
     }
-    
 }
 
 void RoutingServiceBusTopicEndpointProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -98,7 +90,6 @@ void RoutingServiceBusTopicEndpointProperties::toMultipart(std::shared_ptr<Multi
         multipart->add(ModelBase::toHttpContent(namePrefix + U("resourceGroup"), m_ResourceGroup));
         
     }
-    
 }
 
 void RoutingServiceBusTopicEndpointProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -114,21 +105,19 @@ void RoutingServiceBusTopicEndpointProperties::fromMultiPart(std::shared_ptr<Mul
     if(multipart->hasContent(U("subscriptionId")))
     {
         setSubscriptionId(ModelBase::stringFromHttpContent(multipart->getContent(U("subscriptionId"))));
-        
     }
     if(multipart->hasContent(U("resourceGroup")))
     {
         setResourceGroup(ModelBase::stringFromHttpContent(multipart->getContent(U("resourceGroup"))));
-        
     }
-    
 }
-
 
 utility::string_t RoutingServiceBusTopicEndpointProperties::getConnectionString() const
 {
     return m_ConnectionString;
 }
+
+
 void RoutingServiceBusTopicEndpointProperties::setConnectionString(utility::string_t value)
 {
     m_ConnectionString = value;
@@ -138,6 +127,8 @@ utility::string_t RoutingServiceBusTopicEndpointProperties::getName() const
 {
     return m_Name;
 }
+
+
 void RoutingServiceBusTopicEndpointProperties::setName(utility::string_t value)
 {
     m_Name = value;
@@ -147,6 +138,8 @@ utility::string_t RoutingServiceBusTopicEndpointProperties::getSubscriptionId() 
 {
     return m_SubscriptionId;
 }
+
+
 void RoutingServiceBusTopicEndpointProperties::setSubscriptionId(utility::string_t value)
 {
     m_SubscriptionId = value;
@@ -156,14 +149,18 @@ bool RoutingServiceBusTopicEndpointProperties::subscriptionIdIsSet() const
 {
     return m_SubscriptionIdIsSet;
 }
+
 void RoutingServiceBusTopicEndpointProperties::unsetSubscriptionId()
 {
     m_SubscriptionIdIsSet = false;
 }
+
 utility::string_t RoutingServiceBusTopicEndpointProperties::getResourceGroup() const
 {
     return m_ResourceGroup;
 }
+
+
 void RoutingServiceBusTopicEndpointProperties::setResourceGroup(utility::string_t value)
 {
     m_ResourceGroup = value;
@@ -173,6 +170,7 @@ bool RoutingServiceBusTopicEndpointProperties::resourceGroupIsSet() const
 {
     return m_ResourceGroupIsSet;
 }
+
 void RoutingServiceBusTopicEndpointProperties::unsetResourceGroup()
 {
     m_ResourceGroupIsSet = false;

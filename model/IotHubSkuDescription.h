@@ -59,20 +59,20 @@ public:
     /// The type of the resource.
     /// </summary>
     utility::string_t getResourceType() const;
-    void setResourceType(utility::string_t value);
     bool resourceTypeIsSet() const;
     void unsetResourceType();
+    void setResourceType(utility::string_t value);
     /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<IotHubSkuInfo> getSku() const;
-    void setSku(std::shared_ptr<IotHubSkuInfo> value);
-        /// <summary>
+        void setSku(std::shared_ptr<IotHubSkuInfo> value);
+    /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<IotHubCapacity> getCapacity() const;
-    void setCapacity(std::shared_ptr<IotHubCapacity> value);
-    
+        void setCapacity(std::shared_ptr<IotHubCapacity> value);
+
 protected:
     utility::string_t m_ResourceType;
     bool m_ResourceTypeIsSet;

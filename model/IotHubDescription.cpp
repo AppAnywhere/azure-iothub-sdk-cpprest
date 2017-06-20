@@ -29,7 +29,6 @@ IotHubDescription::IotHubDescription()
     m_TypeIsSet = false;
     m_Location = U("");
     m_TagsIsSet = false;
-    
 }
 
 IotHubDescription::~IotHubDescription()
@@ -43,7 +42,6 @@ void IotHubDescription::validate()
 
 web::json::value IotHubDescription::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_IdIsSet)
@@ -59,46 +57,55 @@ web::json::value IotHubDescription::toJson() const
         val[U("type")] = ModelBase::toJson(m_Type);
     }
     val[U("location")] = ModelBase::toJson(m_Location);
-    if(m_TagsIsSet)
     {
-        val[U("tags")] = ModelBase::toJson(m_Tags);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Tags )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("tags")] = web::json::value::array(jsonArray);
+        }
     }
-    
 
     return val;
 }
 
 void IotHubDescription::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("id")))
     {
         setId(ModelBase::stringFromJson(val[U("id")]));
-        
     }
     if(val.has_field(U("name")))
     {
         setName(ModelBase::stringFromJson(val[U("name")]));
-        
     }
     if(val.has_field(U("type")))
     {
         setType(ModelBase::stringFromJson(val[U("type")]));
-        
     }
     setLocation(ModelBase::stringFromJson(val[U("location")]));
-    if(val.has_field(U("tags")))
     {
-        if(!val[U("tags")].is_null())
+        m_Tags.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("tags")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, utility::string_t>());
-            newItem->fromJson(val[U("tags")]);
-            setTags( newItem );
+        for( auto& item : val[U("tags")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Tags.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
         }
-        
+        }
     }
-    
 }
 
 void IotHubDescription::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -125,15 +132,21 @@ void IotHubDescription::toMultipart(std::shared_ptr<MultipartFormData> multipart
         
     }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("location"), m_Location));
-    if(m_TagsIsSet)
     {
-        if (m_Tags.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Tags )
         {
-            m_Tags->toMultipart(multipart, U("tags."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("tags"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
-    
 }
 
 void IotHubDescription::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -147,37 +160,41 @@ void IotHubDescription::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
     if(multipart->hasContent(U("id")))
     {
         setId(ModelBase::stringFromHttpContent(multipart->getContent(U("id"))));
-        
     }
     if(multipart->hasContent(U("name")))
     {
         setName(ModelBase::stringFromHttpContent(multipart->getContent(U("name"))));
-        
     }
     if(multipart->hasContent(U("type")))
     {
         setType(ModelBase::stringFromHttpContent(multipart->getContent(U("type"))));
-        
     }
     setLocation(ModelBase::stringFromHttpContent(multipart->getContent(U("location"))));
-    if(multipart->hasContent(U("tags")))
     {
+        m_Tags.clear();
         if(multipart->hasContent(U("tags")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, utility::string_t>());
-            newItem->fromMultiPart(multipart, U("tags."));
-            setTags( newItem );
-        }
-        
-    }
-    
-}
 
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("tags"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Tags.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
+        }
+        }
+    }
+}
 
 utility::string_t IotHubDescription::getId() const
 {
     return m_Id;
 }
+
+
 void IotHubDescription::setId(utility::string_t value)
 {
     m_Id = value;
@@ -187,14 +204,18 @@ bool IotHubDescription::idIsSet() const
 {
     return m_IdIsSet;
 }
+
 void IotHubDescription::unsetId()
 {
     m_IdIsSet = false;
 }
+
 utility::string_t IotHubDescription::getName() const
 {
     return m_Name;
 }
+
+
 void IotHubDescription::setName(utility::string_t value)
 {
     m_Name = value;
@@ -204,14 +225,18 @@ bool IotHubDescription::nameIsSet() const
 {
     return m_NameIsSet;
 }
+
 void IotHubDescription::unsetName()
 {
     m_NameIsSet = false;
 }
+
 utility::string_t IotHubDescription::getType() const
 {
     return m_Type;
 }
+
+
 void IotHubDescription::setType(utility::string_t value)
 {
     m_Type = value;
@@ -221,14 +246,18 @@ bool IotHubDescription::typeIsSet() const
 {
     return m_TypeIsSet;
 }
+
 void IotHubDescription::unsetType()
 {
     m_TypeIsSet = false;
 }
+
 utility::string_t IotHubDescription::getLocation() const
 {
     return m_Location;
 }
+
+
 void IotHubDescription::setLocation(utility::string_t value)
 {
     m_Location = value;
@@ -238,10 +267,17 @@ std::map<utility::string_t, utility::string_t>& IotHubDescription::getTags()
 {
     return m_Tags;
 }
+
+void IotHubDescription::setTags(std::map<utility::string_t, utility::string_t> value)
+{
+    m_Tags = value;
+    m_TagsIsSet = true;
+}
 bool IotHubDescription::tagsIsSet() const
 {
     return m_TagsIsSet;
 }
+
 void IotHubDescription::unsetTags()
 {
     m_TagsIsSet = false;

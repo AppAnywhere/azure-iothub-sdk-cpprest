@@ -62,18 +62,21 @@ public:
     std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>>& getServiceBusQueues();
     bool serviceBusQueuesIsSet() const;
     void unsetServiceBusQueues();
+    void setServiceBusQueues(std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>> value);
     /// <summary>
     /// The list of Service Bus topic endpoints that the IoT hub routes the messages to, based on the routing rules.
     /// </summary>
     std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>>& getServiceBusTopics();
     bool serviceBusTopicsIsSet() const;
     void unsetServiceBusTopics();
+    void setServiceBusTopics(std::vector<std::shared_ptr<RoutingServiceBusTopicEndpointProperties>> value);
     /// <summary>
     /// The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not include the built-in Event Hubs endpoint.
     /// </summary>
     std::vector<std::shared_ptr<RoutingEventHubProperties>>& getEventHubs();
     bool eventHubsIsSet() const;
     void unsetEventHubs();
+    void setEventHubs(std::vector<std::shared_ptr<RoutingEventHubProperties>> value);
 
 protected:
     std::vector<std::shared_ptr<RoutingServiceBusQueueEndpointProperties>> m_ServiceBusQueues;

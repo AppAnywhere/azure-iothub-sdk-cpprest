@@ -58,24 +58,25 @@ public:
     /// The source to which the routing rule is to be applied to. e.g. DeviceMessages
     /// </summary>
     utility::string_t getSource() const;
-    void setSource(utility::string_t value);
-        /// <summary>
+        void setSource(utility::string_t value);
+    /// <summary>
     /// The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will evaluate to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
     /// </summary>
     utility::string_t getCondition() const;
-    void setCondition(utility::string_t value);
     bool conditionIsSet() const;
     void unsetCondition();
+    void setCondition(utility::string_t value);
     /// <summary>
     /// The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint is allowed.
     /// </summary>
     std::vector<utility::string_t>& getEndpointNames();
-        /// <summary>
+        void setEndpointNames(std::vector<utility::string_t> value);
+    /// <summary>
     /// Used to specify whether the fallback route is enabled or not.
     /// </summary>
     bool getIsEnabled() const;
-    void setIsEnabled(bool value);
-    
+        void setIsEnabled(bool value);
+
 protected:
     utility::string_t m_Source;
         utility::string_t m_Condition;

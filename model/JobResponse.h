@@ -57,58 +57,58 @@ public:
     /// The job identifier.
     /// </summary>
     utility::string_t getJobId() const;
-    void setJobId(utility::string_t value);
     bool jobIdIsSet() const;
     void unsetJobId();
+    void setJobId(utility::string_t value);
     /// <summary>
     /// The start time of the job.
     /// </summary>
     utility::string_t getStartTimeUtc() const;
-    void setStartTimeUtc(utility::string_t value);
     bool startTimeUtcIsSet() const;
     void unsetStartTimeUtc();
+    void setStartTimeUtc(utility::string_t value);
     /// <summary>
     /// The time the job stopped processing.
     /// </summary>
     utility::string_t getEndTimeUtc() const;
-    void setEndTimeUtc(utility::string_t value);
     bool endTimeUtcIsSet() const;
     void unsetEndTimeUtc();
+    void setEndTimeUtc(utility::string_t value);
     /// <summary>
     /// The type of the job.
     /// </summary>
     utility::string_t getType() const;
-    void setType(utility::string_t value);
     bool typeIsSet() const;
     void unsetType();
+    void setType(utility::string_t value);
     /// <summary>
     /// The status of the job.
     /// </summary>
     utility::string_t getStatus() const;
-    void setStatus(utility::string_t value);
     bool statusIsSet() const;
     void unsetStatus();
+    void setStatus(utility::string_t value);
     /// <summary>
     /// If status &#x3D;&#x3D; failed, this string containing the reason for the failure.
     /// </summary>
     utility::string_t getFailureReason() const;
-    void setFailureReason(utility::string_t value);
     bool failureReasonIsSet() const;
     void unsetFailureReason();
+    void setFailureReason(utility::string_t value);
     /// <summary>
     /// The status message for the job.
     /// </summary>
     utility::string_t getStatusMessage() const;
-    void setStatusMessage(utility::string_t value);
     bool statusMessageIsSet() const;
     void unsetStatusMessage();
+    void setStatusMessage(utility::string_t value);
     /// <summary>
     /// The job identifier of the parent job, if any.
     /// </summary>
     utility::string_t getParentJobId() const;
-    void setParentJobId(utility::string_t value);
     bool parentJobIdIsSet() const;
     void unsetParentJobId();
+    void setParentJobId(utility::string_t value);
 
 protected:
     utility::string_t m_JobId;

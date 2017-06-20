@@ -27,7 +27,6 @@ SharedAccessSignatureAuthorizationRule::SharedAccessSignatureAuthorizationRule()
     m_SecondaryKey = U("");
     m_SecondaryKeyIsSet = false;
     m_Rights = U("");
-    
 }
 
 SharedAccessSignatureAuthorizationRule::~SharedAccessSignatureAuthorizationRule()
@@ -41,7 +40,6 @@ void SharedAccessSignatureAuthorizationRule::validate()
 
 web::json::value SharedAccessSignatureAuthorizationRule::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("keyName")] = ModelBase::toJson(m_KeyName);
@@ -54,28 +52,22 @@ web::json::value SharedAccessSignatureAuthorizationRule::toJson() const
         val[U("secondaryKey")] = ModelBase::toJson(m_SecondaryKey);
     }
     val[U("rights")] = ModelBase::toJson(m_Rights);
-    
 
     return val;
 }
 
 void SharedAccessSignatureAuthorizationRule::fromJson(web::json::value& val)
 {
-    
-
     setKeyName(ModelBase::stringFromJson(val[U("keyName")]));
     if(val.has_field(U("primaryKey")))
     {
         setPrimaryKey(ModelBase::stringFromJson(val[U("primaryKey")]));
-        
     }
     if(val.has_field(U("secondaryKey")))
     {
         setSecondaryKey(ModelBase::stringFromJson(val[U("secondaryKey")]));
-        
     }
     setRights(ModelBase::stringFromJson(val[U("rights")]));
-    
 }
 
 void SharedAccessSignatureAuthorizationRule::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -98,7 +90,6 @@ void SharedAccessSignatureAuthorizationRule::toMultipart(std::shared_ptr<Multipa
         
     }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("rights"), m_Rights));
-    
 }
 
 void SharedAccessSignatureAuthorizationRule::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -113,22 +104,20 @@ void SharedAccessSignatureAuthorizationRule::fromMultiPart(std::shared_ptr<Multi
     if(multipart->hasContent(U("primaryKey")))
     {
         setPrimaryKey(ModelBase::stringFromHttpContent(multipart->getContent(U("primaryKey"))));
-        
     }
     if(multipart->hasContent(U("secondaryKey")))
     {
         setSecondaryKey(ModelBase::stringFromHttpContent(multipart->getContent(U("secondaryKey"))));
-        
     }
     setRights(ModelBase::stringFromHttpContent(multipart->getContent(U("rights"))));
-    
 }
-
 
 utility::string_t SharedAccessSignatureAuthorizationRule::getKeyName() const
 {
     return m_KeyName;
 }
+
+
 void SharedAccessSignatureAuthorizationRule::setKeyName(utility::string_t value)
 {
     m_KeyName = value;
@@ -138,6 +127,8 @@ utility::string_t SharedAccessSignatureAuthorizationRule::getPrimaryKey() const
 {
     return m_PrimaryKey;
 }
+
+
 void SharedAccessSignatureAuthorizationRule::setPrimaryKey(utility::string_t value)
 {
     m_PrimaryKey = value;
@@ -147,14 +138,18 @@ bool SharedAccessSignatureAuthorizationRule::primaryKeyIsSet() const
 {
     return m_PrimaryKeyIsSet;
 }
+
 void SharedAccessSignatureAuthorizationRule::unsetPrimaryKey()
 {
     m_PrimaryKeyIsSet = false;
 }
+
 utility::string_t SharedAccessSignatureAuthorizationRule::getSecondaryKey() const
 {
     return m_SecondaryKey;
 }
+
+
 void SharedAccessSignatureAuthorizationRule::setSecondaryKey(utility::string_t value)
 {
     m_SecondaryKey = value;
@@ -164,20 +159,23 @@ bool SharedAccessSignatureAuthorizationRule::secondaryKeyIsSet() const
 {
     return m_SecondaryKeyIsSet;
 }
+
 void SharedAccessSignatureAuthorizationRule::unsetSecondaryKey()
 {
     m_SecondaryKeyIsSet = false;
 }
+
 utility::string_t SharedAccessSignatureAuthorizationRule::getRights() const
 {
     return m_Rights;
 }
+
+
 void SharedAccessSignatureAuthorizationRule::setRights(utility::string_t value)
 {
     m_Rights = value;
     
 }
-
 }
 }
 }

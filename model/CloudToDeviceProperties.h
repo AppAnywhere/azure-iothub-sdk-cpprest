@@ -58,23 +58,23 @@ public:
     /// The max delivery count for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
     /// </summary>
     int32_t getMaxDeliveryCount() const;
-    void setMaxDeliveryCount(int32_t value);
     bool maxDeliveryCountIsSet() const;
     void unsetMaxDeliveryCount();
+    void setMaxDeliveryCount(int32_t value);
     /// <summary>
     /// The default time to live for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
     /// </summary>
     utility::string_t getDefaultTtlAsIso8601() const;
-    void setDefaultTtlAsIso8601(utility::string_t value);
     bool defaultTtlAsIso8601IsSet() const;
     void unsetDefaultTtlAsIso8601();
+    void setDefaultTtlAsIso8601(utility::string_t value);
     /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<FeedbackProperties> getFeedback() const;
-    void setFeedback(std::shared_ptr<FeedbackProperties> value);
     bool feedbackIsSet() const;
     void unsetFeedback();
+    void setFeedback(std::shared_ptr<FeedbackProperties> value);
 
 protected:
     int32_t m_MaxDeliveryCount;

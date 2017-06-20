@@ -23,7 +23,6 @@ ImportDevicesRequest::ImportDevicesRequest()
 {
     m_InputBlobContainerUri = U("");
     m_OutputBlobContainerUri = U("");
-    
 }
 
 ImportDevicesRequest::~ImportDevicesRequest()
@@ -37,23 +36,18 @@ void ImportDevicesRequest::validate()
 
 web::json::value ImportDevicesRequest::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("InputBlobContainerUri")] = ModelBase::toJson(m_InputBlobContainerUri);
     val[U("OutputBlobContainerUri")] = ModelBase::toJson(m_OutputBlobContainerUri);
-    
 
     return val;
 }
 
 void ImportDevicesRequest::fromJson(web::json::value& val)
 {
-    
-
     setInputBlobContainerUri(ModelBase::stringFromJson(val[U("InputBlobContainerUri")]));
     setOutputBlobContainerUri(ModelBase::stringFromJson(val[U("OutputBlobContainerUri")]));
-    
 }
 
 void ImportDevicesRequest::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -66,7 +60,6 @@ void ImportDevicesRequest::toMultipart(std::shared_ptr<MultipartFormData> multip
 
     multipart->add(ModelBase::toHttpContent(namePrefix + U("InputBlobContainerUri"), m_InputBlobContainerUri));
     multipart->add(ModelBase::toHttpContent(namePrefix + U("OutputBlobContainerUri"), m_OutputBlobContainerUri));
-    
 }
 
 void ImportDevicesRequest::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -79,14 +72,14 @@ void ImportDevicesRequest::fromMultiPart(std::shared_ptr<MultipartFormData> mult
 
     setInputBlobContainerUri(ModelBase::stringFromHttpContent(multipart->getContent(U("InputBlobContainerUri"))));
     setOutputBlobContainerUri(ModelBase::stringFromHttpContent(multipart->getContent(U("OutputBlobContainerUri"))));
-    
 }
-
 
 utility::string_t ImportDevicesRequest::getInputBlobContainerUri() const
 {
     return m_InputBlobContainerUri;
 }
+
+
 void ImportDevicesRequest::setInputBlobContainerUri(utility::string_t value)
 {
     m_InputBlobContainerUri = value;
@@ -96,12 +89,13 @@ utility::string_t ImportDevicesRequest::getOutputBlobContainerUri() const
 {
     return m_OutputBlobContainerUri;
 }
+
+
 void ImportDevicesRequest::setOutputBlobContainerUri(utility::string_t value)
 {
     m_OutputBlobContainerUri = value;
     
 }
-
 }
 }
 }

@@ -1,5 +1,7 @@
 [requires]
-cpprestsdk/2.8.0@lasote/vcpkg
+CppRestSdk/2.8.0@lasote/vcpkg
+Boost/1.59.0@lasote/stable
+OpenSSL/1.0.2g@lasote/stable
 
 [generators]
 cmake

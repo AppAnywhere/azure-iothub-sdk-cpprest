@@ -57,23 +57,23 @@ public:
     /// The value which indicates whether the provided name is available.
     /// </summary>
     bool getNameAvailable() const;
-    void setNameAvailable(bool value);
     bool nameAvailableIsSet() const;
     void unsetNameAvailable();
+    void setNameAvailable(bool value);
     /// <summary>
     /// The reason for unavailability.
     /// </summary>
     utility::string_t getReason() const;
-    void setReason(utility::string_t value);
     bool reasonIsSet() const;
     void unsetReason();
+    void setReason(utility::string_t value);
     /// <summary>
     /// The detailed reason message.
     /// </summary>
     utility::string_t getMessage() const;
-    void setMessage(utility::string_t value);
     bool messageIsSet() const;
     void unsetMessage();
+    void setMessage(utility::string_t value);
 
 protected:
     bool m_NameAvailable;

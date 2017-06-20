@@ -22,7 +22,6 @@ namespace model {
 OperationsMonitoringProperties::OperationsMonitoringProperties()
 {
     m_EventsIsSet = false;
-    
 }
 
 OperationsMonitoringProperties::~OperationsMonitoringProperties()
@@ -36,33 +35,44 @@ void OperationsMonitoringProperties::validate()
 
 web::json::value OperationsMonitoringProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
-    if(m_EventsIsSet)
     {
-        val[U("events")] = ModelBase::toJson(m_Events);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Events )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("events")] = web::json::value::array(jsonArray);
+        }
     }
-    
 
     return val;
 }
 
 void OperationsMonitoringProperties::fromJson(web::json::value& val)
 {
-    
-
-    if(val.has_field(U("events")))
     {
-        if(!val[U("events")].is_null())
+        m_Events.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("events")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, InnerEnum>());
-            newItem->fromJson(val[U("events")]);
-            setEvents( newItem );
+        for( auto& item : val[U("events")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Events.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
         }
-        
+        }
     }
-    
 }
 
 void OperationsMonitoringProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -73,15 +83,21 @@ void OperationsMonitoringProperties::toMultipart(std::shared_ptr<MultipartFormDa
         namePrefix += U(".");
     }
 
-    if(m_EventsIsSet)
     {
-        if (m_Events.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Events )
         {
-            m_Events->toMultipart(multipart, U("events."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("events"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
-    
 }
 
 void OperationsMonitoringProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -92,28 +108,40 @@ void OperationsMonitoringProperties::fromMultiPart(std::shared_ptr<MultipartForm
         namePrefix += U(".");
     }
 
-    if(multipart->hasContent(U("events")))
     {
+        m_Events.clear();
         if(multipart->hasContent(U("events")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, InnerEnum>());
-            newItem->fromMultiPart(multipart, U("events."));
-            setEvents( newItem );
-        }
-        
-    }
-    
-}
 
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("events"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Events.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
+        }
+        }
+    }
+}
 
 std::map<utility::string_t, utility::string_t>& OperationsMonitoringProperties::getEvents()
 {
     return m_Events;
 }
+
+void OperationsMonitoringProperties::setEvents(std::map<utility::string_t, utility::string_t> value)
+{
+    m_Events = value;
+    m_EventsIsSet = true;
+}
 bool OperationsMonitoringProperties::eventsIsSet() const
 {
     return m_EventsIsSet;
 }
+
 void OperationsMonitoringProperties::unsetEvents()
 {
     m_EventsIsSet = false;

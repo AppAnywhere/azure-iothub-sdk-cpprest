@@ -57,13 +57,13 @@ public:
     /// The input blob container URI.
     /// </summary>
     utility::string_t getInputBlobContainerUri() const;
-    void setInputBlobContainerUri(utility::string_t value);
-        /// <summary>
+        void setInputBlobContainerUri(utility::string_t value);
+    /// <summary>
     /// The output blob container URI.
     /// </summary>
     utility::string_t getOutputBlobContainerUri() const;
-    void setOutputBlobContainerUri(utility::string_t value);
-    
+        void setOutputBlobContainerUri(utility::string_t value);
+
 protected:
     utility::string_t m_InputBlobContainerUri;
         utility::string_t m_OutputBlobContainerUri;

@@ -37,7 +37,6 @@ JobResponse::JobResponse()
     m_StatusMessageIsSet = false;
     m_ParentJobId = U("");
     m_ParentJobIdIsSet = false;
-    
 }
 
 JobResponse::~JobResponse()
@@ -51,7 +50,6 @@ void JobResponse::validate()
 
 web::json::value JobResponse::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_JobIdIsSet)
@@ -86,56 +84,44 @@ web::json::value JobResponse::toJson() const
     {
         val[U("parentJobId")] = ModelBase::toJson(m_ParentJobId);
     }
-    
 
     return val;
 }
 
 void JobResponse::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("jobId")))
     {
         setJobId(ModelBase::stringFromJson(val[U("jobId")]));
-        
     }
     if(val.has_field(U("startTimeUtc")))
     {
         setStartTimeUtc(ModelBase::stringFromJson(val[U("startTimeUtc")]));
-        
     }
     if(val.has_field(U("endTimeUtc")))
     {
         setEndTimeUtc(ModelBase::stringFromJson(val[U("endTimeUtc")]));
-        
     }
     if(val.has_field(U("type")))
     {
         setType(ModelBase::stringFromJson(val[U("type")]));
-        
     }
     if(val.has_field(U("status")))
     {
         setStatus(ModelBase::stringFromJson(val[U("status")]));
-        
     }
     if(val.has_field(U("failureReason")))
     {
         setFailureReason(ModelBase::stringFromJson(val[U("failureReason")]));
-        
     }
     if(val.has_field(U("statusMessage")))
     {
         setStatusMessage(ModelBase::stringFromJson(val[U("statusMessage")]));
-        
     }
     if(val.has_field(U("parentJobId")))
     {
         setParentJobId(ModelBase::stringFromJson(val[U("parentJobId")]));
-        
     }
-    
 }
 
 void JobResponse::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -186,7 +172,6 @@ void JobResponse::toMultipart(std::shared_ptr<MultipartFormData> multipart, cons
         multipart->add(ModelBase::toHttpContent(namePrefix + U("parentJobId"), m_ParentJobId));
         
     }
-    
 }
 
 void JobResponse::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -200,51 +185,43 @@ void JobResponse::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, co
     if(multipart->hasContent(U("jobId")))
     {
         setJobId(ModelBase::stringFromHttpContent(multipart->getContent(U("jobId"))));
-        
     }
     if(multipart->hasContent(U("startTimeUtc")))
     {
         setStartTimeUtc(ModelBase::stringFromHttpContent(multipart->getContent(U("startTimeUtc"))));
-        
     }
     if(multipart->hasContent(U("endTimeUtc")))
     {
         setEndTimeUtc(ModelBase::stringFromHttpContent(multipart->getContent(U("endTimeUtc"))));
-        
     }
     if(multipart->hasContent(U("type")))
     {
         setType(ModelBase::stringFromHttpContent(multipart->getContent(U("type"))));
-        
     }
     if(multipart->hasContent(U("status")))
     {
         setStatus(ModelBase::stringFromHttpContent(multipart->getContent(U("status"))));
-        
     }
     if(multipart->hasContent(U("failureReason")))
     {
         setFailureReason(ModelBase::stringFromHttpContent(multipart->getContent(U("failureReason"))));
-        
     }
     if(multipart->hasContent(U("statusMessage")))
     {
         setStatusMessage(ModelBase::stringFromHttpContent(multipart->getContent(U("statusMessage"))));
-        
     }
     if(multipart->hasContent(U("parentJobId")))
     {
         setParentJobId(ModelBase::stringFromHttpContent(multipart->getContent(U("parentJobId"))));
-        
     }
-    
 }
-
 
 utility::string_t JobResponse::getJobId() const
 {
     return m_JobId;
 }
+
+
 void JobResponse::setJobId(utility::string_t value)
 {
     m_JobId = value;
@@ -254,14 +231,18 @@ bool JobResponse::jobIdIsSet() const
 {
     return m_JobIdIsSet;
 }
+
 void JobResponse::unsetJobId()
 {
     m_JobIdIsSet = false;
 }
+
 utility::string_t JobResponse::getStartTimeUtc() const
 {
     return m_StartTimeUtc;
 }
+
+
 void JobResponse::setStartTimeUtc(utility::string_t value)
 {
     m_StartTimeUtc = value;
@@ -271,14 +252,18 @@ bool JobResponse::startTimeUtcIsSet() const
 {
     return m_StartTimeUtcIsSet;
 }
+
 void JobResponse::unsetStartTimeUtc()
 {
     m_StartTimeUtcIsSet = false;
 }
+
 utility::string_t JobResponse::getEndTimeUtc() const
 {
     return m_EndTimeUtc;
 }
+
+
 void JobResponse::setEndTimeUtc(utility::string_t value)
 {
     m_EndTimeUtc = value;
@@ -288,14 +273,18 @@ bool JobResponse::endTimeUtcIsSet() const
 {
     return m_EndTimeUtcIsSet;
 }
+
 void JobResponse::unsetEndTimeUtc()
 {
     m_EndTimeUtcIsSet = false;
 }
+
 utility::string_t JobResponse::getType() const
 {
     return m_Type;
 }
+
+
 void JobResponse::setType(utility::string_t value)
 {
     m_Type = value;
@@ -305,14 +294,18 @@ bool JobResponse::typeIsSet() const
 {
     return m_TypeIsSet;
 }
+
 void JobResponse::unsetType()
 {
     m_TypeIsSet = false;
 }
+
 utility::string_t JobResponse::getStatus() const
 {
     return m_Status;
 }
+
+
 void JobResponse::setStatus(utility::string_t value)
 {
     m_Status = value;
@@ -322,14 +315,18 @@ bool JobResponse::statusIsSet() const
 {
     return m_StatusIsSet;
 }
+
 void JobResponse::unsetStatus()
 {
     m_StatusIsSet = false;
 }
+
 utility::string_t JobResponse::getFailureReason() const
 {
     return m_FailureReason;
 }
+
+
 void JobResponse::setFailureReason(utility::string_t value)
 {
     m_FailureReason = value;
@@ -339,14 +336,18 @@ bool JobResponse::failureReasonIsSet() const
 {
     return m_FailureReasonIsSet;
 }
+
 void JobResponse::unsetFailureReason()
 {
     m_FailureReasonIsSet = false;
 }
+
 utility::string_t JobResponse::getStatusMessage() const
 {
     return m_StatusMessage;
 }
+
+
 void JobResponse::setStatusMessage(utility::string_t value)
 {
     m_StatusMessage = value;
@@ -356,14 +357,18 @@ bool JobResponse::statusMessageIsSet() const
 {
     return m_StatusMessageIsSet;
 }
+
 void JobResponse::unsetStatusMessage()
 {
     m_StatusMessageIsSet = false;
 }
+
 utility::string_t JobResponse::getParentJobId() const
 {
     return m_ParentJobId;
 }
+
+
 void JobResponse::setParentJobId(utility::string_t value)
 {
     m_ParentJobId = value;
@@ -373,6 +378,7 @@ bool JobResponse::parentJobIdIsSet() const
 {
     return m_ParentJobIdIsSet;
 }
+
 void JobResponse::unsetParentJobId()
 {
     m_ParentJobIdIsSet = false;

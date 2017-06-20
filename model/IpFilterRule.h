@@ -57,18 +57,18 @@ public:
     /// The name of the IP filter rule.
     /// </summary>
     utility::string_t getFilterName() const;
-    void setFilterName(utility::string_t value);
-        /// <summary>
+        void setFilterName(utility::string_t value);
+    /// <summary>
     /// The desired action for requests captured by this rule.
     /// </summary>
     utility::string_t getAction() const;
-    void setAction(utility::string_t value);
-        /// <summary>
+        void setAction(utility::string_t value);
+    /// <summary>
     /// A string that contains the IP address range in CIDR notation for the rule.
     /// </summary>
     utility::string_t getIpMask() const;
-    void setIpMask(utility::string_t value);
-    
+        void setIpMask(utility::string_t value);
+
 protected:
     utility::string_t m_FilterName;
         utility::string_t m_Action;

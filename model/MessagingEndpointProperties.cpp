@@ -27,7 +27,6 @@ MessagingEndpointProperties::MessagingEndpointProperties()
     m_TtlAsIso8601IsSet = false;
     m_MaxDeliveryCount = 0;
     m_MaxDeliveryCountIsSet = false;
-    
 }
 
 MessagingEndpointProperties::~MessagingEndpointProperties()
@@ -41,7 +40,6 @@ void MessagingEndpointProperties::validate()
 
 web::json::value MessagingEndpointProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_LockDurationAsIso8601IsSet)
@@ -56,30 +54,24 @@ web::json::value MessagingEndpointProperties::toJson() const
     {
         val[U("maxDeliveryCount")] = ModelBase::toJson(m_MaxDeliveryCount);
     }
-    
 
     return val;
 }
 
 void MessagingEndpointProperties::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("lockDurationAsIso8601")))
     {
         setLockDurationAsIso8601(ModelBase::stringFromJson(val[U("lockDurationAsIso8601")]));
-        
     }
     if(val.has_field(U("ttlAsIso8601")))
     {
         setTtlAsIso8601(ModelBase::stringFromJson(val[U("ttlAsIso8601")]));
-        
     }
     if(val.has_field(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromJson(val[U("maxDeliveryCount")]));
     }
-    
 }
 
 void MessagingEndpointProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -104,7 +96,6 @@ void MessagingEndpointProperties::toMultipart(std::shared_ptr<MultipartFormData>
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("maxDeliveryCount"), m_MaxDeliveryCount));
     }
-    
 }
 
 void MessagingEndpointProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -118,25 +109,23 @@ void MessagingEndpointProperties::fromMultiPart(std::shared_ptr<MultipartFormDat
     if(multipart->hasContent(U("lockDurationAsIso8601")))
     {
         setLockDurationAsIso8601(ModelBase::stringFromHttpContent(multipart->getContent(U("lockDurationAsIso8601"))));
-        
     }
     if(multipart->hasContent(U("ttlAsIso8601")))
     {
         setTtlAsIso8601(ModelBase::stringFromHttpContent(multipart->getContent(U("ttlAsIso8601"))));
-        
     }
     if(multipart->hasContent(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromHttpContent(multipart->getContent(U("maxDeliveryCount"))));
     }
-    
 }
-
 
 utility::string_t MessagingEndpointProperties::getLockDurationAsIso8601() const
 {
     return m_LockDurationAsIso8601;
 }
+
+
 void MessagingEndpointProperties::setLockDurationAsIso8601(utility::string_t value)
 {
     m_LockDurationAsIso8601 = value;
@@ -146,14 +135,18 @@ bool MessagingEndpointProperties::lockDurationAsIso8601IsSet() const
 {
     return m_LockDurationAsIso8601IsSet;
 }
+
 void MessagingEndpointProperties::unsetLockDurationAsIso8601()
 {
     m_LockDurationAsIso8601IsSet = false;
 }
+
 utility::string_t MessagingEndpointProperties::getTtlAsIso8601() const
 {
     return m_TtlAsIso8601;
 }
+
+
 void MessagingEndpointProperties::setTtlAsIso8601(utility::string_t value)
 {
     m_TtlAsIso8601 = value;
@@ -163,14 +156,18 @@ bool MessagingEndpointProperties::ttlAsIso8601IsSet() const
 {
     return m_TtlAsIso8601IsSet;
 }
+
 void MessagingEndpointProperties::unsetTtlAsIso8601()
 {
     m_TtlAsIso8601IsSet = false;
 }
+
 int32_t MessagingEndpointProperties::getMaxDeliveryCount() const
 {
     return m_MaxDeliveryCount;
 }
+
+
 void MessagingEndpointProperties::setMaxDeliveryCount(int32_t value)
 {
     m_MaxDeliveryCount = value;
@@ -180,6 +177,7 @@ bool MessagingEndpointProperties::maxDeliveryCountIsSet() const
 {
     return m_MaxDeliveryCountIsSet;
 }
+
 void MessagingEndpointProperties::unsetMaxDeliveryCount()
 {
     m_MaxDeliveryCountIsSet = false;

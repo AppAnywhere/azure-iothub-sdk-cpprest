@@ -1,0 +1,660 @@
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build>msbuild ALL_BUILD.vcxproj /p:Configuration=Release
+Microsoft (R) Build Engine version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/20/2017 2:19:01 PM.
+Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ALL_BUILD.vcxproj" on node 1 (default targets).
+Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\jerry\git-c\a
+zure-iothub-sdk-cpprest\build\ZERO_CHECK.vcxproj" (2) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "x64\Release\ZERO_CHECK\".
+  Creating directory "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\".
+InitializeBuildStatus:
+  Creating "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Checking Build System
+  CMake does not need to re-run because C:/Users/jerry/git-c/azure-iothub-sdk-cpprest/build/CMakeFiles/generate.stamp i
+  s up-to-date.
+FinalizeBuildStatus:
+  Deleting file "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Touching "x64\Release\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Done Building Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ZERO_CHECK.vcxproj" (default targets).
+
+Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ALL_BUILD.vcxproj" (1) is building "C:\Users\jerry\git-c\a
+zure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj" (3) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "CppRestSwaggerClient.dir\Release\".
+  Creating directory "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\lib\".
+  Creating directory "CppRestSwaggerClient.dir\Release\CppRestS.FA480139.tlog\".
+InitializeBuildStatus:
+  Creating "CppRestSwaggerClient.dir\Release\CppRestS.FA480139.tlog\unsuccessfulbuild" because "AlwaysCreate" was speci
+  fied.
+CustomBuild:
+  Building Custom Rule C:/Users/jerry/git-c/azure-iothub-sdk-cpprest/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/jerry/git-c/azure-iothub-sdk-cpprest/build/CMakeFiles/generate.stamp i
+  s up-to-date.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX86\x64\CL.exe /c /IC
+  :\Users\jerry\.conan\data\Boost\1.59.0\lasote\stable\package\7569deb7626b9f88e03d1b57f5ad4b34f8383a6f\include /IC:\.c
+  onan\_qlxdt\1\include /IC:\Users\jerry\.conan\data\OpenSSL\1.0.2g\lasote\stable\package\ee5dab950b6ea94ae953b93c55343
+  e98c2ec39df\include /IC:\Users\jerry\.conan\data\zlib\1.2.8\lasote\stable\package\c85f9b402dd4d46acdf074e1c63b768a411
+  81d7a\include /I"C:\Users\jerry\git-c\azure-iothub-sdk-cpprest" /I"C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\api"
+   /I"C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model" /nologo /W3 /WX- /diagnostics:classic /O2 /Ob2 /D WIN32 /D _
+  WINDOWS /D NDEBUG /D BOOST_ALL_DYN_LINK /D BOOST_ALL_NO_LIB /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS
+   /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"CppRestSwaggerClient.dir\Release\\" /Fd"CppRestSwaggerClient
+  .dir\Release\CppRestSwaggerClient.pdb" /Gd /TP /errorReport:queue "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ApiC
+  lient.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ApiConfiguration.cpp" "C:\Users\jerry\git-c\azure-iothub-sd
+  k-cpprest\ApiException.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\HttpContent.cpp" "C:\Users\jerry\git-c\azu
+  re-iothub-sdk-cpprest\JsonBody.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp" "C:\Users\jerry\git
+  -c\azure-iothub-sdk-cpprest\MultipartFormData.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\api\DELETEApi.cpp"
+  "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\api\GETApi.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\api\POS
+  TApi.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\api\PUTApi.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cppre
+  st\model\CloudToDeviceProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\ErrorDetails.cpp" "C:\User
+  s\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cp
+  prest\model\EventHubConsumerGroupsListResult.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubProper
+  ties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\ExportDevicesRequest.cpp" "C:\Users\jerry\git-c\azure-
+  iothub-sdk-cpprest\model\FallbackRouteProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\FeedbackPr
+  operties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\ImportDevicesRequest.cpp" "C:\Users\jerry\git-c\az
+  ure-iothub-sdk-cpprest\model\IotHubCapacity.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescripti
+  on.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescriptionListResult.cpp" "C:\Users\jerry\git-c\a
+  zure-iothub-sdk-cpprest\model\IotHubNameAvailabilityInfo.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Io
+  tHubProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubQuotaMetricInfo.cpp" "C:\Users\jerry\g
+  it-c\azure-iothub-sdk-cpprest\model\IotHubQuotaMetricInfoListResult.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cppre
+  st\model\IotHubSkuDescription.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubSkuDescriptionListResul
+  t.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubSkuInfo.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk
+  -cpprest\model\IpFilterRule.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\JobResponse.cpp" "C:\Users\jerr
+  y\git-c\azure-iothub-sdk-cpprest\model\JobResponseListResult.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\mode
+  l\MessagingEndpointProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationInputs.cpp" "C:\User
+  s\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-s
+  dk-cpprest\model\RegistryStatistics.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp" "C:\Users
+  \jerry\git-c\azure-iothub-sdk-cpprest\model\RouteProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model
+  \RoutingEndpoints.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\RoutingEventHubProperties.cpp" "C:\Users\
+  jerry\git-c\azure-iothub-sdk-cpprest\model\RoutingProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\mode
+  l\RoutingServiceBusQueueEndpointProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\RoutingServiceBu
+  sTopicEndpointProperties.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\SharedAccessSignatureAuthorization
+  Rule.cpp" "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\SharedAccessSignatureAuthorizationRuleListResult.cpp"
+  "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\StorageEndpointProperties.cpp"
+  ApiClient.cpp
+  ApiConfiguration.cpp
+  ApiException.cpp
+  HttpContent.cpp
+  JsonBody.cpp
+  ModelBase.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(259): error C2440: '<function-style-cast>': cannot convert
+from 'const wchar_t [28]' to 'web::json::json_exception' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSw
+aggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(259): note: No constructor could take the source type, or
+   constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(264): error C2440: '<function-style-cast>': cannot convert
+from 'const wchar_t [32]' to 'web::json::json_exception' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSw
+aggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(264): note: No constructor could take the source type, or
+   constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(292): error C2446: ':': no conversion from 'const wchar_t *
+' to 'const std::string' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(292): note: No constructor could take the source type, or
+   constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(297): error C2664: 'utility::datetime utility::datetime::fr
+om_string(const utility::string_t &,utility::datetime::date_format)': cannot convert argument 1 from 'const std::string
+' to 'const utility::string_t &' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(297): note: Reason: cannot convert from 'const std::strin
+  g' to 'const utility::string_t'
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(297): note: No user-defined-conversion operator available
+   that can perform this conversion, or the operator cannot be called
+  MultipartFormData.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  DELETEApi.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  GETApi.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  POSTApi.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  PUTApi.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  CloudToDeviceProperties.cpp
+  ErrorDetails.cpp
+  EventHubConsumerGroupInfo.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(49): error C2064: term does not evalu
+ate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(50): error C2064: term does not evalu
+ate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(79): error C2440: 'initializing': can
+not convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:
+\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(79): note: No constructor could tak
+  e the source type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(111): error C2064: term does not eval
+uate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj
+]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(112): error C2064: term does not eval
+uate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj
+]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(149): error C2440: 'initializing': ca
+nnot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C
+:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(149): note: No constructor could ta
+  ke the source type, or constructor overload resolution was ambiguous
+  EventHubConsumerGroupsListResult.cpp
+  EventHubProperties.cpp
+  ExportDevicesRequest.cpp
+  FallbackRouteProperties.cpp
+  FeedbackProperties.cpp
+  ImportDevicesRequest.cpp
+  Generating Code...
+  Compiling...
+  IotHubCapacity.cpp
+  IotHubDescription.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(65): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(66): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(100): error C2440: 'initializing': cannot con
+vert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\
+jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(100): note: No constructor could take the s
+  ource type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(140): error C2064: term does not evaluate to
+a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(141): error C2064: term does not evaluate to
+a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(181): error C2440: 'initializing': cannot con
+vert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\
+jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(181): note: No constructor could take the s
+  ource type, or constructor overload resolution was ambiguous
+  IotHubDescriptionListResult.cpp
+  IotHubNameAvailabilityInfo.cpp
+  IotHubProperties.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(92): error C2064: term does not evaluate to a
+function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(93): error C2064: term does not evaluate to a
+function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(110): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(111): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(124): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(125): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(214): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(214): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(248): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(248): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(273): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(273): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(370): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(371): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(393): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(394): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(408): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(409): error C2064: term does not evaluate to a
+ function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(516): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(516): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(551): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(551): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(577): error C2440: 'initializing': cannot conv
+ert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\j
+erry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(577): note: No constructor could take the so
+  urce type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2146: syntax error: missing '>' b
+efore identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2955: 'std::shared_ptr': use of c
+lass template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient
+.vcxproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\memory(863): note: se
+  e declaration of 'std::shared_ptr'
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2955: 'std::pair': use of class t
+emplate requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\utility(93): note: se
+  e declaration of 'std::pair'
+  IotHubQuotaMetricInfo.cpp
+  IotHubQuotaMetricInfoListResult.cpp
+  IotHubSkuDescription.cpp
+  IotHubSkuDescriptionListResult.cpp
+  IotHubSkuInfo.cpp
+  IpFilterRule.cpp
+  JobResponse.cpp
+  JobResponseListResult.cpp
+  MessagingEndpointProperties.cpp
+  OperationInputs.cpp
+  OperationsMonitoringProperties.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(45): error C2064: term does not
+evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(46): error C2064: term does not
+evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(67): error C2440: 'initializing'
+: cannot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>
+' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(67): note: No constructor coul
+  d take the source type, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(91): error C2064: term does not
+evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(92): error C2064: term does not
+evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(119): error C2440: 'initializing
+': cannot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>
+>' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(119): note: No constructor cou
+  ld take the source type, or constructor overload resolution was ambiguous
+  RegistryStatistics.cpp
+  Resource.cpp
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(65): error C2064: term does not evaluate to a function
+ taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(66): error C2064: term does not evaluate to a function
+ taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(100): error C2440: 'initializing': cannot convert from
+ 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\jerry\git
+-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(100): note: No constructor could take the source typ
+  e, or constructor overload resolution was ambiguous
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(140): error C2064: term does not evaluate to a functio
+n taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(141): error C2064: term does not evaluate to a functio
+n taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(181): error C2440: 'initializing': cannot convert from
+ 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\jerry\git
+-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(181): note: No constructor could take the source typ
+  e, or constructor overload resolution was ambiguous
+  RouteProperties.cpp
+  RoutingEndpoints.cpp
+  Generating Code...
+  Compiling...
+  RoutingEventHubProperties.cpp
+  RoutingProperties.cpp
+  RoutingServiceBusQueueEndpointProperties.cpp
+  RoutingServiceBusTopicEndpointProperties.cpp
+  SharedAccessSignatureAuthorizationRule.cpp
+  SharedAccessSignatureAuthorizationRuleListResult.cpp
+  StorageEndpointProperties.cpp
+  Generating Code...
+Done Building Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj" (default targe
+ts) -- FAILED.
+
+Done Building Project "C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ALL_BUILD.vcxproj" (default targets) -- FAIL
+ED.
+
+
+Build FAILED.
+
+"C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\ALL_BUILD.vcxproj" (default target) (1) ->
+"C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj" (default target) (3) ->
+(ClCompile target) ->
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(259): error C2440: '<function-style-cast>': cannot conver
+t from 'const wchar_t [28]' to 'web::json::json_exception' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRest
+SwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(264): error C2440: '<function-style-cast>': cannot conver
+t from 'const wchar_t [32]' to 'web::json::json_exception' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRest
+SwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(292): error C2446: ':': no conversion from 'const wchar_t
+ *' to 'const std::string' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\ModelBase.cpp(297): error C2664: 'utility::datetime utility::datetime::
+from_string(const utility::string_t &,utility::datetime::date_format)': cannot convert argument 1 from 'const std::stri
+ng' to 'const utility::string_t &' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(49): error C2064: term does not eva
+luate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpro
+j]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(50): error C2064: term does not eva
+luate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpro
+j]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(79): error C2440: 'initializing': c
+annot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [
+C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(111): error C2064: term does not ev
+aluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(112): error C2064: term does not ev
+aluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxpr
+oj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\EventHubConsumerGroupInfo.cpp(149): error C2440: 'initializing':
+cannot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'
+[C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(65): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(66): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(100): error C2440: 'initializing': cannot c
+onvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\User
+s\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(140): error C2064: term does not evaluate t
+o a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(141): error C2064: term does not evaluate t
+o a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubDescription.cpp(181): error C2440: 'initializing': cannot c
+onvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\User
+s\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(92): error C2064: term does not evaluate to
+a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(93): error C2064: term does not evaluate to
+a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(110): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(111): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(124): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(125): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(214): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(221): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(227): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(248): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(255): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(261): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(273): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(280): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(286): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(370): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(371): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(393): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(394): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(408): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(409): error C2064: term does not evaluate to
+ a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(516): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(523): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(529): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(551): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(558): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(564): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(577): error C2440: 'initializing': cannot co
+nvert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users
+\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(584): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2146: syntax error: missing '>'
+ before identifier 'lt' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2955: 'std::shared_ptr': use of
+ class template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClie
+nt.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\IotHubProperties.cpp(590): error C2955: 'std::pair': use of class
+ template requires template argument list [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcx
+proj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(45): error C2064: term does no
+t evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.v
+cxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(46): error C2064: term does no
+t evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.v
+cxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(67): error C2440: 'initializin
+g': cannot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t
+>>' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(91): error C2064: term does no
+t evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.v
+cxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(92): error C2064: term does no
+t evaluate to a function taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.v
+cxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\OperationsMonitoringProperties.cpp(119): error C2440: 'initializi
+ng': cannot convert from 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_
+t>>' [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(65): error C2064: term does not evaluate to a functi
+on taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(66): error C2064: term does not evaluate to a functi
+on taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(100): error C2440: 'initializing': cannot convert fr
+om 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\jerry\g
+it-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(140): error C2064: term does not evaluate to a funct
+ion taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(141): error C2064: term does not evaluate to a funct
+ion taking 0 arguments [C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+  C:\Users\jerry\git-c\azure-iothub-sdk-cpprest\model\Resource.cpp(181): error C2440: 'initializing': cannot convert fr
+om 'const char [1]' to 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' [C:\Users\jerry\g
+it-c\azure-iothub-sdk-cpprest\build\CppRestSwaggerClient.vcxproj]
+
+    0 Warning(s)
+    82 Error(s)
+
+Time Elapsed 00:01:44.78

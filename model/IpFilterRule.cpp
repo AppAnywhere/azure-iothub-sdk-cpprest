@@ -24,7 +24,6 @@ IpFilterRule::IpFilterRule()
     m_FilterName = U("");
     m_Action = U("");
     m_IpMask = U("");
-    
 }
 
 IpFilterRule::~IpFilterRule()
@@ -38,25 +37,20 @@ void IpFilterRule::validate()
 
 web::json::value IpFilterRule::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("filterName")] = ModelBase::toJson(m_FilterName);
     val[U("action")] = ModelBase::toJson(m_Action);
     val[U("ipMask")] = ModelBase::toJson(m_IpMask);
-    
 
     return val;
 }
 
 void IpFilterRule::fromJson(web::json::value& val)
 {
-    
-
     setFilterName(ModelBase::stringFromJson(val[U("filterName")]));
     setAction(ModelBase::stringFromJson(val[U("action")]));
     setIpMask(ModelBase::stringFromJson(val[U("ipMask")]));
-    
 }
 
 void IpFilterRule::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -70,7 +64,6 @@ void IpFilterRule::toMultipart(std::shared_ptr<MultipartFormData> multipart, con
     multipart->add(ModelBase::toHttpContent(namePrefix + U("filterName"), m_FilterName));
     multipart->add(ModelBase::toHttpContent(namePrefix + U("action"), m_Action));
     multipart->add(ModelBase::toHttpContent(namePrefix + U("ipMask"), m_IpMask));
-    
 }
 
 void IpFilterRule::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -84,14 +77,14 @@ void IpFilterRule::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, c
     setFilterName(ModelBase::stringFromHttpContent(multipart->getContent(U("filterName"))));
     setAction(ModelBase::stringFromHttpContent(multipart->getContent(U("action"))));
     setIpMask(ModelBase::stringFromHttpContent(multipart->getContent(U("ipMask"))));
-    
 }
-
 
 utility::string_t IpFilterRule::getFilterName() const
 {
     return m_FilterName;
 }
+
+
 void IpFilterRule::setFilterName(utility::string_t value)
 {
     m_FilterName = value;
@@ -101,6 +94,8 @@ utility::string_t IpFilterRule::getAction() const
 {
     return m_Action;
 }
+
+
 void IpFilterRule::setAction(utility::string_t value)
 {
     m_Action = value;
@@ -110,12 +105,13 @@ utility::string_t IpFilterRule::getIpMask() const
 {
     return m_IpMask;
 }
+
+
 void IpFilterRule::setIpMask(utility::string_t value)
 {
     m_IpMask = value;
     
 }
-
 }
 }
 }

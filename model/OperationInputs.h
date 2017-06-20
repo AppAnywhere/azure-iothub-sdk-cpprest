@@ -57,8 +57,8 @@ public:
     /// The name of the IoT hub to check.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
-    
+        void setName(utility::string_t value);
+
 protected:
     utility::string_t m_Name;
     };

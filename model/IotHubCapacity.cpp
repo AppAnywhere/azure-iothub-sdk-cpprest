@@ -29,7 +29,6 @@ IotHubCapacity::IotHubCapacity()
     m_DefaultIsSet = false;
     m_ScaleType = U("");
     m_ScaleTypeIsSet = false;
-    
 }
 
 IotHubCapacity::~IotHubCapacity()
@@ -43,7 +42,6 @@ void IotHubCapacity::validate()
 
 web::json::value IotHubCapacity::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_MinimumIsSet)
@@ -62,15 +60,12 @@ web::json::value IotHubCapacity::toJson() const
     {
         val[U("scaleType")] = ModelBase::toJson(m_ScaleType);
     }
-    
 
     return val;
 }
 
 void IotHubCapacity::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("minimum")))
     {
         setMinimum(ModelBase::int64_tFromJson(val[U("minimum")]));
@@ -86,9 +81,7 @@ void IotHubCapacity::fromJson(web::json::value& val)
     if(val.has_field(U("scaleType")))
     {
         setScaleType(ModelBase::stringFromJson(val[U("scaleType")]));
-        
     }
-    
 }
 
 void IotHubCapacity::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -116,7 +109,6 @@ void IotHubCapacity::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
         multipart->add(ModelBase::toHttpContent(namePrefix + U("scaleType"), m_ScaleType));
         
     }
-    
 }
 
 void IotHubCapacity::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -142,16 +134,15 @@ void IotHubCapacity::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
     if(multipart->hasContent(U("scaleType")))
     {
         setScaleType(ModelBase::stringFromHttpContent(multipart->getContent(U("scaleType"))));
-        
     }
-    
 }
-
 
 int64_t IotHubCapacity::getMinimum() const
 {
     return m_Minimum;
 }
+
+
 void IotHubCapacity::setMinimum(int64_t value)
 {
     m_Minimum = value;
@@ -161,14 +152,18 @@ bool IotHubCapacity::minimumIsSet() const
 {
     return m_MinimumIsSet;
 }
+
 void IotHubCapacity::unsetMinimum()
 {
     m_MinimumIsSet = false;
 }
+
 int64_t IotHubCapacity::getMaximum() const
 {
     return m_Maximum;
 }
+
+
 void IotHubCapacity::setMaximum(int64_t value)
 {
     m_Maximum = value;
@@ -178,14 +173,18 @@ bool IotHubCapacity::maximumIsSet() const
 {
     return m_MaximumIsSet;
 }
+
 void IotHubCapacity::unsetMaximum()
 {
     m_MaximumIsSet = false;
 }
+
 int64_t IotHubCapacity::getDefault() const
 {
     return m_Default;
 }
+
+
 void IotHubCapacity::setDefault(int64_t value)
 {
     m_Default = value;
@@ -195,14 +194,18 @@ bool IotHubCapacity::defaultIsSet() const
 {
     return m_DefaultIsSet;
 }
+
 void IotHubCapacity::unsetDefault()
 {
     m_DefaultIsSet = false;
 }
+
 utility::string_t IotHubCapacity::getScaleType() const
 {
     return m_ScaleType;
 }
+
+
 void IotHubCapacity::setScaleType(utility::string_t value)
 {
     m_ScaleType = value;
@@ -212,6 +215,7 @@ bool IotHubCapacity::scaleTypeIsSet() const
 {
     return m_ScaleTypeIsSet;
 }
+
 void IotHubCapacity::unsetScaleType()
 {
     m_ScaleTypeIsSet = false;

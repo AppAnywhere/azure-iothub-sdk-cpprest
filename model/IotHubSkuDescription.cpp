@@ -23,7 +23,6 @@ IotHubSkuDescription::IotHubSkuDescription()
 {
     m_ResourceType = U("");
     m_ResourceTypeIsSet = false;
-    
 }
 
 IotHubSkuDescription::~IotHubSkuDescription()
@@ -37,7 +36,6 @@ void IotHubSkuDescription::validate()
 
 web::json::value IotHubSkuDescription::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_ResourceTypeIsSet)
@@ -46,19 +44,15 @@ web::json::value IotHubSkuDescription::toJson() const
     }
     val[U("sku")] = ModelBase::toJson(m_Sku);
     val[U("capacity")] = ModelBase::toJson(m_Capacity);
-    
 
     return val;
 }
 
 void IotHubSkuDescription::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("resourceType")))
     {
         setResourceType(ModelBase::stringFromJson(val[U("resourceType")]));
-        
     }
     std::shared_ptr<IotHubSkuInfo> newSku(new IotHubSkuInfo());
     newSku->fromJson(val[U("sku")]);
@@ -66,7 +60,6 @@ void IotHubSkuDescription::fromJson(web::json::value& val)
     std::shared_ptr<IotHubCapacity> newCapacity(new IotHubCapacity());
     newCapacity->fromJson(val[U("capacity")]);
     setCapacity( newCapacity );
-    
 }
 
 void IotHubSkuDescription::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -84,7 +77,6 @@ void IotHubSkuDescription::toMultipart(std::shared_ptr<MultipartFormData> multip
     }
     m_Sku->toMultipart(multipart, U("sku."));
     m_Capacity->toMultipart(multipart, U("capacity."));
-    
 }
 
 void IotHubSkuDescription::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -98,7 +90,6 @@ void IotHubSkuDescription::fromMultiPart(std::shared_ptr<MultipartFormData> mult
     if(multipart->hasContent(U("resourceType")))
     {
         setResourceType(ModelBase::stringFromHttpContent(multipart->getContent(U("resourceType"))));
-        
     }
     std::shared_ptr<IotHubSkuInfo> newSku(new IotHubSkuInfo());
     newSku->fromMultiPart(multipart, U("sku."));
@@ -106,14 +97,14 @@ void IotHubSkuDescription::fromMultiPart(std::shared_ptr<MultipartFormData> mult
     std::shared_ptr<IotHubCapacity> newCapacity(new IotHubCapacity());
     newCapacity->fromMultiPart(multipart, U("capacity."));
     setCapacity( newCapacity );
-    
 }
-
 
 utility::string_t IotHubSkuDescription::getResourceType() const
 {
     return m_ResourceType;
 }
+
+
 void IotHubSkuDescription::setResourceType(utility::string_t value)
 {
     m_ResourceType = value;
@@ -123,14 +114,18 @@ bool IotHubSkuDescription::resourceTypeIsSet() const
 {
     return m_ResourceTypeIsSet;
 }
+
 void IotHubSkuDescription::unsetResourceType()
 {
     m_ResourceTypeIsSet = false;
 }
+
 std::shared_ptr<IotHubSkuInfo> IotHubSkuDescription::getSku() const
 {
     return m_Sku;
 }
+
+
 void IotHubSkuDescription::setSku(std::shared_ptr<IotHubSkuInfo> value)
 {
     m_Sku = value;
@@ -140,12 +135,13 @@ std::shared_ptr<IotHubCapacity> IotHubSkuDescription::getCapacity() const
 {
     return m_Capacity;
 }
+
+
 void IotHubSkuDescription::setCapacity(std::shared_ptr<IotHubCapacity> value)
 {
     m_Capacity = value;
     
 }
-
 }
 }
 }

@@ -1,17 +1,96 @@
-set(CONAN_CPPRESTSDK_ROOT "C:/.conan/beqgdv/1")
-set(CONAN_INCLUDE_DIRS_CPPRESTSDK "C:/.conan/beqgdv/1/include")
-set(CONAN_LIB_DIRS_CPPRESTSDK "C:/.conan/beqgdv/1/lib")
-set(CONAN_BIN_DIRS_CPPRESTSDK "C:/.conan/beqgdv/1/bin")
-set(CONAN_RES_DIRS_CPPRESTSDK "C:/.conan/beqgdv/1/res")
-set(CONAN_BUILD_DIRS_CPPRESTSDK "C:/.conan/beqgdv/1/")
+set(CONAN_BOOST_ROOT "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f")
+set(CONAN_INCLUDE_DIRS_BOOST "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/include")
+set(CONAN_LIB_DIRS_BOOST "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/lib")
+set(CONAN_BIN_DIRS_BOOST "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/bin")
+set(CONAN_RES_DIRS_BOOST "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/res")
+set(CONAN_BUILD_DIRS_BOOST "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/")
+set(CONAN_LIBS_BOOST boost_atomic-vc140-mt-1_59 boost_chrono-vc140-mt-1_59 boost_container-vc140-mt-1_59 boost_context-vc140-mt-1_59 boost_coroutine-vc140-mt-1_59 boost_date_time-vc140-mt-1_59 boost_filesystem-vc140-mt-1_59 boost_graph-vc140-mt-1_59 boost_iostreams-vc140-mt-1_59 boost_locale-vc140-mt-1_59 boost_log_setup-vc140-mt-1_59 boost_log-vc140-mt-1_59 boost_math_c99-vc140-mt-1_59 boost_math_c99f-vc140-mt-1_59 boost_math_c99l-vc140-mt-1_59 boost_math_tr1-vc140-mt-1_59 boost_math_tr1f-vc140-mt-1_59 boost_math_tr1l-vc140-mt-1_59 boost_prg_exec_monitor-vc140-mt-1_59 boost_program_options-vc140-mt-1_59 boost_random-vc140-mt-1_59 boost_regex-vc140-mt-1_59 boost_serialization-vc140-mt-1_59 boost_signals-vc140-mt-1_59 boost_system-vc140-mt-1_59 boost_thread-vc140-mt-1_59 boost_timer-vc140-mt-1_59 boost_unit_test_framework-vc140-mt-1_59 boost_wave-vc140-mt-1_59 boost_wserialization-vc140-mt-1_59 libboost_exception-vc140-mt-1_59 libboost_test_exec_monitor-vc140-mt-1_59)
+set(CONAN_DEFINES_BOOST -DBOOST_ALL_DYN_LINK
+			-DBOOST_ALL_NO_LIB)
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_BOOST BOOST_ALL_DYN_LINK
+			BOOST_ALL_NO_LIB)
+
+set(CONAN_C_FLAGS_BOOST "")
+set(CONAN_CXX_FLAGS_BOOST "")
+set(CONAN_SHARED_LINKER_FLAGS_BOOST "")
+set(CONAN_EXE_LINKER_FLAGS_BOOST "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_BOOST_LIST "")
+set(CONAN_CXX_FLAGS_BOOST_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_BOOST_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_BOOST_LIST "")
+
+
+set(CONAN_CPPRESTSDK_ROOT "C:/.conan/_qlxdt/1")
+set(CONAN_INCLUDE_DIRS_CPPRESTSDK "C:/.conan/_qlxdt/1/include")
+set(CONAN_LIB_DIRS_CPPRESTSDK "C:/.conan/_qlxdt/1/lib")
+set(CONAN_BIN_DIRS_CPPRESTSDK "C:/.conan/_qlxdt/1/bin")
+set(CONAN_RES_DIRS_CPPRESTSDK "C:/.conan/_qlxdt/1/res")
+set(CONAN_BUILD_DIRS_CPPRESTSDK "C:/.conan/_qlxdt/1/")
 set(CONAN_LIBS_CPPRESTSDK cpprest_2_8)
 set(CONAN_DEFINES_CPPRESTSDK )
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
 set(CONAN_COMPILE_DEFINITIONS_CPPRESTSDK )
+
+set(CONAN_C_FLAGS_CPPRESTSDK "")
 set(CONAN_CXX_FLAGS_CPPRESTSDK "")
 set(CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK "")
 set(CONAN_EXE_LINKER_FLAGS_CPPRESTSDK "")
-set(CONAN_C_FLAGS_CPPRESTSDK "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_CPPRESTSDK_LIST "")
+set(CONAN_CXX_FLAGS_CPPRESTSDK_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_LIST "")
+
+
+set(CONAN_OPENSSL_ROOT "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df")
+set(CONAN_INCLUDE_DIRS_OPENSSL "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/include")
+set(CONAN_LIB_DIRS_OPENSSL "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/lib")
+set(CONAN_BIN_DIRS_OPENSSL "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/bin")
+set(CONAN_RES_DIRS_OPENSSL "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/res")
+set(CONAN_BUILD_DIRS_OPENSSL "C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/")
+set(CONAN_LIBS_OPENSSL ssleay32MD libeay32MD crypt32.lib msi.lib)
+set(CONAN_DEFINES_OPENSSL )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_OPENSSL )
+
+set(CONAN_C_FLAGS_OPENSSL "")
+set(CONAN_CXX_FLAGS_OPENSSL "")
+set(CONAN_SHARED_LINKER_FLAGS_OPENSSL "")
+set(CONAN_EXE_LINKER_FLAGS_OPENSSL "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_OPENSSL_LIST "")
+set(CONAN_CXX_FLAGS_OPENSSL_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_OPENSSL_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_OPENSSL_LIST "")
+
+
+set(CONAN_ZLIB_ROOT "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a")
+set(CONAN_INCLUDE_DIRS_ZLIB "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/include")
+set(CONAN_LIB_DIRS_ZLIB "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/lib")
+set(CONAN_BIN_DIRS_ZLIB "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/bin")
+set(CONAN_RES_DIRS_ZLIB "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/res")
+set(CONAN_BUILD_DIRS_ZLIB "C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/")
+set(CONAN_LIBS_ZLIB zlib)
+set(CONAN_DEFINES_ZLIB )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_ZLIB )
+
+set(CONAN_C_FLAGS_ZLIB "")
+set(CONAN_CXX_FLAGS_ZLIB "")
+set(CONAN_SHARED_LINKER_FLAGS_ZLIB "")
+set(CONAN_EXE_LINKER_FLAGS_ZLIB "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_ZLIB_LIST "")
+set(CONAN_CXX_FLAGS_ZLIB_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_ZLIB_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_ZLIB_LIST "")
+
 
 
 ### Definition of global aggregated variables ###
@@ -19,24 +98,42 @@ set(CONAN_C_FLAGS_CPPRESTSDK "")
 set(CONAN_PACKAGE_NAME None)
 set(CONAN_PACKAGE_VERSION None)
 
-set(CONAN_DEPENDENCIES cpprestsdk)
+set(CONAN_DEPENDENCIES Boost CppRestSdk OpenSSL zlib)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
+
 set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "C:/.conan/beqgdv/1/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "C:/.conan/beqgdv/1/lib" ${CONAN_LIB_DIRS})
-set(CONAN_BIN_DIRS "C:/.conan/beqgdv/1/bin" ${CONAN_BIN_DIRS})
-set(CONAN_RES_DIRS "C:/.conan/beqgdv/1/res" ${CONAN_RES_DIRS})
-set(CONAN_LIBS cpprest_2_8 ${CONAN_LIBS})
-set(CONAN_DEFINES  ${CONAN_DEFINES})
+set(CONAN_INCLUDE_DIRS "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/include"
+			"C:/.conan/_qlxdt/1/include"
+			"C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/include"
+			"C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/lib"
+			"C:/.conan/_qlxdt/1/lib"
+			"C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/lib"
+			"C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/lib" ${CONAN_LIB_DIRS})
+set(CONAN_BIN_DIRS "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/bin"
+			"C:/.conan/_qlxdt/1/bin"
+			"C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/bin"
+			"C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/bin" ${CONAN_BIN_DIRS})
+set(CONAN_RES_DIRS "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/res"
+			"C:/.conan/_qlxdt/1/res"
+			"C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/res"
+			"C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/res" ${CONAN_RES_DIRS})
+set(CONAN_LIBS boost_atomic-vc140-mt-1_59 boost_chrono-vc140-mt-1_59 boost_container-vc140-mt-1_59 boost_context-vc140-mt-1_59 boost_coroutine-vc140-mt-1_59 boost_date_time-vc140-mt-1_59 boost_filesystem-vc140-mt-1_59 boost_graph-vc140-mt-1_59 boost_iostreams-vc140-mt-1_59 boost_locale-vc140-mt-1_59 boost_log_setup-vc140-mt-1_59 boost_log-vc140-mt-1_59 boost_math_c99-vc140-mt-1_59 boost_math_c99f-vc140-mt-1_59 boost_math_c99l-vc140-mt-1_59 boost_math_tr1-vc140-mt-1_59 boost_math_tr1f-vc140-mt-1_59 boost_math_tr1l-vc140-mt-1_59 boost_prg_exec_monitor-vc140-mt-1_59 boost_program_options-vc140-mt-1_59 boost_random-vc140-mt-1_59 boost_regex-vc140-mt-1_59 boost_serialization-vc140-mt-1_59 boost_signals-vc140-mt-1_59 boost_system-vc140-mt-1_59 boost_thread-vc140-mt-1_59 boost_timer-vc140-mt-1_59 boost_unit_test_framework-vc140-mt-1_59 boost_wave-vc140-mt-1_59 boost_wserialization-vc140-mt-1_59 libboost_exception-vc140-mt-1_59 libboost_test_exec_monitor-vc140-mt-1_59 cpprest_2_8 ssleay32MD libeay32MD crypt32.lib msi.lib zlib ${CONAN_LIBS})
+set(CONAN_DEFINES -DBOOST_ALL_DYN_LINK
+			-DBOOST_ALL_NO_LIB ${CONAN_DEFINES})
+set(CONAN_CMAKE_MODULE_PATH "C:/Users/jerry/.conan/data/Boost/1.59.0/lasote/stable/package/7569deb7626b9f88e03d1b57f5ad4b34f8383a6f/"
+			"C:/.conan/_qlxdt/1/"
+			"C:/Users/jerry/.conan/data/OpenSSL/1.0.2g/lasote/stable/package/ee5dab950b6ea94ae953b93c55343e98c2ec39df/"
+			"C:/Users/jerry/.conan/data/zlib/1.2.8/lasote/stable/package/c85f9b402dd4d46acdf074e1c63b768a41181d7a/" ${CONAN_CMAKE_MODULE_PATH})
+
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
 set(CONAN_EXE_LINKER_FLAGS " ${CONAN_EXE_LINKER_FLAGS}")
 set(CONAN_C_FLAGS " ${CONAN_C_FLAGS}")
-set(CONAN_CMAKE_MODULE_PATH "C:/.conan/beqgdv/1/" ${CONAN_CMAKE_MODULE_PATH})
 
 
 ###  Definition of macros and functions ###
@@ -50,6 +147,39 @@ macro(conan_define_targets)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${CONAN_CMD_SHARED_LINKER_FLAGS}")
 
 
+    conan_find_libraries_abs_path("${CONAN_LIBS_BOOST}" "${CONAN_LIB_DIRS_BOOST}"
+                                  CONAN_FULLPATH_LIBS_BOOST)
+    conan_find_libraries_abs_path("${CONAN_LIBS_BOOST_DEBUG}" "${CONAN_LIB_DIRS_BOOST_DEBUG}"
+                                  CONAN_FULLPATH_LIBS_BOOST_DEBUG)
+    conan_find_libraries_abs_path("${CONAN_LIBS_BOOST_RELEASE}" "${CONAN_LIB_DIRS_BOOST_RELEASE}"
+                                  CONAN_FULLPATH_LIBS_BOOST_RELEASE)
+
+    add_library(CONAN_PKG::Boost INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::Boost PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_BOOST} ${CONAN_SHARED_LINKER_FLAGS_BOOST_LIST} ${CONAN_EXE_LINKER_FLAGS_BOOST_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_BOOST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_BOOST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_BOOST_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_BOOST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_BOOST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_BOOST_RELEASE_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_BOOST_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_BOOST_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_BOOST_RELEASE_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_BOOST_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_BOOST_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_BOOST_DEBUG_LIST}>
+                                                                 CONAN_PKG::zlib)
+    set_property(TARGET CONAN_PKG::Boost PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_BOOST}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_BOOST_DEBUG}>)
+    set_property(TARGET CONAN_PKG::Boost PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_BOOST}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_BOOST_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_BOOST_DEBUG}>)
+    set_property(TARGET CONAN_PKG::Boost PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_BOOST_LIST} ${CONAN_CXX_FLAGS_BOOST_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_BOOST_RELEASE_LIST} ${CONAN_CXX_FLAGS_BOOST_RELEASE_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_BOOST_DEBUG_LIST}  ${CONAN_CXX_FLAGS_BOOST_DEBUG_LIST}>)
+ 
+
     conan_find_libraries_abs_path("${CONAN_LIBS_CPPRESTSDK}" "${CONAN_LIB_DIRS_CPPRESTSDK}"
                                   CONAN_FULLPATH_LIBS_CPPRESTSDK)
     conan_find_libraries_abs_path("${CONAN_LIBS_CPPRESTSDK_DEBUG}" "${CONAN_LIB_DIRS_CPPRESTSDK_DEBUG}"
@@ -57,35 +187,106 @@ macro(conan_define_targets)
     conan_find_libraries_abs_path("${CONAN_LIBS_CPPRESTSDK_RELEASE}" "${CONAN_LIB_DIRS_CPPRESTSDK_RELEASE}"
                                   CONAN_FULLPATH_LIBS_CPPRESTSDK_RELEASE)
 
-    add_library(CONAN_PKG::cpprestsdk INTERFACE IMPORTED)
-    foreach(build_type "" "_DEBUG" "_RELEASE")
-        string(REPLACE " " ";" "CONAN_C_FLAGS_CPPRESTSDK${build_type}"     "${CONAN_C_FLAGS_CPPRESTSDK${build_type}}")
-        string(REPLACE " " ";" "CONAN_CXX_FLAGS_CPPRESTSDK${build_type}"   "${CONAN_CXX_FLAGS_CPPRESTSDK${build_type}}")
-        string(REPLACE " " ";" "CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK${build_type}" "${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK${build_type}}")
-        string(REPLACE " " ";" "CONAN_EXE_LINKER_FLAGS_CPPRESTSDK${build_type}"    "${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK${build_type}}")
-    endforeach()
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::cpprestsdk PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_CPPRESTSDK} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK}
-                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_RELEASE} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_RELEASE}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_DEBUG} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_DEBUG}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::cpprestsdk PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_CPPRESTSDK}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_DEBUG}>)
-    set_property(TARGET CONAN_PKG::cpprestsdk PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_RELEASE}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_DEBUG}>)
+    add_library(CONAN_PKG::CppRestSdk INTERFACE IMPORTED)
 
-    set_property(TARGET CONAN_PKG::cpprestsdk PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_CPPRESTSDK} ${CONAN_CXX_FLAGS_CPPRESTSDK}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_CPPRESTSDK_RELEASE} ${CONAN_CXX_FLAGS_CPPRESTSDK_RELEASE}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_CPPRESTSDK_DEBUG}  ${CONAN_CXX_FLAGS_CPPRESTSDK_DEBUG}>)
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::CppRestSdk PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_CPPRESTSDK} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_LIST} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_CPPRESTSDK_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_CPPRESTSDK_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_CPPRESTSDK_DEBUG_LIST}>
+                                                                 )
+    set_property(TARGET CONAN_PKG::CppRestSdk PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_CPPRESTSDK}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_CPPRESTSDK_DEBUG}>)
+    set_property(TARGET CONAN_PKG::CppRestSdk PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_CPPRESTSDK_DEBUG}>)
+    set_property(TARGET CONAN_PKG::CppRestSdk PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_CPPRESTSDK_LIST} ${CONAN_CXX_FLAGS_CPPRESTSDK_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_CXX_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_CXX_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_CPPRESTSDK_RELEASE_LIST} ${CONAN_CXX_FLAGS_CPPRESTSDK_RELEASE_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_CPPRESTSDK_DEBUG_LIST}  ${CONAN_CXX_FLAGS_CPPRESTSDK_DEBUG_LIST}>)
  
-    set(CONAN_TARGETS CONAN_PKG::cpprestsdk)
+
+    conan_find_libraries_abs_path("${CONAN_LIBS_OPENSSL}" "${CONAN_LIB_DIRS_OPENSSL}"
+                                  CONAN_FULLPATH_LIBS_OPENSSL)
+    conan_find_libraries_abs_path("${CONAN_LIBS_OPENSSL_DEBUG}" "${CONAN_LIB_DIRS_OPENSSL_DEBUG}"
+                                  CONAN_FULLPATH_LIBS_OPENSSL_DEBUG)
+    conan_find_libraries_abs_path("${CONAN_LIBS_OPENSSL_RELEASE}" "${CONAN_LIB_DIRS_OPENSSL_RELEASE}"
+                                  CONAN_FULLPATH_LIBS_OPENSSL_RELEASE)
+
+    add_library(CONAN_PKG::OpenSSL INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::OpenSSL PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_OPENSSL} ${CONAN_SHARED_LINKER_FLAGS_OPENSSL_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENSSL_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_OPENSSL_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_OPENSSL_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_OPENSSL_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_OPENSSL_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_OPENSSL_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_OPENSSL_DEBUG_LIST}>
+                                                                 CONAN_PKG::zlib)
+    set_property(TARGET CONAN_PKG::OpenSSL PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_OPENSSL}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_OPENSSL_DEBUG}>)
+    set_property(TARGET CONAN_PKG::OpenSSL PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_OPENSSL}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_OPENSSL_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_OPENSSL_DEBUG}>)
+    set_property(TARGET CONAN_PKG::OpenSSL PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_OPENSSL_LIST} ${CONAN_CXX_FLAGS_OPENSSL_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_OPENSSL_RELEASE_LIST} ${CONAN_CXX_FLAGS_OPENSSL_RELEASE_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_OPENSSL_DEBUG_LIST}  ${CONAN_CXX_FLAGS_OPENSSL_DEBUG_LIST}>)
+ 
+
+    conan_find_libraries_abs_path("${CONAN_LIBS_ZLIB}" "${CONAN_LIB_DIRS_ZLIB}"
+                                  CONAN_FULLPATH_LIBS_ZLIB)
+    conan_find_libraries_abs_path("${CONAN_LIBS_ZLIB_DEBUG}" "${CONAN_LIB_DIRS_ZLIB_DEBUG}"
+                                  CONAN_FULLPATH_LIBS_ZLIB_DEBUG)
+    conan_find_libraries_abs_path("${CONAN_LIBS_ZLIB_RELEASE}" "${CONAN_LIB_DIRS_ZLIB_RELEASE}"
+                                  CONAN_FULLPATH_LIBS_ZLIB_RELEASE)
+
+    add_library(CONAN_PKG::zlib INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_FULLPATH_LIBS_ZLIB} ${CONAN_SHARED_LINKER_FLAGS_ZLIB_LIST} ${CONAN_EXE_LINKER_FLAGS_ZLIB_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_FULLPATH_LIBS_ZLIB_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_FULLPATH_LIBS_ZLIB_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_FULLPATH_LIBS_ZLIB_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_FULLPATH_LIBS_ZLIB_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_ZLIB_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_ZLIB_DEBUG_LIST}>
+                                                                 )
+    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_ZLIB}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_ZLIB_DEBUG}>)
+    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_ZLIB}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_ZLIB_RELEASE}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_ZLIB_DEBUG}>)
+    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_ZLIB_LIST} ${CONAN_CXX_FLAGS_ZLIB_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_ZLIB_DEBUG_LIST}  ${CONAN_CXX_FLAGS_ZLIB_DEBUG_LIST}>)
+ 
+    set(CONAN_TARGETS CONAN_PKG::Boost CONAN_PKG::CppRestSdk CONAN_PKG::OpenSSL CONAN_PKG::zlib)
 
 endmacro()
 
 
 macro(conan_basic_setup)
+    if(CONAN_EXPORTED)
+        message(STATUS "Conan: called by CMake conan helper")
+    endif()
     conan_check_compiler()
     conan_output_dirs_setup()
     conan_set_find_library_paths()
@@ -110,6 +311,18 @@ macro(conan_set_find_paths)
 
     # Make find_package() to work
     set(CMAKE_PREFIX_PATH ${CONAN_CMAKE_MODULE_PATH} ${CMAKE_PREFIX_PATH})
+
+    # Set the find root path (cross build)
+    set(CMAKE_FIND_ROOT_PATH ${CONAN_CMAKE_FIND_ROOT_PATH} ${CMAKE_FIND_ROOT_PATH})
+    if(CONAN_CMAKE_FIND_ROOT_PATH_MODE_PROGRAM)
+        set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ${CONAN_CMAKE_FIND_ROOT_PATH_MODE_PROGRAM})
+    endif()
+    if(CONAN_CMAKE_FIND_ROOT_PATH_MODE_LIBRARY)
+        set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ${CONAN_CMAKE_FIND_ROOT_PATH_MODE_LIBRARY})
+    endif()
+    if(CONAN_CMAKE_FIND_ROOT_PATH_MODE_INCLUDE)
+        set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ${CONAN_CMAKE_FIND_ROOT_PATH_MODE_INCLUDE})
+    endif()
 endmacro()
 
 macro(conan_set_find_library_paths)
@@ -150,16 +363,17 @@ endmacro()
 
 function(conan_find_libraries_abs_path libraries package_libdir libraries_abs_path)
     foreach(_LIBRARY_NAME ${libraries})
-        unset(FOUND_LIBRARY CACHE)
-        find_library(FOUND_LIBRARY NAME ${_LIBRARY_NAME} PATHS ${package_libdir} NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
-        if(FOUND_LIBRARY)
-            message(STATUS "Library ${_LIBRARY_NAME} found ${FOUND_LIBRARY}")
-            set(CONAN_FULLPATH_LIBS ${CONAN_FULLPATH_LIBS} ${FOUND_LIBRARY})
+        unset(CONAN_FOUND_LIBRARY CACHE)
+        find_library(CONAN_FOUND_LIBRARY NAME ${_LIBRARY_NAME} PATHS ${package_libdir} NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
+        if(CONAN_FOUND_LIBRARY)
+            message(STATUS "Library ${_LIBRARY_NAME} found ${CONAN_FOUND_LIBRARY}")
+            set(CONAN_FULLPATH_LIBS ${CONAN_FULLPATH_LIBS} ${CONAN_FOUND_LIBRARY})
         else()
             message(STATUS "Library ${_LIBRARY_NAME} not found in package, might be system one")
             set(CONAN_FULLPATH_LIBS ${CONAN_FULLPATH_LIBS} ${_LIBRARY_NAME})
         endif()
     endforeach()
+    unset(CONAN_FOUND_LIBRARY CACHE)
     set(${libraries_abs_path} ${CONAN_FULLPATH_LIBS} PARENT_SCOPE)
 endfunction()
 
@@ -243,13 +457,13 @@ function(conan_get_compiler CONAN_INFO_COMPILER CONAN_INFO_COMPILER_VERSION)
 
     string(REGEX MATCH "compiler=([-A-Za-z0-9_ ]+)" _MATCHED ${CONANINFO})
     if(DEFINED CMAKE_MATCH_1)
-        string(STRIP ${CMAKE_MATCH_1} _CONAN_INFO_COMPILER)
+        string(STRIP "${CMAKE_MATCH_1}" _CONAN_INFO_COMPILER)
         set(${CONAN_INFO_COMPILER} ${_CONAN_INFO_COMPILER} PARENT_SCOPE)
     endif()
 
     string(REGEX MATCH "compiler.version=([-A-Za-z0-9_.]+)" _MATCHED ${CONANINFO})
     if(DEFINED CMAKE_MATCH_1)
-        string(STRIP ${CMAKE_MATCH_1} _CONAN_INFO_COMPILER_VERSION)
+        string(STRIP "${CMAKE_MATCH_1}" _CONAN_INFO_COMPILER_VERSION)
         set(${CONAN_INFO_COMPILER_VERSION} ${_CONAN_INFO_COMPILER_VERSION} PARENT_SCOPE)
     endif()
 endfunction()
@@ -301,14 +515,20 @@ function(conan_check_compiler)
         endif()
     endif()
 
+    if(NOT CMAKE_HOST_SYSTEM_NAME STREQUAL ${CMAKE_SYSTEM_NAME})
+        set(CROSS_BUILDING 1)
+    endif()
+
+    # Avoid checks when cross compiling, apple-clang crashes because its APPLE but not apple-clang
+    # Actually CMake is detecting "clang" when you are using apple-clang, only if CMP0025 is set to NEW will detect apple-clang
     if( (CONAN_COMPILER STREQUAL "Visual Studio" AND NOT CMAKE_CXX_COMPILER_ID MATCHES MSVC) OR
         (CONAN_COMPILER STREQUAL "gcc" AND NOT CMAKE_CXX_COMPILER_ID MATCHES "GNU") OR
-        (CONAN_COMPILER STREQUAL "apple-clang" AND (NOT APPLE OR NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")) OR
+        (CONAN_COMPILER STREQUAL "apple-clang" AND NOT CROSS_BUILDING AND (NOT APPLE OR NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")) OR
         (CONAN_COMPILER STREQUAL "clang" AND NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") OR
         (CONAN_COMPILER STREQUAL "sun-cc" AND NOT CMAKE_CXX_COMPILER_ID MATCHES "SunPro") )
-
         message(FATAL_ERROR "Incorrect '${CONAN_COMPILER}', is not the one detected by CMake: '${CMAKE_CXX_COMPILER_ID}'")
     endif()
+
 
     if(NOT DEFINED CONAN_COMPILER_VERSION)
         message(STATUS "WARN: CONAN_COMPILER_VERSION variable not set, please make sure yourself "
@@ -318,15 +538,25 @@ function(conan_check_compiler)
     check_compiler_version()
 endfunction()
 
+macro(conan_set_flags build_type)
+    set(CMAKE_CXX_FLAGS${build_type} "${CMAKE_CXX_FLAGS${build_type}} ${CONAN_CXX_FLAGS${build_type}}")
+    set(CMAKE_C_FLAGS${build_type} "${CMAKE_C_FLAGS${build_type}} ${CONAN_C_FLAGS${build_type}}")
+    set(CMAKE_SHARED_LINKER_FLAGS${build_type} "${CMAKE_SHARED_LINKER_FLAGS${build_type}} ${CONAN_SHARED_LINKER_FLAGS${build_type}}")
+    set(CMAKE_EXE_LINKER_FLAGS${build_type} "${CMAKE_EXE_LINKER_FLAGS${build_type}} ${CONAN_EXE_LINKER_FLAGS${build_type}}")
+endmacro()
 
 macro(conan_global_flags)
     if(CONAN_SYSTEM_INCLUDES)
         include_directories(SYSTEM ${CONAN_INCLUDE_DIRS}
                                    "$<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_RELEASE}>"
+                                   "$<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_RELEASE}>"
+                                   "$<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_RELEASE}>"
                                    "$<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_DEBUG}>")
     else()
         include_directories(${CONAN_INCLUDE_DIRS}
                             "$<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_RELEASE}>"
+                            "$<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_RELEASE}>"
+                            "$<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_RELEASE}>"
                             "$<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_DEBUG}>")
     endif()
 
@@ -341,20 +571,10 @@ macro(conan_global_flags)
                         "$<$<CONFIG:Debug>:${CONAN_DEFINES_DEBUG}>"
                         "$<$<CONFIG:Release>:${CONAN_DEFINES_RELEASE}>")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CONAN_CXX_FLAGS}")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CONAN_C_FLAGS}")
-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${CONAN_SHARED_LINKER_FLAGS}")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${CONAN_EXE_LINKER_FLAGS}")
+    conan_set_flags("")
+    conan_set_flags("_RELEASE")
+    conan_set_flags("_DEBUG")
 
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ${CONAN_CXX_FLAGS_RELEASE}")
-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} ${CONAN_C_FLAGS_RELEASE}")
-    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_RELEASE}")
-    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} ${CONAN_EXE_LINKER_FLAGS_RELEASE}")
-
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${CONAN_CXX_FLAGS_DEBUG}")
-    set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${CONAN_C_FLAGS_DEBUG}")
-    set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_DEBUG}")
-    set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} ${CONAN_EXE_LINKER_FLAGS_DEBUG}")
 endmacro()
 
 macro(conan_target_link_libraries target)

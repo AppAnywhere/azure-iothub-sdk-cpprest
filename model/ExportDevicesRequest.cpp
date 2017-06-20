@@ -23,7 +23,6 @@ ExportDevicesRequest::ExportDevicesRequest()
 {
     m_ExportBlobContainerUri = U("");
     m_ExcludeKeys = false;
-    
 }
 
 ExportDevicesRequest::~ExportDevicesRequest()
@@ -37,23 +36,18 @@ void ExportDevicesRequest::validate()
 
 web::json::value ExportDevicesRequest::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("ExportBlobContainerUri")] = ModelBase::toJson(m_ExportBlobContainerUri);
     val[U("ExcludeKeys")] = ModelBase::toJson(m_ExcludeKeys);
-    
 
     return val;
 }
 
 void ExportDevicesRequest::fromJson(web::json::value& val)
 {
-    
-
     setExportBlobContainerUri(ModelBase::stringFromJson(val[U("ExportBlobContainerUri")]));
     setExcludeKeys(ModelBase::boolFromJson(val[U("ExcludeKeys")]));
-    
 }
 
 void ExportDevicesRequest::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -66,7 +60,6 @@ void ExportDevicesRequest::toMultipart(std::shared_ptr<MultipartFormData> multip
 
     multipart->add(ModelBase::toHttpContent(namePrefix + U("ExportBlobContainerUri"), m_ExportBlobContainerUri));
     multipart->add(ModelBase::toHttpContent(namePrefix + U("ExcludeKeys"), m_ExcludeKeys));
-    
 }
 
 void ExportDevicesRequest::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -79,14 +72,14 @@ void ExportDevicesRequest::fromMultiPart(std::shared_ptr<MultipartFormData> mult
 
     setExportBlobContainerUri(ModelBase::stringFromHttpContent(multipart->getContent(U("ExportBlobContainerUri"))));
     setExcludeKeys(ModelBase::boolFromHttpContent(multipart->getContent(U("ExcludeKeys"))));
-    
 }
-
 
 utility::string_t ExportDevicesRequest::getExportBlobContainerUri() const
 {
     return m_ExportBlobContainerUri;
 }
+
+
 void ExportDevicesRequest::setExportBlobContainerUri(utility::string_t value)
 {
     m_ExportBlobContainerUri = value;
@@ -96,12 +89,13 @@ bool ExportDevicesRequest::getExcludeKeys() const
 {
     return m_ExcludeKeys;
 }
+
+
 void ExportDevicesRequest::setExcludeKeys(bool value)
 {
     m_ExcludeKeys = value;
     
 }
-
 }
 }
 }

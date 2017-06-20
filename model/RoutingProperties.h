@@ -60,22 +60,23 @@ public:
     /// 
     /// </summary>
     std::shared_ptr<RoutingEndpoints> getEndpoints() const;
-    void setEndpoints(std::shared_ptr<RoutingEndpoints> value);
     bool endpointsIsSet() const;
     void unsetEndpoints();
+    void setEndpoints(std::shared_ptr<RoutingEndpoints> value);
     /// <summary>
     /// The list of user-provided routing rules that the IoT hub uses to route messages to built-in and custom endpoints. A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5 routing rules are allowed for free hubs.
     /// </summary>
     std::vector<std::shared_ptr<RouteProperties>>& getRoutes();
     bool routesIsSet() const;
     void unsetRoutes();
+    void setRoutes(std::vector<std::shared_ptr<RouteProperties>> value);
     /// <summary>
     /// The properties of the route that is used as a fall-back route when none of the conditions specified in the &#39;routes&#39; section are met. This is an optional parameter. When this property is not set, the messages which do not meet any of the conditions specified in the &#39;routes&#39; section get routed to the built-in eventhub endpoint.
     /// </summary>
     std::shared_ptr<FallbackRouteProperties> getFallbackRoute() const;
-    void setFallbackRoute(std::shared_ptr<FallbackRouteProperties> value);
     bool fallbackRouteIsSet() const;
     void unsetFallbackRoute();
+    void setFallbackRoute(std::shared_ptr<FallbackRouteProperties> value);
 
 protected:
     std::shared_ptr<RoutingEndpoints> m_Endpoints;

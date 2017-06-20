@@ -60,34 +60,35 @@ public:
     /// The resource identifier.
     /// </summary>
     utility::string_t getId() const;
-    void setId(utility::string_t value);
     bool idIsSet() const;
     void unsetId();
+    void setId(utility::string_t value);
     /// <summary>
     /// The resource name.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
     bool nameIsSet() const;
     void unsetName();
+    void setName(utility::string_t value);
     /// <summary>
     /// The resource type.
     /// </summary>
     utility::string_t getType() const;
-    void setType(utility::string_t value);
     bool typeIsSet() const;
     void unsetType();
+    void setType(utility::string_t value);
     /// <summary>
     /// The resource location.
     /// </summary>
     utility::string_t getLocation() const;
-    void setLocation(utility::string_t value);
-        /// <summary>
+        void setLocation(utility::string_t value);
+    /// <summary>
     /// The resource tags.
     /// </summary>
     std::map<utility::string_t, utility::string_t>& getTags();
     bool tagsIsSet() const;
     void unsetTags();
+    void setTags(std::map<utility::string_t, utility::string_t> value);
 
 protected:
     utility::string_t m_Id;

@@ -26,7 +26,6 @@ CloudToDeviceProperties::CloudToDeviceProperties()
     m_DefaultTtlAsIso8601 = U("");
     m_DefaultTtlAsIso8601IsSet = false;
     m_FeedbackIsSet = false;
-    
 }
 
 CloudToDeviceProperties::~CloudToDeviceProperties()
@@ -40,7 +39,6 @@ void CloudToDeviceProperties::validate()
 
 web::json::value CloudToDeviceProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_MaxDeliveryCountIsSet)
@@ -55,15 +53,12 @@ web::json::value CloudToDeviceProperties::toJson() const
     {
         val[U("feedback")] = ModelBase::toJson(m_Feedback);
     }
-    
 
     return val;
 }
 
 void CloudToDeviceProperties::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromJson(val[U("maxDeliveryCount")]));
@@ -71,7 +66,6 @@ void CloudToDeviceProperties::fromJson(web::json::value& val)
     if(val.has_field(U("defaultTtlAsIso8601")))
     {
         setDefaultTtlAsIso8601(ModelBase::stringFromJson(val[U("defaultTtlAsIso8601")]));
-        
     }
     if(val.has_field(U("feedback")))
     {
@@ -81,9 +75,7 @@ void CloudToDeviceProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("feedback")]);
             setFeedback( newItem );
         }
-        
     }
-    
 }
 
 void CloudToDeviceProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -111,7 +103,6 @@ void CloudToDeviceProperties::toMultipart(std::shared_ptr<MultipartFormData> mul
         }
         
     }
-    
 }
 
 void CloudToDeviceProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -129,7 +120,6 @@ void CloudToDeviceProperties::fromMultiPart(std::shared_ptr<MultipartFormData> m
     if(multipart->hasContent(U("defaultTtlAsIso8601")))
     {
         setDefaultTtlAsIso8601(ModelBase::stringFromHttpContent(multipart->getContent(U("defaultTtlAsIso8601"))));
-        
     }
     if(multipart->hasContent(U("feedback")))
     {
@@ -139,16 +129,15 @@ void CloudToDeviceProperties::fromMultiPart(std::shared_ptr<MultipartFormData> m
             newItem->fromMultiPart(multipart, U("feedback."));
             setFeedback( newItem );
         }
-        
     }
-    
 }
-
 
 int32_t CloudToDeviceProperties::getMaxDeliveryCount() const
 {
     return m_MaxDeliveryCount;
 }
+
+
 void CloudToDeviceProperties::setMaxDeliveryCount(int32_t value)
 {
     m_MaxDeliveryCount = value;
@@ -158,14 +147,18 @@ bool CloudToDeviceProperties::maxDeliveryCountIsSet() const
 {
     return m_MaxDeliveryCountIsSet;
 }
+
 void CloudToDeviceProperties::unsetMaxDeliveryCount()
 {
     m_MaxDeliveryCountIsSet = false;
 }
+
 utility::string_t CloudToDeviceProperties::getDefaultTtlAsIso8601() const
 {
     return m_DefaultTtlAsIso8601;
 }
+
+
 void CloudToDeviceProperties::setDefaultTtlAsIso8601(utility::string_t value)
 {
     m_DefaultTtlAsIso8601 = value;
@@ -175,14 +168,18 @@ bool CloudToDeviceProperties::defaultTtlAsIso8601IsSet() const
 {
     return m_DefaultTtlAsIso8601IsSet;
 }
+
 void CloudToDeviceProperties::unsetDefaultTtlAsIso8601()
 {
     m_DefaultTtlAsIso8601IsSet = false;
 }
+
 std::shared_ptr<FeedbackProperties> CloudToDeviceProperties::getFeedback() const
 {
     return m_Feedback;
 }
+
+
 void CloudToDeviceProperties::setFeedback(std::shared_ptr<FeedbackProperties> value)
 {
     m_Feedback = value;
@@ -192,6 +189,7 @@ bool CloudToDeviceProperties::feedbackIsSet() const
 {
     return m_FeedbackIsSet;
 }
+
 void CloudToDeviceProperties::unsetFeedback()
 {
     m_FeedbackIsSet = false;

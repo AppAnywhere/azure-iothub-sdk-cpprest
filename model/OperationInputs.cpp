@@ -22,7 +22,6 @@ namespace model {
 OperationInputs::OperationInputs()
 {
     m_Name = U("");
-    
 }
 
 OperationInputs::~OperationInputs()
@@ -36,21 +35,16 @@ void OperationInputs::validate()
 
 web::json::value OperationInputs::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("Name")] = ModelBase::toJson(m_Name);
-    
 
     return val;
 }
 
 void OperationInputs::fromJson(web::json::value& val)
 {
-    
-
     setName(ModelBase::stringFromJson(val[U("Name")]));
-    
 }
 
 void OperationInputs::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -62,7 +56,6 @@ void OperationInputs::toMultipart(std::shared_ptr<MultipartFormData> multipart, 
     }
 
     multipart->add(ModelBase::toHttpContent(namePrefix + U("Name"), m_Name));
-    
 }
 
 void OperationInputs::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -74,20 +67,19 @@ void OperationInputs::fromMultiPart(std::shared_ptr<MultipartFormData> multipart
     }
 
     setName(ModelBase::stringFromHttpContent(multipart->getContent(U("Name"))));
-    
 }
-
 
 utility::string_t OperationInputs::getName() const
 {
     return m_Name;
 }
+
+
 void OperationInputs::setName(utility::string_t value)
 {
     m_Name = value;
     
 }
-
 }
 }
 }

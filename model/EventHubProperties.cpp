@@ -30,7 +30,6 @@ EventHubProperties::EventHubProperties()
     m_PathIsSet = false;
     m_Endpoint = U("");
     m_EndpointIsSet = false;
-    
 }
 
 EventHubProperties::~EventHubProperties()
@@ -44,7 +43,6 @@ void EventHubProperties::validate()
 
 web::json::value EventHubProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_RetentionTimeInDaysIsSet)
@@ -61,7 +59,6 @@ web::json::value EventHubProperties::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("partitionIds")] = web::json::value::array(jsonArray);
@@ -75,15 +72,12 @@ web::json::value EventHubProperties::toJson() const
     {
         val[U("endpoint")] = ModelBase::toJson(m_Endpoint);
     }
-    
 
     return val;
 }
 
 void EventHubProperties::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("retentionTimeInDays")))
     {
         setRetentionTimeInDays(ModelBase::int64_tFromJson(val[U("retentionTimeInDays")]));
@@ -100,21 +94,17 @@ void EventHubProperties::fromJson(web::json::value& val)
         for( auto& item : val[U("partitionIds")].as_array() )
         {
             m_PartitionIds.push_back(ModelBase::stringFromJson(item));
-            
         }
         }
     }
     if(val.has_field(U("path")))
     {
         setPath(ModelBase::stringFromJson(val[U("path")]));
-        
     }
     if(val.has_field(U("endpoint")))
     {
         setEndpoint(ModelBase::stringFromJson(val[U("endpoint")]));
-        
     }
-    
 }
 
 void EventHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -155,7 +145,6 @@ void EventHubProperties::toMultipart(std::shared_ptr<MultipartFormData> multipar
         multipart->add(ModelBase::toHttpContent(namePrefix + U("endpoint"), m_Endpoint));
         
     }
-    
 }
 
 void EventHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -183,28 +172,25 @@ void EventHubProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multip
         for( auto& item : jsonArray.as_array() )
         {
             m_PartitionIds.push_back(ModelBase::stringFromJson(item));
-            
         }
         }
     }
     if(multipart->hasContent(U("path")))
     {
         setPath(ModelBase::stringFromHttpContent(multipart->getContent(U("path"))));
-        
     }
     if(multipart->hasContent(U("endpoint")))
     {
         setEndpoint(ModelBase::stringFromHttpContent(multipart->getContent(U("endpoint"))));
-        
     }
-    
 }
-
 
 int64_t EventHubProperties::getRetentionTimeInDays() const
 {
     return m_RetentionTimeInDays;
 }
+
+
 void EventHubProperties::setRetentionTimeInDays(int64_t value)
 {
     m_RetentionTimeInDays = value;
@@ -214,14 +200,18 @@ bool EventHubProperties::retentionTimeInDaysIsSet() const
 {
     return m_RetentionTimeInDaysIsSet;
 }
+
 void EventHubProperties::unsetRetentionTimeInDays()
 {
     m_RetentionTimeInDaysIsSet = false;
 }
+
 int32_t EventHubProperties::getPartitionCount() const
 {
     return m_PartitionCount;
 }
+
+
 void EventHubProperties::setPartitionCount(int32_t value)
 {
     m_PartitionCount = value;
@@ -231,26 +221,38 @@ bool EventHubProperties::partitionCountIsSet() const
 {
     return m_PartitionCountIsSet;
 }
+
 void EventHubProperties::unsetPartitionCount()
 {
     m_PartitionCountIsSet = false;
 }
+
 std::vector<utility::string_t>& EventHubProperties::getPartitionIds()
 {
     return m_PartitionIds;
+}
+
+void EventHubProperties::setPartitionIds(std::vector<utility::string_t> value)
+{
+    m_PartitionIds = value;
+    m_PartitionIdsIsSet = true;
 }
 bool EventHubProperties::partitionIdsIsSet() const
 {
     return m_PartitionIdsIsSet;
 }
+
 void EventHubProperties::unsetPartitionIds()
 {
     m_PartitionIdsIsSet = false;
 }
+
 utility::string_t EventHubProperties::getPath() const
 {
     return m_Path;
 }
+
+
 void EventHubProperties::setPath(utility::string_t value)
 {
     m_Path = value;
@@ -260,14 +262,18 @@ bool EventHubProperties::pathIsSet() const
 {
     return m_PathIsSet;
 }
+
 void EventHubProperties::unsetPath()
 {
     m_PathIsSet = false;
 }
+
 utility::string_t EventHubProperties::getEndpoint() const
 {
     return m_Endpoint;
 }
+
+
 void EventHubProperties::setEndpoint(utility::string_t value)
 {
     m_Endpoint = value;
@@ -277,6 +283,7 @@ bool EventHubProperties::endpointIsSet() const
 {
     return m_EndpointIsSet;
 }
+
 void EventHubProperties::unsetEndpoint()
 {
     m_EndpointIsSet = false;

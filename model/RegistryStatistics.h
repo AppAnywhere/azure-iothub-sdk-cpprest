@@ -56,23 +56,23 @@ public:
     /// The total count of devices in the identity registry.
     /// </summary>
     int64_t getTotalDeviceCount() const;
-    void setTotalDeviceCount(int64_t value);
     bool totalDeviceCountIsSet() const;
     void unsetTotalDeviceCount();
+    void setTotalDeviceCount(int64_t value);
     /// <summary>
     /// The count of enabled devices in the identity registry.
     /// </summary>
     int64_t getEnabledDeviceCount() const;
-    void setEnabledDeviceCount(int64_t value);
     bool enabledDeviceCountIsSet() const;
     void unsetEnabledDeviceCount();
+    void setEnabledDeviceCount(int64_t value);
     /// <summary>
     /// The count of disabled devices in the identity registry.
     /// </summary>
     int64_t getDisabledDeviceCount() const;
-    void setDisabledDeviceCount(int64_t value);
     bool disabledDeviceCountIsSet() const;
     void unsetDisabledDeviceCount();
+    void setDisabledDeviceCount(int64_t value);
 
 protected:
     int64_t m_TotalDeviceCount;

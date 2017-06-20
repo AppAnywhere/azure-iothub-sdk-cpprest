@@ -24,7 +24,6 @@ IotHubDescriptionListResult::IotHubDescriptionListResult()
     m_ValueIsSet = false;
     m_NextLink = U("");
     m_NextLinkIsSet = false;
-    
 }
 
 IotHubDescriptionListResult::~IotHubDescriptionListResult()
@@ -38,7 +37,6 @@ void IotHubDescriptionListResult::validate()
 
 web::json::value IotHubDescriptionListResult::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     {
@@ -47,7 +45,6 @@ web::json::value IotHubDescriptionListResult::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("value")] = web::json::value::array(jsonArray);
@@ -57,15 +54,12 @@ web::json::value IotHubDescriptionListResult::toJson() const
     {
         val[U("nextLink")] = ModelBase::toJson(m_NextLink);
     }
-    
 
     return val;
 }
 
 void IotHubDescriptionListResult::fromJson(web::json::value& val)
 {
-    
-
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -73,7 +67,6 @@ void IotHubDescriptionListResult::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("value")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Value.push_back( std::shared_ptr<IotHubDescription>(nullptr) );
@@ -84,16 +77,13 @@ void IotHubDescriptionListResult::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
-            
         }
         }
     }
     if(val.has_field(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromJson(val[U("nextLink")]));
-        
     }
-    
 }
 
 void IotHubDescriptionListResult::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -121,7 +111,6 @@ void IotHubDescriptionListResult::toMultipart(std::shared_ptr<MultipartFormData>
         multipart->add(ModelBase::toHttpContent(namePrefix + U("nextLink"), m_NextLink));
         
     }
-    
 }
 
 void IotHubDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -140,7 +129,6 @@ void IotHubDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartFormDat
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("value"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Value.push_back( std::shared_ptr<IotHubDescription>(nullptr) );
@@ -151,35 +139,41 @@ void IotHubDescriptionListResult::fromMultiPart(std::shared_ptr<MultipartFormDat
                 newItem->fromJson(item);
                 m_Value.push_back( newItem );
             }
-            
         }
         }
     }
     if(multipart->hasContent(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromHttpContent(multipart->getContent(U("nextLink"))));
-        
     }
-    
 }
-
 
 std::vector<std::shared_ptr<IotHubDescription>>& IotHubDescriptionListResult::getValue()
 {
     return m_Value;
 }
+
+void IotHubDescriptionListResult::setValue(std::vector<std::shared_ptr<IotHubDescription>> value)
+{
+    m_Value = value;
+    m_ValueIsSet = true;
+}
 bool IotHubDescriptionListResult::valueIsSet() const
 {
     return m_ValueIsSet;
 }
+
 void IotHubDescriptionListResult::unsetValue()
 {
     m_ValueIsSet = false;
 }
+
 utility::string_t IotHubDescriptionListResult::getNextLink() const
 {
     return m_NextLink;
 }
+
+
 void IotHubDescriptionListResult::setNextLink(utility::string_t value)
 {
     m_NextLink = value;
@@ -189,6 +183,7 @@ bool IotHubDescriptionListResult::nextLinkIsSet() const
 {
     return m_NextLinkIsSet;
 }
+
 void IotHubDescriptionListResult::unsetNextLink()
 {
     m_NextLinkIsSet = false;

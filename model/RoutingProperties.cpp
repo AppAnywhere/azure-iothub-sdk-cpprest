@@ -24,7 +24,6 @@ RoutingProperties::RoutingProperties()
     m_EndpointsIsSet = false;
     m_RoutesIsSet = false;
     m_FallbackRouteIsSet = false;
-    
 }
 
 RoutingProperties::~RoutingProperties()
@@ -38,7 +37,6 @@ void RoutingProperties::validate()
 
 web::json::value RoutingProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_EndpointsIsSet)
@@ -51,7 +49,6 @@ web::json::value RoutingProperties::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("routes")] = web::json::value::array(jsonArray);
@@ -61,15 +58,12 @@ web::json::value RoutingProperties::toJson() const
     {
         val[U("fallbackRoute")] = ModelBase::toJson(m_FallbackRoute);
     }
-    
 
     return val;
 }
 
 void RoutingProperties::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("endpoints")))
     {
         if(!val[U("endpoints")].is_null())
@@ -78,7 +72,6 @@ void RoutingProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("endpoints")]);
             setEndpoints( newItem );
         }
-        
     }
     {
         m_Routes.clear();
@@ -87,7 +80,6 @@ void RoutingProperties::fromJson(web::json::value& val)
         {
         for( auto& item : val[U("routes")].as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Routes.push_back( std::shared_ptr<RouteProperties>(nullptr) );
@@ -98,7 +90,6 @@ void RoutingProperties::fromJson(web::json::value& val)
                 newItem->fromJson(item);
                 m_Routes.push_back( newItem );
             }
-            
         }
         }
     }
@@ -110,9 +101,7 @@ void RoutingProperties::fromJson(web::json::value& val)
             newItem->fromJson(val[U("fallbackRoute")]);
             setFallbackRoute( newItem );
         }
-        
     }
-    
 }
 
 void RoutingProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -151,7 +140,6 @@ void RoutingProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart
         }
         
     }
-    
 }
 
 void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -170,7 +158,6 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
             newItem->fromMultiPart(multipart, U("endpoints."));
             setEndpoints( newItem );
         }
-        
     }
     {
         m_Routes.clear();
@@ -180,7 +167,6 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("routes"))));
         for( auto& item : jsonArray.as_array() )
         {
-            
             if(item.is_null())
             {
                 m_Routes.push_back( std::shared_ptr<RouteProperties>(nullptr) );
@@ -191,7 +177,6 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
                 newItem->fromJson(item);
                 m_Routes.push_back( newItem );
             }
-            
         }
         }
     }
@@ -203,16 +188,15 @@ void RoutingProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipa
             newItem->fromMultiPart(multipart, U("fallbackRoute."));
             setFallbackRoute( newItem );
         }
-        
     }
-    
 }
-
 
 std::shared_ptr<RoutingEndpoints> RoutingProperties::getEndpoints() const
 {
     return m_Endpoints;
 }
+
+
 void RoutingProperties::setEndpoints(std::shared_ptr<RoutingEndpoints> value)
 {
     m_Endpoints = value;
@@ -222,26 +206,38 @@ bool RoutingProperties::endpointsIsSet() const
 {
     return m_EndpointsIsSet;
 }
+
 void RoutingProperties::unsetEndpoints()
 {
     m_EndpointsIsSet = false;
 }
+
 std::vector<std::shared_ptr<RouteProperties>>& RoutingProperties::getRoutes()
 {
     return m_Routes;
+}
+
+void RoutingProperties::setRoutes(std::vector<std::shared_ptr<RouteProperties>> value)
+{
+    m_Routes = value;
+    m_RoutesIsSet = true;
 }
 bool RoutingProperties::routesIsSet() const
 {
     return m_RoutesIsSet;
 }
+
 void RoutingProperties::unsetRoutes()
 {
     m_RoutesIsSet = false;
 }
+
 std::shared_ptr<FallbackRouteProperties> RoutingProperties::getFallbackRoute() const
 {
     return m_FallbackRoute;
 }
+
+
 void RoutingProperties::setFallbackRoute(std::shared_ptr<FallbackRouteProperties> value)
 {
     m_FallbackRoute = value;
@@ -251,6 +247,7 @@ bool RoutingProperties::fallbackRouteIsSet() const
 {
     return m_FallbackRouteIsSet;
 }
+
 void RoutingProperties::unsetFallbackRoute()
 {
     m_FallbackRouteIsSet = false;

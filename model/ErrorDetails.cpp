@@ -29,7 +29,6 @@ ErrorDetails::ErrorDetails()
     m_MessageIsSet = false;
     m_Details = U("");
     m_DetailsIsSet = false;
-    
 }
 
 ErrorDetails::~ErrorDetails()
@@ -43,7 +42,6 @@ void ErrorDetails::validate()
 
 web::json::value ErrorDetails::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_CodeIsSet)
@@ -62,36 +60,28 @@ web::json::value ErrorDetails::toJson() const
     {
         val[U("Details")] = ModelBase::toJson(m_Details);
     }
-    
 
     return val;
 }
 
 void ErrorDetails::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("Code")))
     {
         setCode(ModelBase::stringFromJson(val[U("Code")]));
-        
     }
     if(val.has_field(U("HttpStatusCode")))
     {
         setHttpStatusCode(ModelBase::stringFromJson(val[U("HttpStatusCode")]));
-        
     }
     if(val.has_field(U("Message")))
     {
         setMessage(ModelBase::stringFromJson(val[U("Message")]));
-        
     }
     if(val.has_field(U("Details")))
     {
         setDetails(ModelBase::stringFromJson(val[U("Details")]));
-        
     }
-    
 }
 
 void ErrorDetails::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -122,7 +112,6 @@ void ErrorDetails::toMultipart(std::shared_ptr<MultipartFormData> multipart, con
         multipart->add(ModelBase::toHttpContent(namePrefix + U("Details"), m_Details));
         
     }
-    
 }
 
 void ErrorDetails::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -136,31 +125,27 @@ void ErrorDetails::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, c
     if(multipart->hasContent(U("Code")))
     {
         setCode(ModelBase::stringFromHttpContent(multipart->getContent(U("Code"))));
-        
     }
     if(multipart->hasContent(U("HttpStatusCode")))
     {
         setHttpStatusCode(ModelBase::stringFromHttpContent(multipart->getContent(U("HttpStatusCode"))));
-        
     }
     if(multipart->hasContent(U("Message")))
     {
         setMessage(ModelBase::stringFromHttpContent(multipart->getContent(U("Message"))));
-        
     }
     if(multipart->hasContent(U("Details")))
     {
         setDetails(ModelBase::stringFromHttpContent(multipart->getContent(U("Details"))));
-        
     }
-    
 }
-
 
 utility::string_t ErrorDetails::getCode() const
 {
     return m_Code;
 }
+
+
 void ErrorDetails::setCode(utility::string_t value)
 {
     m_Code = value;
@@ -170,14 +155,18 @@ bool ErrorDetails::CodeIsSet() const
 {
     return m_CodeIsSet;
 }
+
 void ErrorDetails::unsetCode()
 {
     m_CodeIsSet = false;
 }
+
 utility::string_t ErrorDetails::getHttpStatusCode() const
 {
     return m_HttpStatusCode;
 }
+
+
 void ErrorDetails::setHttpStatusCode(utility::string_t value)
 {
     m_HttpStatusCode = value;
@@ -187,14 +176,18 @@ bool ErrorDetails::HttpStatusCodeIsSet() const
 {
     return m_HttpStatusCodeIsSet;
 }
+
 void ErrorDetails::unsetHttpStatusCode()
 {
     m_HttpStatusCodeIsSet = false;
 }
+
 utility::string_t ErrorDetails::getMessage() const
 {
     return m_Message;
 }
+
+
 void ErrorDetails::setMessage(utility::string_t value)
 {
     m_Message = value;
@@ -204,14 +197,18 @@ bool ErrorDetails::MessageIsSet() const
 {
     return m_MessageIsSet;
 }
+
 void ErrorDetails::unsetMessage()
 {
     m_MessageIsSet = false;
 }
+
 utility::string_t ErrorDetails::getDetails() const
 {
     return m_Details;
 }
+
+
 void ErrorDetails::setDetails(utility::string_t value)
 {
     m_Details = value;
@@ -221,6 +218,7 @@ bool ErrorDetails::DetailsIsSet() const
 {
     return m_DetailsIsSet;
 }
+
 void ErrorDetails::unsetDetails()
 {
     m_DetailsIsSet = false;

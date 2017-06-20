@@ -58,29 +58,30 @@ public:
     /// The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters,  and must be unique.
     /// </summary>
     utility::string_t getName() const;
-    void setName(utility::string_t value);
-        /// <summary>
+        void setName(utility::string_t value);
+    /// <summary>
     /// The source that the routing rule is to be applied to, such as DeviceMessages.
     /// </summary>
     utility::string_t getSource() const;
-    void setSource(utility::string_t value);
-        /// <summary>
+        void setSource(utility::string_t value);
+    /// <summary>
     /// The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
     /// </summary>
     utility::string_t getCondition() const;
-    void setCondition(utility::string_t value);
     bool conditionIsSet() const;
     void unsetCondition();
+    void setCondition(utility::string_t value);
     /// <summary>
     /// The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
     /// </summary>
     std::vector<utility::string_t>& getEndpointNames();
-        /// <summary>
+        void setEndpointNames(std::vector<utility::string_t> value);
+    /// <summary>
     /// Used to specify whether a route is enabled.
     /// </summary>
     bool getIsEnabled() const;
-    void setIsEnabled(bool value);
-    
+        void setIsEnabled(bool value);
+
 protected:
     utility::string_t m_Name;
         utility::string_t m_Source;

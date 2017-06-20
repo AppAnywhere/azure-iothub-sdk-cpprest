@@ -58,36 +58,37 @@ public:
     /// The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages
     /// </summary>
     int64_t getRetentionTimeInDays() const;
-    void setRetentionTimeInDays(int64_t value);
     bool retentionTimeInDaysIsSet() const;
     void unsetRetentionTimeInDays();
+    void setRetentionTimeInDays(int64_t value);
     /// <summary>
     /// The number of paritions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
     /// </summary>
     int32_t getPartitionCount() const;
-    void setPartitionCount(int32_t value);
     bool partitionCountIsSet() const;
     void unsetPartitionCount();
+    void setPartitionCount(int32_t value);
     /// <summary>
     /// The partition ids in the Event Hub-compatible endpoint.
     /// </summary>
     std::vector<utility::string_t>& getPartitionIds();
     bool partitionIdsIsSet() const;
     void unsetPartitionIds();
+    void setPartitionIds(std::vector<utility::string_t> value);
     /// <summary>
     /// The Event Hub-compatible name.
     /// </summary>
     utility::string_t getPath() const;
-    void setPath(utility::string_t value);
     bool pathIsSet() const;
     void unsetPath();
+    void setPath(utility::string_t value);
     /// <summary>
     /// The Event Hub-compatible endpoint.
     /// </summary>
     utility::string_t getEndpoint() const;
-    void setEndpoint(utility::string_t value);
     bool endpointIsSet() const;
     void unsetEndpoint();
+    void setEndpoint(utility::string_t value);
 
 protected:
     int64_t m_RetentionTimeInDays;

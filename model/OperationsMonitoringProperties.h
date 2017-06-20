@@ -61,6 +61,7 @@ public:
     std::map<utility::string_t, utility::string_t>& getEvents();
     bool eventsIsSet() const;
     void unsetEvents();
+    void setEvents(std::map<utility::string_t, utility::string_t> value);
 
 protected:
     std::map<utility::string_t, utility::string_t> m_Events;

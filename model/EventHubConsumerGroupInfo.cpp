@@ -26,7 +26,6 @@ EventHubConsumerGroupInfo::EventHubConsumerGroupInfo()
     m_IdIsSet = false;
     m_Name = U("");
     m_NameIsSet = false;
-    
 }
 
 EventHubConsumerGroupInfo::~EventHubConsumerGroupInfo()
@@ -40,12 +39,21 @@ void EventHubConsumerGroupInfo::validate()
 
 web::json::value EventHubConsumerGroupInfo::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
-    if(m_TagsIsSet)
     {
-        val[U("tags")] = ModelBase::toJson(m_Tags);
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Tags )
+        {
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
+        }
+        if(jsonArray.size() > 0)
+        {
+            val[U("tags")] = web::json::value::array(jsonArray);
+        }
     }
     if(m_IdIsSet)
     {
@@ -55,36 +63,36 @@ web::json::value EventHubConsumerGroupInfo::toJson() const
     {
         val[U("name")] = ModelBase::toJson(m_Name);
     }
-    
 
     return val;
 }
 
 void EventHubConsumerGroupInfo::fromJson(web::json::value& val)
 {
-    
-
-    if(val.has_field(U("tags")))
     {
-        if(!val[U("tags")].is_null())
+        m_Tags.clear();
+        std::vector<web::json::value> jsonArray;
+        if(val.has_field(U("tags")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, utility::string_t>());
-            newItem->fromJson(val[U("tags")]);
-            setTags( newItem );
+        for( auto& item : val[U("tags")].as_array() )
+        {  
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Tags.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
         }
-        
+        }
     }
     if(val.has_field(U("id")))
     {
         setId(ModelBase::stringFromJson(val[U("id")]));
-        
     }
     if(val.has_field(U("name")))
     {
         setName(ModelBase::stringFromJson(val[U("name")]));
-        
     }
-    
 }
 
 void EventHubConsumerGroupInfo::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -95,13 +103,20 @@ void EventHubConsumerGroupInfo::toMultipart(std::shared_ptr<MultipartFormData> m
         namePrefix += U(".");
     }
 
-    if(m_TagsIsSet)
     {
-        if (m_Tags.get())
+        std::vector<web::json::value> jsonArray;
+        for( auto& item : m_Tags )
         {
-            m_Tags->toMultipart(multipart, U("tags."));
+            web::json::value tmp = web::json::value::object();
+            tmp[U("key")] = ModelBase::toJson(item.first());
+            tmp[U("value")] = ModelBase::toJson(item.second());
+            jsonArray.push_back(tmp);
         }
         
+        if(jsonArray.size() > 0)
+        {
+            multipart->add(ModelBase::toHttpContent(namePrefix + U("tags"), web::json::value::array(jsonArray), U("application/json")));
+        }
     }
     if(m_IdIsSet)
     {
@@ -113,7 +128,6 @@ void EventHubConsumerGroupInfo::toMultipart(std::shared_ptr<MultipartFormData> m
         multipart->add(ModelBase::toHttpContent(namePrefix + U("name"), m_Name));
         
     }
-    
 }
 
 void EventHubConsumerGroupInfo::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -124,46 +138,59 @@ void EventHubConsumerGroupInfo::fromMultiPart(std::shared_ptr<MultipartFormData>
         namePrefix += U(".");
     }
 
-    if(multipart->hasContent(U("tags")))
     {
+        m_Tags.clear();
         if(multipart->hasContent(U("tags")))
         {
-            std::map<utility::string_t, utility::string_t> newItem(std::map<utility::string_t, utility::string_t>());
-            newItem->fromMultiPart(multipart, U("tags."));
-            setTags( newItem );
+
+        web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("tags"))));
+        for( auto& item : jsonArray.as_array() )
+        {
+            utility::string_t key = "";
+            if(item.has_field(U("key")))
+            {
+                key = ModelBase::stringFromJson(item[U("key")]);
+            }
+            m_Tags.insert(std::pair<utility::string_t,utility::string_t>( key, ModelBase::stringFromJson(item[U("value")])));
         }
-        
+        }
     }
     if(multipart->hasContent(U("id")))
     {
         setId(ModelBase::stringFromHttpContent(multipart->getContent(U("id"))));
-        
     }
     if(multipart->hasContent(U("name")))
     {
         setName(ModelBase::stringFromHttpContent(multipart->getContent(U("name"))));
-        
     }
-    
 }
-
 
 std::map<utility::string_t, utility::string_t>& EventHubConsumerGroupInfo::getTags()
 {
     return m_Tags;
 }
+
+void EventHubConsumerGroupInfo::setTags(std::map<utility::string_t, utility::string_t> value)
+{
+    m_Tags = value;
+    m_TagsIsSet = true;
+}
 bool EventHubConsumerGroupInfo::tagsIsSet() const
 {
     return m_TagsIsSet;
 }
+
 void EventHubConsumerGroupInfo::unsetTags()
 {
     m_TagsIsSet = false;
 }
+
 utility::string_t EventHubConsumerGroupInfo::getId() const
 {
     return m_Id;
 }
+
+
 void EventHubConsumerGroupInfo::setId(utility::string_t value)
 {
     m_Id = value;
@@ -173,14 +200,18 @@ bool EventHubConsumerGroupInfo::idIsSet() const
 {
     return m_IdIsSet;
 }
+
 void EventHubConsumerGroupInfo::unsetId()
 {
     m_IdIsSet = false;
 }
+
 utility::string_t EventHubConsumerGroupInfo::getName() const
 {
     return m_Name;
 }
+
+
 void EventHubConsumerGroupInfo::setName(utility::string_t value)
 {
     m_Name = value;
@@ -190,6 +221,7 @@ bool EventHubConsumerGroupInfo::nameIsSet() const
 {
     return m_NameIsSet;
 }
+
 void EventHubConsumerGroupInfo::unsetName()
 {
     m_NameIsSet = false;

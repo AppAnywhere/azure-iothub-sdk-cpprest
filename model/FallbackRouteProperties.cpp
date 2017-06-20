@@ -25,7 +25,6 @@ FallbackRouteProperties::FallbackRouteProperties()
     m_Condition = U("");
     m_ConditionIsSet = false;
     m_IsEnabled = false;
-    
 }
 
 FallbackRouteProperties::~FallbackRouteProperties()
@@ -39,7 +38,6 @@ void FallbackRouteProperties::validate()
 
 web::json::value FallbackRouteProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("source")] = ModelBase::toJson(m_Source);
@@ -54,34 +52,28 @@ web::json::value FallbackRouteProperties::toJson() const
             jsonArray.push_back(ModelBase::toJson(item));
         }
         val[U("endpointNames")] = web::json::value::array(jsonArray);
-            }
+    }
     val[U("isEnabled")] = ModelBase::toJson(m_IsEnabled);
-    
 
     return val;
 }
 
 void FallbackRouteProperties::fromJson(web::json::value& val)
 {
-    
-
     setSource(ModelBase::stringFromJson(val[U("source")]));
     if(val.has_field(U("condition")))
     {
         setCondition(ModelBase::stringFromJson(val[U("condition")]));
-        
     }
     {
         m_EndpointNames.clear();
         std::vector<web::json::value> jsonArray;
-                for( auto& item : val[U("endpointNames")].as_array() )
+        for( auto& item : val[U("endpointNames")].as_array() )
         {
             m_EndpointNames.push_back(ModelBase::stringFromJson(item));
-            
         }
     }
     setIsEnabled(ModelBase::boolFromJson(val[U("isEnabled")]));
-    
 }
 
 void FallbackRouteProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -107,7 +99,6 @@ void FallbackRouteProperties::toMultipart(std::shared_ptr<MultipartFormData> mul
         multipart->add(ModelBase::toHttpContent(namePrefix + U("endpointNames"), web::json::value::array(jsonArray), U("application/json")));
             }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("isEnabled"), m_IsEnabled));
-    
 }
 
 void FallbackRouteProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -122,27 +113,25 @@ void FallbackRouteProperties::fromMultiPart(std::shared_ptr<MultipartFormData> m
     if(multipart->hasContent(U("condition")))
     {
         setCondition(ModelBase::stringFromHttpContent(multipart->getContent(U("condition"))));
-        
     }
     {
         m_EndpointNames.clear();
-        
+
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("endpointNames"))));
         for( auto& item : jsonArray.as_array() )
         {
             m_EndpointNames.push_back(ModelBase::stringFromJson(item));
-            
         }
     }
     setIsEnabled(ModelBase::boolFromHttpContent(multipart->getContent(U("isEnabled"))));
-    
 }
-
 
 utility::string_t FallbackRouteProperties::getSource() const
 {
     return m_Source;
 }
+
+
 void FallbackRouteProperties::setSource(utility::string_t value)
 {
     m_Source = value;
@@ -152,6 +141,8 @@ utility::string_t FallbackRouteProperties::getCondition() const
 {
     return m_Condition;
 }
+
+
 void FallbackRouteProperties::setCondition(utility::string_t value)
 {
     m_Condition = value;
@@ -161,24 +152,33 @@ bool FallbackRouteProperties::conditionIsSet() const
 {
     return m_ConditionIsSet;
 }
+
 void FallbackRouteProperties::unsetCondition()
 {
     m_ConditionIsSet = false;
 }
+
 std::vector<utility::string_t>& FallbackRouteProperties::getEndpointNames()
 {
     return m_EndpointNames;
+}
+
+void FallbackRouteProperties::setEndpointNames(std::vector<utility::string_t> value)
+{
+    m_EndpointNames = value;
+    
 }
 bool FallbackRouteProperties::getIsEnabled() const
 {
     return m_IsEnabled;
 }
+
+
 void FallbackRouteProperties::setIsEnabled(bool value)
 {
     m_IsEnabled = value;
     
 }
-
 }
 }
 }

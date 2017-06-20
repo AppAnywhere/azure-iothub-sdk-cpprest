@@ -57,23 +57,23 @@ public:
     /// The lock duration for the feedback queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
     /// </summary>
     utility::string_t getLockDurationAsIso8601() const;
-    void setLockDurationAsIso8601(utility::string_t value);
     bool lockDurationAsIso8601IsSet() const;
     void unsetLockDurationAsIso8601();
+    void setLockDurationAsIso8601(utility::string_t value);
     /// <summary>
     /// The period of time for which a message is available to consume before it is expired by the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
     /// </summary>
     utility::string_t getTtlAsIso8601() const;
-    void setTtlAsIso8601(utility::string_t value);
     bool ttlAsIso8601IsSet() const;
     void unsetTtlAsIso8601();
+    void setTtlAsIso8601(utility::string_t value);
     /// <summary>
     /// The number of times the IoT hub attempts to deliver a message on the feedback queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
     /// </summary>
     int32_t getMaxDeliveryCount() const;
-    void setMaxDeliveryCount(int32_t value);
     bool maxDeliveryCountIsSet() const;
     void unsetMaxDeliveryCount();
+    void setMaxDeliveryCount(int32_t value);
 
 protected:
     utility::string_t m_LockDurationAsIso8601;

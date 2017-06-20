@@ -24,7 +24,6 @@ EventHubConsumerGroupsListResult::EventHubConsumerGroupsListResult()
     m_ValueIsSet = false;
     m_NextLink = U("");
     m_NextLinkIsSet = false;
-    
 }
 
 EventHubConsumerGroupsListResult::~EventHubConsumerGroupsListResult()
@@ -38,7 +37,6 @@ void EventHubConsumerGroupsListResult::validate()
 
 web::json::value EventHubConsumerGroupsListResult::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     {
@@ -47,7 +45,6 @@ web::json::value EventHubConsumerGroupsListResult::toJson() const
         {
             jsonArray.push_back(ModelBase::toJson(item));
         }
-        
         if(jsonArray.size() > 0)
         {
             val[U("value")] = web::json::value::array(jsonArray);
@@ -57,15 +54,12 @@ web::json::value EventHubConsumerGroupsListResult::toJson() const
     {
         val[U("nextLink")] = ModelBase::toJson(m_NextLink);
     }
-    
 
     return val;
 }
 
 void EventHubConsumerGroupsListResult::fromJson(web::json::value& val)
 {
-    
-
     {
         m_Value.clear();
         std::vector<web::json::value> jsonArray;
@@ -74,16 +68,13 @@ void EventHubConsumerGroupsListResult::fromJson(web::json::value& val)
         for( auto& item : val[U("value")].as_array() )
         {
             m_Value.push_back(ModelBase::stringFromJson(item));
-            
         }
         }
     }
     if(val.has_field(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromJson(val[U("nextLink")]));
-        
     }
-    
 }
 
 void EventHubConsumerGroupsListResult::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -111,7 +102,6 @@ void EventHubConsumerGroupsListResult::toMultipart(std::shared_ptr<MultipartForm
         multipart->add(ModelBase::toHttpContent(namePrefix + U("nextLink"), m_NextLink));
         
     }
-    
 }
 
 void EventHubConsumerGroupsListResult::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -131,35 +121,41 @@ void EventHubConsumerGroupsListResult::fromMultiPart(std::shared_ptr<MultipartFo
         for( auto& item : jsonArray.as_array() )
         {
             m_Value.push_back(ModelBase::stringFromJson(item));
-            
         }
         }
     }
     if(multipart->hasContent(U("nextLink")))
     {
         setNextLink(ModelBase::stringFromHttpContent(multipart->getContent(U("nextLink"))));
-        
     }
-    
 }
-
 
 std::vector<utility::string_t>& EventHubConsumerGroupsListResult::getValue()
 {
     return m_Value;
 }
+
+void EventHubConsumerGroupsListResult::setValue(std::vector<utility::string_t> value)
+{
+    m_Value = value;
+    m_ValueIsSet = true;
+}
 bool EventHubConsumerGroupsListResult::valueIsSet() const
 {
     return m_ValueIsSet;
 }
+
 void EventHubConsumerGroupsListResult::unsetValue()
 {
     m_ValueIsSet = false;
 }
+
 utility::string_t EventHubConsumerGroupsListResult::getNextLink() const
 {
     return m_NextLink;
 }
+
+
 void EventHubConsumerGroupsListResult::setNextLink(utility::string_t value)
 {
     m_NextLink = value;
@@ -169,6 +165,7 @@ bool EventHubConsumerGroupsListResult::nextLinkIsSet() const
 {
     return m_NextLinkIsSet;
 }
+
 void EventHubConsumerGroupsListResult::unsetNextLink()
 {
     m_NextLinkIsSet = false;

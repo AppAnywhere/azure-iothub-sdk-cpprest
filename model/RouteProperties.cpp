@@ -26,7 +26,6 @@ RouteProperties::RouteProperties()
     m_Condition = U("");
     m_ConditionIsSet = false;
     m_IsEnabled = false;
-    
 }
 
 RouteProperties::~RouteProperties()
@@ -40,7 +39,6 @@ void RouteProperties::validate()
 
 web::json::value RouteProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     val[U("name")] = ModelBase::toJson(m_Name);
@@ -56,35 +54,29 @@ web::json::value RouteProperties::toJson() const
             jsonArray.push_back(ModelBase::toJson(item));
         }
         val[U("endpointNames")] = web::json::value::array(jsonArray);
-            }
+    }
     val[U("isEnabled")] = ModelBase::toJson(m_IsEnabled);
-    
 
     return val;
 }
 
 void RouteProperties::fromJson(web::json::value& val)
 {
-    
-
     setName(ModelBase::stringFromJson(val[U("name")]));
     setSource(ModelBase::stringFromJson(val[U("source")]));
     if(val.has_field(U("condition")))
     {
         setCondition(ModelBase::stringFromJson(val[U("condition")]));
-        
     }
     {
         m_EndpointNames.clear();
         std::vector<web::json::value> jsonArray;
-                for( auto& item : val[U("endpointNames")].as_array() )
+        for( auto& item : val[U("endpointNames")].as_array() )
         {
             m_EndpointNames.push_back(ModelBase::stringFromJson(item));
-            
         }
     }
     setIsEnabled(ModelBase::boolFromJson(val[U("isEnabled")]));
-    
 }
 
 void RouteProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -111,7 +103,6 @@ void RouteProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, 
         multipart->add(ModelBase::toHttpContent(namePrefix + U("endpointNames"), web::json::value::array(jsonArray), U("application/json")));
             }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("isEnabled"), m_IsEnabled));
-    
 }
 
 void RouteProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -127,27 +118,25 @@ void RouteProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart
     if(multipart->hasContent(U("condition")))
     {
         setCondition(ModelBase::stringFromHttpContent(multipart->getContent(U("condition"))));
-        
     }
     {
         m_EndpointNames.clear();
-        
+
         web::json::value jsonArray = web::json::value::parse(ModelBase::stringFromHttpContent(multipart->getContent(U("endpointNames"))));
         for( auto& item : jsonArray.as_array() )
         {
             m_EndpointNames.push_back(ModelBase::stringFromJson(item));
-            
         }
     }
     setIsEnabled(ModelBase::boolFromHttpContent(multipart->getContent(U("isEnabled"))));
-    
 }
-
 
 utility::string_t RouteProperties::getName() const
 {
     return m_Name;
 }
+
+
 void RouteProperties::setName(utility::string_t value)
 {
     m_Name = value;
@@ -157,6 +146,8 @@ utility::string_t RouteProperties::getSource() const
 {
     return m_Source;
 }
+
+
 void RouteProperties::setSource(utility::string_t value)
 {
     m_Source = value;
@@ -166,6 +157,8 @@ utility::string_t RouteProperties::getCondition() const
 {
     return m_Condition;
 }
+
+
 void RouteProperties::setCondition(utility::string_t value)
 {
     m_Condition = value;
@@ -175,24 +168,33 @@ bool RouteProperties::conditionIsSet() const
 {
     return m_ConditionIsSet;
 }
+
 void RouteProperties::unsetCondition()
 {
     m_ConditionIsSet = false;
 }
+
 std::vector<utility::string_t>& RouteProperties::getEndpointNames()
 {
     return m_EndpointNames;
+}
+
+void RouteProperties::setEndpointNames(std::vector<utility::string_t> value)
+{
+    m_EndpointNames = value;
+    
 }
 bool RouteProperties::getIsEnabled() const
 {
     return m_IsEnabled;
 }
+
+
 void RouteProperties::setIsEnabled(bool value)
 {
     m_IsEnabled = value;
     
 }
-
 }
 }
 }

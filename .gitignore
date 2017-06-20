@@ -1,6 +1,6 @@
 #Visual studio files
 .vs
-
+/build
 
 # Compiled Object files
 *.slo

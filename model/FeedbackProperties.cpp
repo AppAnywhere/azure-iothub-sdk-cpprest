@@ -27,7 +27,6 @@ FeedbackProperties::FeedbackProperties()
     m_TtlAsIso8601IsSet = false;
     m_MaxDeliveryCount = 0;
     m_MaxDeliveryCountIsSet = false;
-    
 }
 
 FeedbackProperties::~FeedbackProperties()
@@ -41,7 +40,6 @@ void FeedbackProperties::validate()
 
 web::json::value FeedbackProperties::toJson() const
 {
-    
     web::json::value val = web::json::value::object();
 
     if(m_LockDurationAsIso8601IsSet)
@@ -56,30 +54,24 @@ web::json::value FeedbackProperties::toJson() const
     {
         val[U("maxDeliveryCount")] = ModelBase::toJson(m_MaxDeliveryCount);
     }
-    
 
     return val;
 }
 
 void FeedbackProperties::fromJson(web::json::value& val)
 {
-    
-
     if(val.has_field(U("lockDurationAsIso8601")))
     {
         setLockDurationAsIso8601(ModelBase::stringFromJson(val[U("lockDurationAsIso8601")]));
-        
     }
     if(val.has_field(U("ttlAsIso8601")))
     {
         setTtlAsIso8601(ModelBase::stringFromJson(val[U("ttlAsIso8601")]));
-        
     }
     if(val.has_field(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromJson(val[U("maxDeliveryCount")]));
     }
-    
 }
 
 void FeedbackProperties::toMultipart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix) const
@@ -104,7 +96,6 @@ void FeedbackProperties::toMultipart(std::shared_ptr<MultipartFormData> multipar
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("maxDeliveryCount"), m_MaxDeliveryCount));
     }
-    
 }
 
 void FeedbackProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const utility::string_t& prefix)
@@ -118,25 +109,23 @@ void FeedbackProperties::fromMultiPart(std::shared_ptr<MultipartFormData> multip
     if(multipart->hasContent(U("lockDurationAsIso8601")))
     {
         setLockDurationAsIso8601(ModelBase::stringFromHttpContent(multipart->getContent(U("lockDurationAsIso8601"))));
-        
     }
     if(multipart->hasContent(U("ttlAsIso8601")))
     {
         setTtlAsIso8601(ModelBase::stringFromHttpContent(multipart->getContent(U("ttlAsIso8601"))));
-        
     }
     if(multipart->hasContent(U("maxDeliveryCount")))
     {
         setMaxDeliveryCount(ModelBase::int32_tFromHttpContent(multipart->getContent(U("maxDeliveryCount"))));
     }
-    
 }
-
 
 utility::string_t FeedbackProperties::getLockDurationAsIso8601() const
 {
     return m_LockDurationAsIso8601;
 }
+
+
 void FeedbackProperties::setLockDurationAsIso8601(utility::string_t value)
 {
     m_LockDurationAsIso8601 = value;
@@ -146,14 +135,18 @@ bool FeedbackProperties::lockDurationAsIso8601IsSet() const
 {
     return m_LockDurationAsIso8601IsSet;
 }
+
 void FeedbackProperties::unsetLockDurationAsIso8601()
 {
     m_LockDurationAsIso8601IsSet = false;
 }
+
 utility::string_t FeedbackProperties::getTtlAsIso8601() const
 {
     return m_TtlAsIso8601;
 }
+
+
 void FeedbackProperties::setTtlAsIso8601(utility::string_t value)
 {
     m_TtlAsIso8601 = value;
@@ -163,14 +156,18 @@ bool FeedbackProperties::ttlAsIso8601IsSet() const
 {
     return m_TtlAsIso8601IsSet;
 }
+
 void FeedbackProperties::unsetTtlAsIso8601()
 {
     m_TtlAsIso8601IsSet = false;
 }
+
 int32_t FeedbackProperties::getMaxDeliveryCount() const
 {
     return m_MaxDeliveryCount;
 }
+
+
 void FeedbackProperties::setMaxDeliveryCount(int32_t value)
 {
     m_MaxDeliveryCount = value;
@@ -180,6 +177,7 @@ bool FeedbackProperties::maxDeliveryCountIsSet() const
 {
     return m_MaxDeliveryCountIsSet;
 }
+
 void FeedbackProperties::unsetMaxDeliveryCount()
 {
     m_MaxDeliveryCountIsSet = false;
